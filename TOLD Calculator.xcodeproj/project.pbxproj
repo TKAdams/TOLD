@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C151F08917800D71A01 /* AppDelegate.swift */; };
+		D3F23C181F08917800D71A01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C171F08917800D71A01 /* ViewController.swift */; };
+		D3F23C1B1F08917800D71A01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C191F08917800D71A01 /* Main.storyboard */; };
+		D3F23C1E1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C1C1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld */; };
+		D3F23C201F08917800D71A01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C1F1F08917800D71A01 /* Assets.xcassets */; };
+		D3F23C231F08917800D71A01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C211F08917800D71A01 /* LaunchScreen.storyboard */; };
+		D3F23C2E1F08917800D71A01 /* TOLD_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C2D1F08917800D71A01 /* TOLD_CalculatorTests.swift */; };
+		D3F23C391F08917800D71A01 /* TOLD_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C381F08917800D71A01 /* TOLD_CalculatorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3F23C2A1F08917800D71A01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3F23C0A1F08917800D71A01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3F23C111F08917800D71A01;
+			remoteInfo = "TOLD Calculator";
+		};
+		D3F23C351F08917800D71A01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3F23C0A1F08917800D71A01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3F23C111F08917800D71A01;
+			remoteInfo = "TOLD Calculator";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D3F23C121F08917800D71A01 /* TOLD Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TOLD Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3F23C151F08917800D71A01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D3F23C171F08917800D71A01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D3F23C1A1F08917800D71A01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D3F23C1D1F08917800D71A01 /* TOLD_Calculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TOLD_Calculator.xcdatamodel; sourceTree = "<group>"; };
+		D3F23C1F1F08917800D71A01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3F23C221F08917800D71A01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D3F23C241F08917800D71A01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3F23C291F08917800D71A01 /* TOLD CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TOLD CalculatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3F23C2D1F08917800D71A01 /* TOLD_CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOLD_CalculatorTests.swift; sourceTree = "<group>"; };
+		D3F23C2F1F08917800D71A01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3F23C341F08917800D71A01 /* TOLD CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TOLD CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3F23C381F08917800D71A01 /* TOLD_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOLD_CalculatorUITests.swift; sourceTree = "<group>"; };
+		D3F23C3A1F08917800D71A01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3F23C0F1F08917800D71A01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3F23C261F08917800D71A01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3F23C311F08917800D71A01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D3F23C091F08917800D71A01 = {
+			isa = PBXGroup;
+			children = (
+				D3F23C141F08917800D71A01 /* TOLD Calculator */,
+				D3F23C2C1F08917800D71A01 /* TOLD CalculatorTests */,
+				D3F23C371F08917800D71A01 /* TOLD CalculatorUITests */,
+				D3F23C131F08917800D71A01 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D3F23C131F08917800D71A01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3F23C121F08917800D71A01 /* TOLD Calculator.app */,
+				D3F23C291F08917800D71A01 /* TOLD CalculatorTests.xctest */,
+				D3F23C341F08917800D71A01 /* TOLD CalculatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3F23C141F08917800D71A01 /* TOLD Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				D3F23C151F08917800D71A01 /* AppDelegate.swift */,
+				D3F23C171F08917800D71A01 /* ViewController.swift */,
+				D3F23C191F08917800D71A01 /* Main.storyboard */,
+				D3F23C1F1F08917800D71A01 /* Assets.xcassets */,
+				D3F23C211F08917800D71A01 /* LaunchScreen.storyboard */,
+				D3F23C241F08917800D71A01 /* Info.plist */,
+				D3F23C1C1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld */,
+			);
+			path = "TOLD Calculator";
+			sourceTree = "<group>";
+		};
+		D3F23C2C1F08917800D71A01 /* TOLD CalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3F23C2D1F08917800D71A01 /* TOLD_CalculatorTests.swift */,
+				D3F23C2F1F08917800D71A01 /* Info.plist */,
+			);
+			path = "TOLD CalculatorTests";
+			sourceTree = "<group>";
+		};
+		D3F23C371F08917800D71A01 /* TOLD CalculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D3F23C381F08917800D71A01 /* TOLD_CalculatorUITests.swift */,
+				D3F23C3A1F08917800D71A01 /* Info.plist */,
+			);
+			path = "TOLD CalculatorUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3F23C111F08917800D71A01 /* TOLD Calculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3F23C3D1F08917800D71A01 /* Build configuration list for PBXNativeTarget "TOLD Calculator" */;
+			buildPhases = (
+				D3F23C0E1F08917800D71A01 /* Sources */,
+				D3F23C0F1F08917800D71A01 /* Frameworks */,
+				D3F23C101F08917800D71A01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TOLD Calculator";
+			productName = "TOLD Calculator";
+			productReference = D3F23C121F08917800D71A01 /* TOLD Calculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D3F23C281F08917800D71A01 /* TOLD CalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3F23C401F08917800D71A01 /* Build configuration list for PBXNativeTarget "TOLD CalculatorTests" */;
+			buildPhases = (
+				D3F23C251F08917800D71A01 /* Sources */,
+				D3F23C261F08917800D71A01 /* Frameworks */,
+				D3F23C271F08917800D71A01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3F23C2B1F08917800D71A01 /* PBXTargetDependency */,
+			);
+			name = "TOLD CalculatorTests";
+			productName = "TOLD CalculatorTests";
+			productReference = D3F23C291F08917800D71A01 /* TOLD CalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D3F23C331F08917800D71A01 /* TOLD CalculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3F23C431F08917800D71A01 /* Build configuration list for PBXNativeTarget "TOLD CalculatorUITests" */;
+			buildPhases = (
+				D3F23C301F08917800D71A01 /* Sources */,
+				D3F23C311F08917800D71A01 /* Frameworks */,
+				D3F23C321F08917800D71A01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3F23C361F08917800D71A01 /* PBXTargetDependency */,
+			);
+			name = "TOLD CalculatorUITests";
+			productName = "TOLD CalculatorUITests";
+			productReference = D3F23C341F08917800D71A01 /* TOLD CalculatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D3F23C0A1F08917800D71A01 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "TODD WILSON";
+				TargetAttributes = {
+					D3F23C111F08917800D71A01 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = PEQA6GT54M;
+						ProvisioningStyle = Automatic;
+					};
+					D3F23C281F08917800D71A01 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = PEQA6GT54M;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D3F23C111F08917800D71A01;
+					};
+					D3F23C331F08917800D71A01 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = PEQA6GT54M;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D3F23C111F08917800D71A01;
+					};
+				};
+			};
+			buildConfigurationList = D3F23C0D1F08917800D71A01 /* Build configuration list for PBXProject "TOLD Calculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D3F23C091F08917800D71A01;
+			productRefGroup = D3F23C131F08917800D71A01 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3F23C111F08917800D71A01 /* TOLD Calculator */,
+				D3F23C281F08917800D71A01 /* TOLD CalculatorTests */,
+				D3F23C331F08917800D71A01 /* TOLD CalculatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D3F23C101F08917800D71A01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3F23C231F08917800D71A01 /* LaunchScreen.storyboard in Resources */,
+				D3F23C201F08917800D71A01 /* Assets.xcassets in Resources */,
+				D3F23C1B1F08917800D71A01 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3F23C271F08917800D71A01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3F23C321F08917800D71A01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3F23C0E1F08917800D71A01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3F23C181F08917800D71A01 /* ViewController.swift in Sources */,
+				D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */,
+				D3F23C1E1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3F23C251F08917800D71A01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3F23C2E1F08917800D71A01 /* TOLD_CalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3F23C301F08917800D71A01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3F23C391F08917800D71A01 /* TOLD_CalculatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3F23C2B1F08917800D71A01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3F23C111F08917800D71A01 /* TOLD Calculator */;
+			targetProxy = D3F23C2A1F08917800D71A01 /* PBXContainerItemProxy */;
+		};
+		D3F23C361F08917800D71A01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3F23C111F08917800D71A01 /* TOLD Calculator */;
+			targetProxy = D3F23C351F08917800D71A01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D3F23C191F08917800D71A01 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3F23C1A1F08917800D71A01 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D3F23C211F08917800D71A01 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3F23C221F08917800D71A01 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D3F23C3B1F08917800D71A01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3F23C3C1F08917800D71A01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D3F23C3E1F08917800D71A01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PEQA6GT54M;
+				INFOPLIST_FILE = "TOLD Calculator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NPMS.TOLD-Calculator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D3F23C3F1F08917800D71A01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PEQA6GT54M;
+				INFOPLIST_FILE = "TOLD Calculator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NPMS.TOLD-Calculator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D3F23C411F08917800D71A01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = PEQA6GT54M;
+				INFOPLIST_FILE = "TOLD CalculatorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NPMS.TOLD-CalculatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TOLD Calculator.app/TOLD Calculator";
+			};
+			name = Debug;
+		};
+		D3F23C421F08917800D71A01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = PEQA6GT54M;
+				INFOPLIST_FILE = "TOLD CalculatorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NPMS.TOLD-CalculatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TOLD Calculator.app/TOLD Calculator";
+			};
+			name = Release;
+		};
+		D3F23C441F08917800D71A01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = PEQA6GT54M;
+				INFOPLIST_FILE = "TOLD CalculatorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NPMS.TOLD-CalculatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "TOLD Calculator";
+			};
+			name = Debug;
+		};
+		D3F23C451F08917800D71A01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = PEQA6GT54M;
+				INFOPLIST_FILE = "TOLD CalculatorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "NPMS.TOLD-CalculatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "TOLD Calculator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3F23C0D1F08917800D71A01 /* Build configuration list for PBXProject "TOLD Calculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3F23C3B1F08917800D71A01 /* Debug */,
+				D3F23C3C1F08917800D71A01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3F23C3D1F08917800D71A01 /* Build configuration list for PBXNativeTarget "TOLD Calculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3F23C3E1F08917800D71A01 /* Debug */,
+				D3F23C3F1F08917800D71A01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D3F23C401F08917800D71A01 /* Build configuration list for PBXNativeTarget "TOLD CalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3F23C411F08917800D71A01 /* Debug */,
+				D3F23C421F08917800D71A01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D3F23C431F08917800D71A01 /* Build configuration list for PBXNativeTarget "TOLD CalculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3F23C441F08917800D71A01 /* Debug */,
+				D3F23C451F08917800D71A01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D3F23C1C1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D3F23C1D1F08917800D71A01 /* TOLD_Calculator.xcdatamodel */,
+			);
+			currentVersion = D3F23C1D1F08917800D71A01 /* TOLD_Calculator.xcdatamodel */;
+			path = TOLD_Calculator.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D3F23C0A1F08917800D71A01 /* Project object */;
+}
