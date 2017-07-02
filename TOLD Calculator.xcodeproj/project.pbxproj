@@ -15,6 +15,10 @@
 		D3F23C231F08917800D71A01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C211F08917800D71A01 /* LaunchScreen.storyboard */; };
 		D3F23C2E1F08917800D71A01 /* TOLD_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C2D1F08917800D71A01 /* TOLD_CalculatorTests.swift */; };
 		D3F23C391F08917800D71A01 /* TOLD_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C381F08917800D71A01 /* TOLD_CalculatorUITests.swift */; };
+		D3F23C4C1F08922300D71A01 /* TOLDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C4B1F08922300D71A01 /* TOLDViewController.swift */; };
+		D3F23C521F0929F600D71A01 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C511F0929F500D71A01 /* Flight.swift */; };
+		D3F23C541F092C1400D71A01 /* TOLD Calculator.docx in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C531F092C1400D71A01 /* TOLD Calculator.docx */; };
+		D3F23C561F092C7700D71A01 /* IFG (15 Aug 16).pdf in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C551F092C7700D71A01 /* IFG (15 Aug 16).pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		D3F23C341F08917800D71A01 /* TOLD CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TOLD CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F23C381F08917800D71A01 /* TOLD_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOLD_CalculatorUITests.swift; sourceTree = "<group>"; };
 		D3F23C3A1F08917800D71A01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3F23C4B1F08922300D71A01 /* TOLDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOLDViewController.swift; sourceTree = "<group>"; };
+		D3F23C511F0929F500D71A01 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		D3F23C531F092C1400D71A01 /* TOLD Calculator.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = "TOLD Calculator.docx"; path = "../../../../Downloads/TOLD Calculator.docx"; sourceTree = "<group>"; };
+		D3F23C551F092C7700D71A01 /* IFG (15 Aug 16).pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "IFG (15 Aug 16).pdf"; path = "../../../../Downloads/IFG (15 Aug 16).pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +107,19 @@
 		D3F23C141F08917800D71A01 /* TOLD Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				D3F23C4A1F0891CC00D71A01 /* Models */,
+				D3F23C491F0891C400D71A01 /* Views */,
+				D3F23C481F0891B900D71A01 /* Controllers */,
+				D3F23C471F0891AB00D71A01 /* Helpers */,
+				D3F23C461F08919300D71A01 /* Support */,
 				D3F23C151F08917800D71A01 /* AppDelegate.swift */,
 				D3F23C171F08917800D71A01 /* ViewController.swift */,
+				D3F23C531F092C1400D71A01 /* TOLD Calculator.docx */,
+				D3F23C551F092C7700D71A01 /* IFG (15 Aug 16).pdf */,
 				D3F23C191F08917800D71A01 /* Main.storyboard */,
 				D3F23C1F1F08917800D71A01 /* Assets.xcassets */,
 				D3F23C211F08917800D71A01 /* LaunchScreen.storyboard */,
 				D3F23C241F08917800D71A01 /* Info.plist */,
-				D3F23C1C1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld */,
 			);
 			path = "TOLD Calculator";
 			sourceTree = "<group>";
@@ -126,6 +140,44 @@
 				D3F23C3A1F08917800D71A01 /* Info.plist */,
 			);
 			path = "TOLD CalculatorUITests";
+			sourceTree = "<group>";
+		};
+		D3F23C461F08919300D71A01 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		D3F23C471F0891AB00D71A01 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		D3F23C481F0891B900D71A01 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D3F23C4B1F08922300D71A01 /* TOLDViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D3F23C491F0891C400D71A01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D3F23C4A1F0891CC00D71A01 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D3F23C1C1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld */,
+				D3F23C511F0929F500D71A01 /* Flight.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +290,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F23C561F092C7700D71A01 /* IFG (15 Aug 16).pdf in Resources */,
 				D3F23C231F08917800D71A01 /* LaunchScreen.storyboard in Resources */,
+				D3F23C541F092C1400D71A01 /* TOLD Calculator.docx in Resources */,
 				D3F23C201F08917800D71A01 /* Assets.xcassets in Resources */,
 				D3F23C1B1F08917800D71A01 /* Main.storyboard in Resources */,
 			);
@@ -266,7 +320,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3F23C181F08917800D71A01 /* ViewController.swift in Sources */,
+				D3F23C4C1F08922300D71A01 /* TOLDViewController.swift in Sources */,
 				D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */,
+				D3F23C521F0929F600D71A01 /* Flight.swift in Sources */,
 				D3F23C1E1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +574,7 @@
 				D3F23C3F1F08917800D71A01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3F23C401F08917800D71A01 /* Build configuration list for PBXNativeTarget "TOLD CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +583,7 @@
 				D3F23C421F08917800D71A01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3F23C431F08917800D71A01 /* Build configuration list for PBXNativeTarget "TOLD CalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +592,7 @@
 				D3F23C451F08917800D71A01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
