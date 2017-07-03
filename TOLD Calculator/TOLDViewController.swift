@@ -10,8 +10,10 @@ import UIKit
 
 class TOLDViewController: UIViewController {
 
+    //Test
     var flight: Flight = Flight()
     var tOF: TakeoffFactors = TakeoffFactors()
+    var speedTable: SpeedTable = SpeedTable()
     
     @IBOutlet weak var temperature: UITextField!
     @IBOutlet weak var pressureAltitude: UITextField!
@@ -29,11 +31,23 @@ class TOLDViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func temperatureEditingDidBegin(_ sender: UITextField) {
+        if sender.text == "0" {
+            sender.text = ""
+        }
+    }
+    
     @IBAction func temperatureEditingDidEnd(_ sender: UITextField) {
         flight.temperature = flight.setTemperature(temp: sender.text!, cORf: CelciusVsFahrenheit.selectedSegmentIndex)
         
     }
         
+    @IBAction func pressureAltitudeEditingDidBegin(_ sender: UITextField) {
+        if sender.text == "0" {
+            sender.text = ""
+        }
+    }
+    
     @IBAction func pressureAltitudeEditingDidEnd(_ sender: UITextField) {
     }
     
