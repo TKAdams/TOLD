@@ -22,6 +22,7 @@
 		D3F23C5C1F09F6C500D71A01 /* testTOF.csv in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C5B1F09F6C500D71A01 /* testTOF.csv */; };
 		D3F23C5E1F09F89100D71A01 /* IFG (15 Aug 16).pdf in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C5D1F09F89100D71A01 /* IFG (15 Aug 16).pdf */; };
 		D3F23C621F09FEEB00D71A01 /* TakeoffFactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C611F09FEEB00D71A01 /* TakeoffFactors.swift */; };
+		D3F23C641F0A711400D71A01 /* CSVReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C631F0A711400D71A01 /* CSVReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		D3F23C5B1F09F6C500D71A01 /* testTOF.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = testTOF.csv; path = Resources/testTOF.csv; sourceTree = SOURCE_ROOT; };
 		D3F23C5D1F09F89100D71A01 /* IFG (15 Aug 16).pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "IFG (15 Aug 16).pdf"; path = "Resources/IFG (15 Aug 16).pdf"; sourceTree = SOURCE_ROOT; };
 		D3F23C611F09FEEB00D71A01 /* TakeoffFactors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeoffFactors.swift; sourceTree = "<group>"; };
+		D3F23C631F0A711400D71A01 /* CSVReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		D3F23C471F0891AB00D71A01 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D3F23C631F0A711400D71A01 /* CSVReader.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */,
 				D3F23C521F0929F600D71A01 /* Flight.swift in Sources */,
 				D3F23C1E1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld in Sources */,
+				D3F23C641F0A711400D71A01 /* CSVReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
