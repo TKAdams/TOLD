@@ -12,6 +12,10 @@ class TOLDViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        var data = readDataFromCSV(fileName: "testTOF", fileType: "csv")
+        data = cleanRows(file: data!)
+        let csvRows = csv(data: data!)
+        print(csvRows[1][1])
 
         // Do any additional setup after loading the view.
     }
@@ -41,12 +45,19 @@ class TOLDViewController: UIViewController {
         var result: [[String]] = []
         let rows = data.components(separatedBy: "\n")
         for row in rows {
-            let columns = row.components(separatedBy: ";")
+            let columns = row.components(separatedBy: ",")
             result.append(columns)
         }
         return result
     }
 
+    func cleanRows(file:String)->String{
+        var cleanFile = file
+        cleanFile = cleanFile.replacingOccurrences(of: "\r", with: "\n")
+        cleanFile = cleanFile.replacingOccurrences(of: "\n\n", with: "\n")
+        return cleanFile
+    }
+    
     /*
     // MARK: - Navigation
 
