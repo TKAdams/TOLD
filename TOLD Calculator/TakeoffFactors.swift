@@ -26,7 +26,7 @@ class TakeoffFactors {
         takeoffTable = CSVReader.convertStringArrayToIntArray(stringData: csvStringRows)
         
     }
-    
+    //
 //    func findBottomTempIndex (tempF: Double) -> Int {
 //        var index: Int = 0
 //        let highestTemp: Double = 120
