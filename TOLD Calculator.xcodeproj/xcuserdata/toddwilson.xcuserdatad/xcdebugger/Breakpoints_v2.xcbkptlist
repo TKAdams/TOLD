@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TOLD Calculator/TOLDViewController.swift"
-            timestampString = "520791731.097306"
+            timestampString = "520808350.550451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "temperatureEditingDidEnd(_:)"
             landmarkType = "7">
          </BreakpointContent>
