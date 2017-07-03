@@ -24,8 +24,7 @@ class TakeoffFactors {
         let csvStringRows = CSVReader.convertCSVDataToStringArray(data: data!)
         takeoffTable = CSVReader.convertStringArrayToIntArray(stringData: csvStringRows)
         
-        print(takeoffTable[1][1])
-        print(takeoffTable[0][0])
+
         
     }
 
