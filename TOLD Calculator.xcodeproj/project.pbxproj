@@ -18,6 +18,7 @@
 		D3F23C4C1F08922300D71A01 /* TOLDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C4B1F08922300D71A01 /* TOLDViewController.swift */; };
 		D3F23C521F0929F600D71A01 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C511F0929F500D71A01 /* Flight.swift */; };
 		D3F23C5C1F09F6C500D71A01 /* testTOF.csv in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C5B1F09F6C500D71A01 /* testTOF.csv */; };
+		D3F23C5E1F09F89100D71A01 /* IFG (15 Aug 16).pdf in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C5D1F09F89100D71A01 /* IFG (15 Aug 16).pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		D3F23C4B1F08922300D71A01 /* TOLDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOLDViewController.swift; sourceTree = "<group>"; };
 		D3F23C511F0929F500D71A01 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		D3F23C5B1F09F6C500D71A01 /* testTOF.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = testTOF.csv; path = Resources/testTOF.csv; sourceTree = SOURCE_ROOT; };
+		D3F23C5D1F09F89100D71A01 /* IFG (15 Aug 16).pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "IFG (15 Aug 16).pdf"; path = "Resources/IFG (15 Aug 16).pdf"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		D3F23C461F08919300D71A01 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				D3F23C5D1F09F89100D71A01 /* IFG (15 Aug 16).pdf */,
 				D3F23C5B1F09F6C500D71A01 /* testTOF.csv */,
 			);
 			name = Support;
@@ -287,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F23C5E1F09F89100D71A01 /* IFG (15 Aug 16).pdf in Resources */,
 				D3F23C231F08917800D71A01 /* LaunchScreen.storyboard in Resources */,
 				D3F23C201F08917800D71A01 /* Assets.xcassets in Resources */,
 				D3F23C5C1F09F6C500D71A01 /* testTOF.csv in Resources */,
