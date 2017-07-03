@@ -17,9 +17,6 @@
 		D3F23C391F08917800D71A01 /* TOLD_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C381F08917800D71A01 /* TOLD_CalculatorUITests.swift */; };
 		D3F23C4C1F08922300D71A01 /* TOLDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C4B1F08922300D71A01 /* TOLDViewController.swift */; };
 		D3F23C521F0929F600D71A01 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C511F0929F500D71A01 /* Flight.swift */; };
-		D3F23C541F092C1400D71A01 /* TOLD Calculator.docx in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C531F092C1400D71A01 /* TOLD Calculator.docx */; };
-		D3F23C561F092C7700D71A01 /* IFG (15 Aug 16).pdf in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C551F092C7700D71A01 /* IFG (15 Aug 16).pdf */; };
-		D3F23C581F099EEF00D71A01 /* testTOF.csv in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C571F099EEF00D71A01 /* testTOF.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +53,6 @@
 		D3F23C3A1F08917800D71A01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3F23C4B1F08922300D71A01 /* TOLDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOLDViewController.swift; sourceTree = "<group>"; };
 		D3F23C511F0929F500D71A01 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
-		D3F23C531F092C1400D71A01 /* TOLD Calculator.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = "TOLD Calculator.docx"; path = "../../../../Downloads/TOLD Calculator.docx"; sourceTree = "<group>"; };
-		D3F23C551F092C7700D71A01 /* IFG (15 Aug 16).pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "IFG (15 Aug 16).pdf"; path = "../../../../Downloads/IFG (15 Aug 16).pdf"; sourceTree = "<group>"; };
-		D3F23C571F099EEF00D71A01 /* testTOF.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = testTOF.csv; path = ../../../../Documents/testTOF.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +110,6 @@
 				D3F23C461F08919300D71A01 /* Support */,
 				D3F23C151F08917800D71A01 /* AppDelegate.swift */,
 				D3F23C171F08917800D71A01 /* ViewController.swift */,
-				D3F23C531F092C1400D71A01 /* TOLD Calculator.docx */,
-				D3F23C551F092C7700D71A01 /* IFG (15 Aug 16).pdf */,
 				D3F23C191F08917800D71A01 /* Main.storyboard */,
 				D3F23C1F1F08917800D71A01 /* Assets.xcassets */,
 				D3F23C211F08917800D71A01 /* LaunchScreen.storyboard */,
@@ -147,7 +139,6 @@
 		D3F23C461F08919300D71A01 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				D3F23C571F099EEF00D71A01 /* testTOF.csv */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -293,10 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3F23C581F099EEF00D71A01 /* testTOF.csv in Resources */,
-				D3F23C561F092C7700D71A01 /* IFG (15 Aug 16).pdf in Resources */,
 				D3F23C231F08917800D71A01 /* LaunchScreen.storyboard in Resources */,
-				D3F23C541F092C1400D71A01 /* TOLD Calculator.docx in Resources */,
 				D3F23C201F08917800D71A01 /* Assets.xcassets in Resources */,
 				D3F23C1B1F08917800D71A01 /* Main.storyboard in Resources */,
 			);
