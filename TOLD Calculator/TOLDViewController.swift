@@ -10,8 +10,13 @@ import UIKit
 
 class TOLDViewController: UIViewController {
 
+    var flight: Flight = Flight()
     var tOF: TakeoffFactors = TakeoffFactors()
     
+    @IBOutlet weak var temperature: UITextField!
+    @IBOutlet weak var pressureAltitude: UITextField!
+    @IBOutlet weak var CelciusVsFahrenheit: UISegmentedControl! //0 = C, 1 = F Default C
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +29,14 @@ class TOLDViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func temperatureEditingDidEnd(_ sender: UITextField) {
+        flight.temperature = flight.setTemperature(temp: sender.text!, cORf: CelciusVsFahrenheit.selectedSegmentIndex)
         
+    }
+        
+    @IBAction func pressureAltitudeEditingDidEnd(_ sender: UITextField) {
+    }
+    
     /*
     // MARK: - Navigation
 

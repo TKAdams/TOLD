@@ -10,7 +10,6 @@ import Foundation
 
 class Flight {
     
-    //Testing the waters
     var grossWeight: Double = 0.0
     var wingSweep: Bool = false //wing sweep true = 15 WS or 20 WS
                                 //wing sweep false = 20 WS SEF/SIS OFF
@@ -28,5 +27,24 @@ class Flight {
     var breakDanger: Double = 0.0
     var takeOffDistance: Double = 0.0
     var cFL: Double = 0.0
+    
+    func setTemperature (temp: String, cORf: Int) -> Double {
+
+        var tempF: Double = 0.0
+        var tempString = temp
+        var tempDouble: Double = 0.0
+        
+        tempString = tempString.replacingOccurrences(of: "\\s", with: "", options: .regularExpression)
+        tempDouble = Double(tempString)!
+        
+        if cORf == 0 {
+            tempF = (tempDouble * 9.0/5.0) + 32
+        } else {
+            tempF = tempDouble
+        }
+        print(tempF)
+        
+        return tempF
+    }
     
 }
