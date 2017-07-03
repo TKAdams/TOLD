@@ -26,19 +26,37 @@ class TakeoffFactors {
         takeoffTable = CSVReader.convertStringArrayToIntArray(stringData: csvStringRows)
         
     }
-    //
-//    func findBottomTempIndex (tempF: Double) -> Int {
-//        var index: Int = 0
-//        let highestTemp: Double = 120
-//        
-//        var bottomIndexTemp = highestTemp
-//        
-//        while bottomIndexTemp > tempF {
-//            index += 1
-//            bottomIndex -=
-//            
-//        }
-//        return index
-//    }
+    
+    func findFirstTempIndex (tempF: Double) -> Int {
+        var index: Int = 0
+        let secondHighestTemp: Double = 110
+        
+        var topIndexTemp = secondHighestTemp
+        
+        while topIndexTemp > tempF {
+            if ((topIndexTemp != -15) || (index >= 26)) {
+                index += 1
+            }
+            topIndexTemp -= 5
+            
+        }
+        return index
+    }
+    
+    func findFirstAltitudeIndex (altitude: Double) -> Int {
+        var index: Int = 0
+        let secondLowestAltitude: Double = 500
+        
+        var leadIndexAlt = secondLowestAltitude
+        
+        while leadIndexAlt < altitude {
+            if ((leadIndexAlt != 5500) || (index >= 12)) {
+                index += 1
+            }
+            leadIndexAlt += 500
+            
+        }
+        return index
+    }
 
 }
