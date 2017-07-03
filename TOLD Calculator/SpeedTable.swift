@@ -29,5 +29,7 @@ class SpeedTable {
         print(speedChart.startIndex)
         
     }
+
+        
     
 }
