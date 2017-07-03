@@ -19,6 +19,7 @@
 		D3F23C521F0929F600D71A01 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C511F0929F500D71A01 /* Flight.swift */; };
 		D3F23C5C1F09F6C500D71A01 /* testTOF.csv in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C5B1F09F6C500D71A01 /* testTOF.csv */; };
 		D3F23C5E1F09F89100D71A01 /* IFG (15 Aug 16).pdf in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C5D1F09F89100D71A01 /* IFG (15 Aug 16).pdf */; };
+		D3F23C621F09FEEB00D71A01 /* TakeoffFactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C611F09FEEB00D71A01 /* TakeoffFactors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		D3F23C511F0929F500D71A01 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		D3F23C5B1F09F6C500D71A01 /* testTOF.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = testTOF.csv; path = Resources/testTOF.csv; sourceTree = SOURCE_ROOT; };
 		D3F23C5D1F09F89100D71A01 /* IFG (15 Aug 16).pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "IFG (15 Aug 16).pdf"; path = "Resources/IFG (15 Aug 16).pdf"; sourceTree = SOURCE_ROOT; };
+		D3F23C611F09FEEB00D71A01 /* TakeoffFactors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeoffFactors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			children = (
 				D3F23C1C1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld */,
 				D3F23C511F0929F500D71A01 /* Flight.swift */,
+				D3F23C611F09FEEB00D71A01 /* TakeoffFactors.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3F23C181F08917800D71A01 /* ViewController.swift in Sources */,
+				D3F23C621F09FEEB00D71A01 /* TakeoffFactors.swift in Sources */,
 				D3F23C4C1F08922300D71A01 /* TOLDViewController.swift in Sources */,
 				D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */,
 				D3F23C521F0929F600D71A01 /* Flight.swift in Sources */,
