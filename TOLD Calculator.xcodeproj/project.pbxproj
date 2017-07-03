@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEF945D11F0A074800BD1701 /* TakeoffFactor.csv in Resources */ = {isa = PBXBuildFile; fileRef = CEF945D01F0A074800BD1701 /* TakeoffFactor.csv */; };
 		D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C151F08917800D71A01 /* AppDelegate.swift */; };
 		D3F23C181F08917800D71A01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C171F08917800D71A01 /* ViewController.swift */; };
 		D3F23C1B1F08917800D71A01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C191F08917800D71A01 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CEF945D01F0A074800BD1701 /* TakeoffFactor.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TakeoffFactor.csv; path = Resources/TakeoffFactor.csv; sourceTree = SOURCE_ROOT; };
 		D3F23C121F08917800D71A01 /* TOLD Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TOLD Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F23C151F08917800D71A01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3F23C171F08917800D71A01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		D3F23C461F08919300D71A01 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				CEF945D01F0A074800BD1701 /* TakeoffFactor.csv */,
 				D3F23C5D1F09F89100D71A01 /* IFG (15 Aug 16).pdf */,
 				D3F23C5B1F09F6C500D71A01 /* testTOF.csv */,
 			);
@@ -295,6 +298,7 @@
 			files = (
 				D3F23C5E1F09F89100D71A01 /* IFG (15 Aug 16).pdf in Resources */,
 				D3F23C231F08917800D71A01 /* LaunchScreen.storyboard in Resources */,
+				CEF945D11F0A074800BD1701 /* TakeoffFactor.csv in Resources */,
 				D3F23C201F08917800D71A01 /* Assets.xcassets in Resources */,
 				D3F23C5C1F09F6C500D71A01 /* testTOF.csv in Resources */,
 				D3F23C1B1F08917800D71A01 /* Main.storyboard in Resources */,
