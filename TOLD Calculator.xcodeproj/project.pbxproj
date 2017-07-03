@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CED3A0B71F0A92C8005A6B69 /* SpeedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3A0B61F0A92C8005A6B69 /* SpeedTable.swift */; };
+		CED3A0BB1F0A94A6005A6B69 /* Speedschart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CED3A0BA1F0A94A6005A6B69 /* Speedschart.csv */; };
 		CEF945D11F0A074800BD1701 /* TakeoffFactor.csv in Resources */ = {isa = PBXBuildFile; fileRef = CEF945D01F0A074800BD1701 /* TakeoffFactor.csv */; };
 		D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C151F08917800D71A01 /* AppDelegate.swift */; };
 		D3F23C1B1F08917800D71A01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C191F08917800D71A01 /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CED3A0B61F0A92C8005A6B69 /* SpeedTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedTable.swift; sourceTree = "<group>"; };
+		CED3A0BA1F0A94A6005A6B69 /* Speedschart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Speedschart.csv; path = Resources/Speedschart.csv; sourceTree = SOURCE_ROOT; };
 		CEF945D01F0A074800BD1701 /* TakeoffFactor.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TakeoffFactor.csv; path = Resources/TakeoffFactor.csv; sourceTree = SOURCE_ROOT; };
 		D3F23C121F08917800D71A01 /* TOLD Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TOLD Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F23C151F08917800D71A01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 		D3F23C461F08919300D71A01 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				CED3A0BA1F0A94A6005A6B69 /* Speedschart.csv */,
 				CEF945D01F0A074800BD1701 /* TakeoffFactor.csv */,
 				D3F23C5D1F09F89100D71A01 /* IFG (15 Aug 16).pdf */,
 				D3F23C5B1F09F6C500D71A01 /* testTOF.csv */,
@@ -182,6 +187,7 @@
 				D3F23C1C1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld */,
 				D3F23C511F0929F500D71A01 /* Flight.swift */,
 				D3F23C611F09FEEB00D71A01 /* TakeoffFactors.swift */,
+				CED3A0B61F0A92C8005A6B69 /* SpeedTable.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 			files = (
 				D3F23C5E1F09F89100D71A01 /* IFG (15 Aug 16).pdf in Resources */,
 				D3F23C231F08917800D71A01 /* LaunchScreen.storyboard in Resources */,
+				CED3A0BB1F0A94A6005A6B69 /* Speedschart.csv in Resources */,
 				CEF945D11F0A074800BD1701 /* TakeoffFactor.csv in Resources */,
 				D3F23C201F08917800D71A01 /* Assets.xcassets in Resources */,
 				D3F23C5C1F09F6C500D71A01 /* testTOF.csv in Resources */,
@@ -329,6 +336,7 @@
 				D3F23C621F09FEEB00D71A01 /* TakeoffFactors.swift in Sources */,
 				D3F23C4C1F08922300D71A01 /* TOLDViewController.swift in Sources */,
 				D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */,
+				CED3A0B71F0A92C8005A6B69 /* SpeedTable.swift in Sources */,
 				D3F23C521F0929F600D71A01 /* Flight.swift in Sources */,
 				D3F23C1E1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld in Sources */,
 				D3F23C641F0A711400D71A01 /* CSVReader.swift in Sources */,
