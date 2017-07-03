@@ -10,6 +10,7 @@ import UIKit
 
 class TOLDViewController: UIViewController {
 
+    //Test
     var flight: Flight = Flight()
     var tOF: TakeoffFactors = TakeoffFactors()
     
