@@ -16,7 +16,7 @@ class Flight {
                                 //wing sweep false = 20 WS SEF/SIS OFF
     var fieldLength: Double = 0.0
     var pressureAltitude: Double = 0.0
-    var temperature: Double = 0.0   //teperature in ºF
+    var temperature: Double = 0.0   //temperature in ºF
     var rCR: Double = 0.0
     
     var refusalSpeedFactor: Double = 0.0
