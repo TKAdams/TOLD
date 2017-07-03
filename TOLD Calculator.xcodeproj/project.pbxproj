@@ -11,7 +11,6 @@
 		CED3A0BB1F0A94A6005A6B69 /* Speedschart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CED3A0BA1F0A94A6005A6B69 /* Speedschart.csv */; };
 		CEF945D11F0A074800BD1701 /* TakeoffFactor.csv in Resources */ = {isa = PBXBuildFile; fileRef = CEF945D01F0A074800BD1701 /* TakeoffFactor.csv */; };
 		D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C151F08917800D71A01 /* AppDelegate.swift */; };
-		D3F23C181F08917800D71A01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C171F08917800D71A01 /* ViewController.swift */; };
 		D3F23C1B1F08917800D71A01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C191F08917800D71A01 /* Main.storyboard */; };
 		D3F23C1E1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C1C1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld */; };
 		D3F23C201F08917800D71A01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C1F1F08917800D71A01 /* Assets.xcassets */; };
@@ -49,7 +48,6 @@
 		CEF945D01F0A074800BD1701 /* TakeoffFactor.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TakeoffFactor.csv; path = Resources/TakeoffFactor.csv; sourceTree = SOURCE_ROOT; };
 		D3F23C121F08917800D71A01 /* TOLD Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TOLD Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F23C151F08917800D71A01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D3F23C171F08917800D71A01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D3F23C1A1F08917800D71A01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3F23C1D1F08917800D71A01 /* TOLD_Calculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TOLD_Calculator.xcdatamodel; sourceTree = "<group>"; };
 		D3F23C1F1F08917800D71A01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 				D3F23C471F0891AB00D71A01 /* Helpers */,
 				D3F23C461F08919300D71A01 /* Support */,
 				D3F23C151F08917800D71A01 /* AppDelegate.swift */,
-				D3F23C171F08917800D71A01 /* ViewController.swift */,
 				D3F23C191F08917800D71A01 /* Main.storyboard */,
 				D3F23C1F1F08917800D71A01 /* Assets.xcassets */,
 				D3F23C211F08917800D71A01 /* LaunchScreen.storyboard */,
@@ -336,7 +333,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3F23C181F08917800D71A01 /* ViewController.swift in Sources */,
 				D3F23C621F09FEEB00D71A01 /* TakeoffFactors.swift in Sources */,
 				D3F23C4C1F08922300D71A01 /* TOLDViewController.swift in Sources */,
 				D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */,

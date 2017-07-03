@@ -52,7 +52,6 @@ class CSVReader {
         
         for row in 0...(rows-1) {
             for col in 0...(cols-1) {
-                print(stringData[row][col])
                 var tempString = stringData[row][col]
                 tempString = tempString.replacingOccurrences(of: "\\s", with: "", options: .regularExpression)
                 intArray[row][col] = Int(tempString)!
