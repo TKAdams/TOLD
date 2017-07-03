@@ -16,18 +16,17 @@ class SpeedTable {
     //Takeoff Speed is always Rotate Speed + 15kts and S/S Off numbers are +12  from 15&20 WS Numbers
     
     var speedChart: [[Int]] = []
-    let tOFFilename: String = "Speedschart"
+    let tOSFilename: String = "Speedschart"
     
     init () {
         
-        var data = CSVReader.readDataFromCSV(fileName: tOFFilename, fileType: "csv")
+        var data = CSVReader.readDataFromCSV(fileName: tOSFilename, fileType: "csv")
         
         data = CSVReader.cleanRows(file: data!)
         let csvStringRows = CSVReader.convertCSVDataToStringArray(data: data!)
         speedChart = CSVReader.convertStringArrayToIntArray(stringData: csvStringRows)
         
-        print(speedChart[1][1])
-        print(speedChart[0][0])
+        print(speedChart.startIndex)
         
     }
     
