@@ -34,8 +34,8 @@ class SpeedTable {
         var lowIndexGW:Double = 220
         
         
-        while lowIndexGW < grossWeight {
-            if ((index >= 22)){
+        while lowIndexGW > grossWeight {
+            if ((index >= 21)){
                 index += 1}
             lowIndexGW += 10
             }
