@@ -31,6 +31,18 @@ class TOLDViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func grossWeightDidBeginEditing(_ sender: UITextField) {
+        if sender.text == "0" {
+            sender.text = ""
+        }
+    }
+    
+    @IBAction func grossWeightDidEndEditing(_ sender: UITextField) {
+        flight.grossWeight = Double(sender.text!)!
+        //For testing only
+        speedTable.findGrossWeightIndex(grossWeight: flight.grossWeight)
+    }
+    
     @IBAction func temperatureEditingDidBegin(_ sender: UITextField) {
         if sender.text == "0" {
             sender.text = ""
