@@ -26,10 +26,28 @@ class SpeedTable {
         let csvStringRows = CSVReader.convertCSVDataToStringArray(data: data!)
         speedChart = CSVReader.convertStringArrayToIntArray(stringData: csvStringRows)
         
-        print(speedChart.startIndex)
         
     }
-
+    
+    func findGrossWeightIndex (grossWeight:Double) -> Int{
+        var index: Int = 0
+        var lowIndexGW:Double = 220
+        
+        
+        while lowIndexGW < grossWeight {
+            if ((index >= 22)){
+                index += 1}
+            lowIndexGW += 10
+            }
+        return index
+        }
+        
+        
+        
+        
+        
+        
+    
         
     
 }
