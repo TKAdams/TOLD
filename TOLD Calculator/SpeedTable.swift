@@ -33,21 +33,45 @@ class SpeedTable {
         var index: Int = 0
         var lowIndexGW:Double = 220
         
-        
-        while lowIndexGW > grossWeight {
-            if ((index >= 21)){
+        while lowIndexGW < grossWeight {
+            if ((index <= 21)){
                 index += 1}
             lowIndexGW += 10
             }
-        return index
-        }
         
-        
-        
-        
-        
-        
+                return index
+
+    }
     
+    func getRotateSpeed (wingsweep: Bool, grossWeight:Double) -> Double {
+        var rotateSpeed: Double = 0
+        var i: Int = 0
+        var j: Int = 0
+        var deltaGrossWeight: Double = 0
+        var deltaSpeed: Double = 0
+        var knotPerPound: Double = 0
+        let deltaGWAndBottomGW: Double = grossWeight - Double(speedChart[i][0])
         
+        i = findGrossWeightIndex(grossWeight: grossWeight)
+        j = i + 1
+        
+        deltaGrossWeight = ((Double(speedChart[j][0])) - (Double(speedChart[i][0])))
+
+        
+        if wingsweep == true {
+            deltaSpeed = ((Double(speedChart[j][1])) - (Double(speedChart[i][1])))
+            knotPerPound=(deltaSpeed / deltaGrossWeight)
+            rotateSpeed = Double(speedChart[i][1]) + (deltaGWAndBottomGW*knotPerPound)
+        }
+        else {
+            
+            deltaSpeed = ((Double(speedChart[j][3])) - (Double(speedChart[i][3])))
+            knotPerPound=(deltaSpeed / deltaGrossWeight)
+            rotateSpeed = Double(speedChart[i][1]) + (deltaGWAndBottomGW*knotPerPound)
+            
+        }
+        print(rotateSpeed)
+            return rotateSpeed
+            }
     
 }
