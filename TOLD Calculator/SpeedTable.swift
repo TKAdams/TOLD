@@ -39,7 +39,7 @@ class SpeedTable {
             lowIndexGW += 10
             }
         
-                return index
+        return index
 
     }
     
@@ -50,29 +50,30 @@ class SpeedTable {
         var deltaGrossWeight: Double = 0 //using the deltas to calculate the knots per pound//
         var deltaSpeed: Double = 0
         var knotPerPound: Double = 0
-        let deltaGWAndBottomGW: Double = grossWeight - Double(speedChart[i][0])
-        
-        
+    
         i = findGrossWeightIndex(grossWeight: grossWeight)
         j = i + 1
         
+        let deltaGWAndBottomGW: Double = grossWeight - Double(speedChart[i][0])
         deltaGrossWeight = Double(speedChart[j][0]) - Double(speedChart[i][0])
+        
         //deltaGrossWeight equals the higher chart gross weight minus the lower chart gross weight in the tables to find the difference in gross weight, this will equal 10. We will then find the delta speed and divide the deltaSpeed/deltaGrossWeight to find the knots per pound.//
         
         if wingsweep == true {
             deltaSpeed = ((Double(speedChart[j][1])) - (Double(speedChart[i][1]))) //finding chart deltaSpeed//
             knotPerPound=(deltaSpeed / deltaGrossWeight)
             rotateSpeed = Double(speedChart[i][1]) + (deltaGWAndBottomGW*knotPerPound)
+            rotateSpeed = rotateSpeed.rounded(.up)
         }
         else {
             
             deltaSpeed = ((Double(speedChart[j][3])) - (Double(speedChart[i][3])))
             knotPerPound=(deltaSpeed / deltaGrossWeight)
-            rotateSpeed = Double(speedChart[i][1]) + (deltaGWAndBottomGW*knotPerPound)
-            
+            rotateSpeed = Double(speedChart[i][3]) + (deltaGWAndBottomGW*knotPerPound)
+            rotateSpeed = rotateSpeed.rounded(.up)
         }
-        print(rotateSpeed)
-            return rotateSpeed
-            }
+        print(rotateSpeed.rounded(.up))
+    return rotateSpeed
+    }
     
 }

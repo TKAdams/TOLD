@@ -11,7 +11,7 @@ import Foundation
 class Flight {
     
     var grossWeight: Double = 0.0
-    var wingSweep: Bool = false //wing sweep true = 15 WS or 20 WS
+    var wingSweep: Bool = true //wing sweep true = 15 WS or 20 WS
                                 //wing sweep false = 20 WS SEF/SIS OFF
     var fieldLength: Double = 0.0
     var pressureAltitude: Double = 0.0
