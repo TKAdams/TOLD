@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TOLD Calculator/TOLDViewController.swift"
-            timestampString = "520900814.671072"
+            filePath = "TOLD Calculator/SpeedTable.swift"
+            timestampString = "520900797.949682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "pressureAltitudeEditingDidEnd(_:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "findGrossWeightIndex(grossWeight:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TOLD Calculator/SpeedTable.swift"
-            timestampString = "520900797.949682"
+            filePath = "TOLD Calculator/TakeoffFactors.swift"
+            timestampString = "520906928.85468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "findGrossWeightIndex(grossWeight:)"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "getTakeoffFactor(tempF:altitude:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
