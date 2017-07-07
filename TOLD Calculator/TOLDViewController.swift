@@ -40,10 +40,19 @@ class TOLDViewController: UIViewController {
         }
     }
     
+    @IBAction func wingSweepDidChange(_ sender: UISegmentedControl){
+        switch sender.selectedSegmentIndex {
+        case 0: flight.wingSweep = true
+        case 1: flight.wingSweep = false
+        default: flight.wingSweep = true
+        }
+    }
+
     @IBAction func grossWeightDidEndEditing(_ sender: UITextField) {
         flight.grossWeight = Double(sender.text!)!
         //TODO: For testing only
         speedTable.findGrossWeightIndex(grossWeight: flight.grossWeight)
+        flight.rotateSpeed = speedTable.getRotateSpeed(wingsweep: flight.wingSweep, grossWeight: flight.grossWeight)
     }
     
     @IBAction func temperatureEditingDidBegin(_ sender: UITextField) {
