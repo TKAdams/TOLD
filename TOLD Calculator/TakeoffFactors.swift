@@ -28,34 +28,23 @@ class TakeoffFactors {
         
     }
     
-    func findFirstTempIndex (tempF: Double) -> Int {
+    func findLowerTempIndex (tempF: Double) -> Int {
         var index: Int = 1
-        let secondHighestTemp: Double = 110
-        
-        var topIndexTemp = secondHighestTemp
-        
-        while topIndexTemp > tempF {
-            if (index < 26) {
+        while Double(takeoffTable[index][0]) > tempF {
+            if (index < 27) {
                 index += 1
             }
-            topIndexTemp -= 5
-            
         }
         return index
     }
     
-    func findFirstAltitudeIndex (altitude: Double) -> Int {
+    func findUpperAltitudeIndex (altitude: Double) -> Int {
         var index: Int = 1
-        let secondLowestAltitude: Double = 500
         
-        var leadIndexAlt = secondLowestAltitude
-        
-        while leadIndexAlt < altitude {
-            if ((leadIndexAlt != 5500) || (index >= 13)) {
+        while Double(takeoffTable[0][index]) < altitude {
+            if (index < 13) {
                 index += 1
             }
-            leadIndexAlt += 500
-            
         }
         return index
     }
@@ -66,42 +55,37 @@ class TakeoffFactors {
         var j: Int = 0
         var toFactor: Double = 0.0
         
-        i = findFirstTempIndex(tempF: tempF)
-        j = findFirstAltitudeIndex(altitude: altitude)
+        i = findLowerTempIndex(tempF: tempF)
+        j = findUpperAltitudeIndex(altitude: altitude)
         
         //Lookup the four values from the takeoff factor charts
-        let a = Double(takeoffTable[i][j])
-        let b = Double(takeoffTable[i][j+1])
-        let c = Double(takeoffTable[i+1][j])
-        let d = Double(takeoffTable[i+1][j+1])
+
+        let a = Double(takeoffTable[i-1][j-1])
+        let b = Double(takeoffTable[i-1][j])
+        let c = Double(takeoffTable[i][j-1])
+        let d = Double(takeoffTable[i][j])
+
+        print( String(a) + " , " + String(b) + "\n" + String(c) + " , " + String(d))
         
-        //Interpolate vertically according to tempF (must account for table variation of temp) and will cap at table edges.
-//        var x = 0.0 //interpolated tempF on left
-//        var y = 0.0 //interpolated tempF on right
-//        switch tempF {
-//        case -10000 ..< -20:
-//            x = b
-//            y = d
-//        case -20 ..< -10:
-//            
-//        case 120..<10000:
-//            x = a
-//            y = c
-//        default:
-//            print ("went way out of range")
-//        }
-//        
+        let tHigh = Double(takeoffTable[i-1][0])
+        let tLow = Double(takeoffTable[i][0])
+        let aHigh = Double(takeoffTable[0][j])
+        let aLow = Double(takeoffTable[0][j-1])
+        
+        let perDiffTemp = (tempF - tLow) / (tHigh - tLow)
+        let perDiffAlt = (altitude - aLow) / (aHigh - aLow)
+    
+        print (String(perDiffTemp) + " , " + String(perDiffAlt))
+        
+        let tIntLow = (perDiffTemp * (a - c)) + c
+        let tIntHigh = (perDiffTemp * (b - d)) + d
+        
+        toFactor = (perDiffAlt * (tIntHigh - tIntLow)) + tIntLow
+        
+        print("***TOF = " + String(toFactor))
+        
         return toFactor
     }
-    
-//    func interpolate (x: Double, tempGap: Double, y: Double, z: Double) -> Double {
-//        var value: Double = 0.0
-//        var percent: Double = 0.0
-//        
-//        percent =
-//        value = percent*(y-z)+z
-//        
-//        return value
-//    }
+
 
 }

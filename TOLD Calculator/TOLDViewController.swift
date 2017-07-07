@@ -65,15 +65,11 @@ class TOLDViewController: UIViewController {
     }
     
     @IBAction func temperatureEditingDidEnd(_ sender: UITextField) {
-        var testIndex: Int = 0
         if sender.text == "" {
             sender.text = "0"
             sender.backgroundColor = UIColor.red
         }
         flight.temperature = flight.setTemperature(temp: sender.text!, cORf: CelciusVsFahrenheit.selectedSegmentIndex)
-        
-        //TODO: Remove once implemented
-        testIndex = tOF.findFirstTempIndex(tempF: flight.temperature)
         
     }
         
@@ -84,11 +80,9 @@ class TOLDViewController: UIViewController {
     }
     
     @IBAction func pressureAltitudeEditingDidEnd(_ sender: UITextField) {
-        var testIndex: Int = 0
         flight.pressureAltitude = Double(sender.text!)!
         
         //TODO: Remove once code implemented
-        testIndex = tOF.findFirstAltitudeIndex(altitude: flight.pressureAltitude)
         var testTOF = tOF.getTakeoffFactor(tempF: flight.temperature, altitude: flight.pressureAltitude)
     }
     
