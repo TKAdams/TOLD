@@ -16,7 +16,7 @@ class TakeoffFactors {
     
     var takeoffTable: [[Int]] = []
     var takeoffFactor: Double = 0.0
-    let tOFFilename: String = "TakeoffFactor"
+    let tOFFilename: String = "TakeoffFactor2"
     
     init () {
         
