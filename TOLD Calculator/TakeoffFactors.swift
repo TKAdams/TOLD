@@ -50,7 +50,6 @@ class TakeoffFactors {
     }
     
     func getTakeoffFactor (tempF: Double, altitude: Double) -> Double {
-        //Start Trident
         var i: Int = 0
         var j: Int = 0
         var toFactor: Double = 0.0
