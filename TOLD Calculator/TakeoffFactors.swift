@@ -15,7 +15,8 @@ class TakeoffFactors {
     //Note that index 26 should be -15F but they skipped to -20F
     
     var takeoffTable: [[Int]] = []
-    let tOFFilename: String = "TakeoffFactor"
+    var takeoffFactor: Double = 0.0
+    let tOFFilename: String = "TakeoffFactor2"
     
     init () {
         
@@ -28,13 +29,13 @@ class TakeoffFactors {
     }
     
     func findFirstTempIndex (tempF: Double) -> Int {
-        var index: Int = 0
+        var index: Int = 1
         let secondHighestTemp: Double = 110
         
         var topIndexTemp = secondHighestTemp
         
         while topIndexTemp > tempF {
-            if ((topIndexTemp != -15) || (index >= 26)) {
+            if (index < 26) {
                 index += 1
             }
             topIndexTemp -= 5
@@ -44,13 +45,13 @@ class TakeoffFactors {
     }
     
     func findFirstAltitudeIndex (altitude: Double) -> Int {
-        var index: Int = 0
+        var index: Int = 1
         let secondLowestAltitude: Double = 500
         
         var leadIndexAlt = secondLowestAltitude
         
         while leadIndexAlt < altitude {
-            if ((leadIndexAlt != 5500) || (index >= 12)) {
+            if ((leadIndexAlt != 5500) || (index >= 13)) {
                 index += 1
             }
             leadIndexAlt += 500
@@ -58,5 +59,49 @@ class TakeoffFactors {
         }
         return index
     }
+    
+    func getTakeoffFactor (tempF: Double, altitude: Double) -> Double {
+        //Start Trident
+        var i: Int = 0
+        var j: Int = 0
+        var toFactor: Double = 0.0
+        
+        i = findFirstTempIndex(tempF: tempF)
+        j = findFirstAltitudeIndex(altitude: altitude)
+        
+        //Lookup the four values from the takeoff factor charts
+        let a = Double(takeoffTable[i][j])
+        let b = Double(takeoffTable[i][j+1])
+        let c = Double(takeoffTable[i+1][j])
+        let d = Double(takeoffTable[i+1][j+1])
+        
+        //Interpolate vertically according to tempF (must account for table variation of temp) and will cap at table edges.
+//        var x = 0.0 //interpolated tempF on left
+//        var y = 0.0 //interpolated tempF on right
+//        switch tempF {
+//        case -10000 ..< -20:
+//            x = b
+//            y = d
+//        case -20 ..< -10:
+//            
+//        case 120..<10000:
+//            x = a
+//            y = c
+//        default:
+//            print ("went way out of range")
+//        }
+//        
+        return toFactor
+    }
+    
+//    func interpolate (x: Double, tempGap: Double, y: Double, z: Double) -> Double {
+//        var value: Double = 0.0
+//        var percent: Double = 0.0
+//        
+//        percent =
+//        value = percent*(y-z)+z
+//        
+//        return value
+//    }
 
 }
