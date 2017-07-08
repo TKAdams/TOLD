@@ -75,5 +75,40 @@ class SpeedTable {
         print(rotateSpeed.rounded(.up))
     return rotateSpeed
     }
+    //  Same concept as above, but for the T/O speed which is one index to the right of rotateSpeed
     
+    func getTOSpeed (wingSweep:Bool, grossWeight:Double)-> Double{
+        var tOSpeed: Double = 0
+        var i: Int = 0
+        var j: Int = 0
+        var deltaGrossWeight: Double = 0 //using the deltas to calculate the knots per pound//
+        var deltaSpeed: Double = 0
+        var knotPerPound: Double = 0
+        
+        i = findGrossWeightIndex(grossWeight: Double(grossWeight))
+        j = i + 1
+        
+        let deltaGWAndBottomGW: Double = (grossWeight - Double(speedChart[i][0]))
+        deltaGrossWeight = Double(speedChart[j][0]) - Double(speedChart[i][0])
+        
+        //deltaGrossWeight equals the higher chart gross weight minus the lower chart gross weight in the tables to find the difference in gross weight, this will equal 10. We will then find the delta speed and divide the deltaSpeed/deltaGrossWeight to find the knots per pound.//
+        
+        if wingSweep == true {
+            deltaSpeed = ((Double(speedChart[j][2])) - (Double(speedChart[i][2]))) //finding chart deltaSpeed//
+            knotPerPound=(deltaSpeed / deltaGrossWeight)
+            tOSpeed = Double(speedChart[i][2]) + (deltaGWAndBottomGW*knotPerPound)
+            tOSpeed = tOSpeed.rounded(.up)
+        }
+        else {
+            
+            deltaSpeed = ((Double(speedChart[j][4])) - (Double(speedChart[i][4])))
+            knotPerPound=(deltaSpeed / deltaGrossWeight)
+            tOSpeed = Double(speedChart[i][4]) + (deltaGWAndBottomGW*knotPerPound)
+            tOSpeed = tOSpeed.rounded(.up)
+        }
+        print(tOSpeed.rounded(.up))
+        
+    return tOSpeed
+
+    }
 }
