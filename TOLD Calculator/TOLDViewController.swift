@@ -46,6 +46,8 @@ class TOLDViewController: UIViewController {
         case 1: flight.wingSweep = false
         default: flight.wingSweep = true
         }
+        flight.rotateSpeed = speedTable.getRotateSpeed(wingsweep: flight.wingSweep, grossWeight: flight.grossWeight)
+        flight.takeoffSpeed = speedTable.getTOSpeed(wingSweep: flight.wingSweep, grossWeight: flight.grossWeight)
     }
 
     @IBAction func grossWeightDidEndEditing(_ sender: UITextField) {
@@ -53,6 +55,8 @@ class TOLDViewController: UIViewController {
         //TODO: For testing only
         speedTable.findGrossWeightIndex(grossWeight: flight.grossWeight)
         flight.rotateSpeed = speedTable.getRotateSpeed(wingsweep: flight.wingSweep, grossWeight: flight.grossWeight)
+        flight.takeoffSpeed = speedTable.getTOSpeed(wingSweep: flight.wingSweep, grossWeight: flight.grossWeight)
+        
     }
     
     @IBAction func temperatureEditingDidBegin(_ sender: UITextField) {
