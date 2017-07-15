@@ -16,6 +16,7 @@ class TOLDViewController: UIViewController {
     var speedTable: SpeedTable = SpeedTable()
     
     @IBOutlet weak var temperature: UITextField!
+    @IBOutlet weak var tempPlusOrMinus: UISegmentedControl!
     @IBOutlet weak var pressureAltitude: UITextField!
     @IBOutlet weak var CelciusVsFahrenheit: UISegmentedControl! //0 = C, 1 = F Default C
 
@@ -74,6 +75,9 @@ class TOLDViewController: UIViewController {
             sender.backgroundColor = UIColor.red
         }
         flight.temperature = flight.setTemperature(temp: sender.text!, cORf: CelciusVsFahrenheit.selectedSegmentIndex)
+        if tempPlusOrMinus.selectedSegmentIndex == 1 {
+            flight.temperature *= -1
+        }
         
     }
         

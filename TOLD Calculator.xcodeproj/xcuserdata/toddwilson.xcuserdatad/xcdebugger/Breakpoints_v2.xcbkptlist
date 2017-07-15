@@ -9,13 +9,27 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TOLD Calculator/SpeedTable.swift"
-            timestampString = "520900797.949682"
+            filePath = "TOLD Calculator/TakeoffFactors.swift"
+            timestampString = "520906928.85468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "findGrossWeightIndex(grossWeight:)"
+            startingLineNumber = "93"
+            endingLineNumber = "93">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TOLD Calculator/TOLDViewController.swift"
+            timestampString = "521525152.089733"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "temperatureEditingDidEnd(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,11 +40,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TOLD Calculator/TakeoffFactors.swift"
-            timestampString = "520906928.85468"
+            timestampString = "521525529.721955"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93">
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "getTakeoffFactor(tempF:altitude:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

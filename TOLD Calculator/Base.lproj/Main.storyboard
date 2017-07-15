@@ -62,7 +62,7 @@
                                         <rect key="frame" x="0.0" y="37" width="313" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EP6-9B-CvE">
-                                                <rect key="frame" x="0.0" y="0.0" width="135.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="182.5" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8g-YE-1bi">
                                                         <rect key="frame" x="0.0" y="0.0" width="135.5" height="30"/>
@@ -70,13 +70,21 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yRM-3r-qKG">
+                                                        <rect key="frame" x="135.5" y="0.0" width="47" height="31"/>
+                                                        <segments>
+                                                            <segment title="+"/>
+                                                            <segment title="-"/>
+                                                        </segments>
+                                                        <color key="tintColor" red="0.080904118716716766" green="0.050908654928207397" blue="0.90213876962661743" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </segmentedControl>
                                                 </subviews>
                                             </stackView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7U-c4-v7n">
-                                                <rect key="frame" x="137.5" y="0.0" width="124.5" height="30"/>
+                                                <rect key="frame" x="184.5" y="0.0" width="77.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 <connections>
                                                     <action selector="temperatureEditingDidBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="vga-vB-RG2"/>
                                                     <action selector="temperatureEditingDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ShT-nL-xhj"/>
@@ -405,6 +413,7 @@ Danger</string>
                     <connections>
                         <outlet property="CelciusVsFahrenheit" destination="23Q-mM-0n9" id="cyk-zv-nO6"/>
                         <outlet property="pressureAltitude" destination="ORy-am-gYF" id="xwm-7n-1XB"/>
+                        <outlet property="tempPlusOrMinus" destination="yRM-3r-qKG" id="Q36-ij-cxl"/>
                         <outlet property="temperature" destination="k7U-c4-v7n" id="FXe-Ae-lws"/>
                     </connections>
                 </viewController>

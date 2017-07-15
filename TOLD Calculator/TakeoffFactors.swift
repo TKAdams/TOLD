@@ -29,7 +29,7 @@ class TakeoffFactors {
     }
     
     func findLowerTempIndex (tempF: Double) -> Int {
-        var index: Int = 1
+        var index: Int = 2
         while Double(takeoffTable[index][0]) > tempF {
             if (index < 27) {
                 index += 1
@@ -39,7 +39,7 @@ class TakeoffFactors {
     }
     
     func findUpperAltitudeIndex (altitude: Double) -> Int {
-        var index: Int = 1
+        var index: Int = 2
         
         while Double(takeoffTable[0][index]) < altitude {
             if (index < 13) {
