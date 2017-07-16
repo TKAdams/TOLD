@@ -12,9 +12,9 @@ class TOLDViewController: UIViewController {
 
     //Test
     var flight: Flight = Flight()
-    var tOF: TakeoffFactors = TakeoffFactors()
-    var speedTable: SpeedTable = SpeedTable()
-    var maxAB: MaxAB = MaxAB()
+//    var tOF: TakeoffFactors = TakeoffFactors()
+//    var speedTable: SpeedTable = SpeedTable()
+//    var maxAB: MaxAB = MaxAB()
     
     @IBOutlet weak var temperature: UITextField!
     @IBOutlet weak var tempPlusOrMinus: UISegmentedControl!
@@ -27,7 +27,6 @@ class TOLDViewController: UIViewController {
 
         stylize()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,16 +49,16 @@ class TOLDViewController: UIViewController {
         case 1: flight.wingSweep = false
         default: flight.wingSweep = true
         }
-        flight.rotateSpeed = speedTable.getRotateSpeed(wingsweep: flight.wingSweep, grossWeight: flight.grossWeight)
-        flight.takeoffSpeed = speedTable.getTOSpeed(wingSweep: flight.wingSweep, grossWeight: flight.grossWeight)
+//        flight.rotateSpeed = speedTable.getRotateSpeed(wingsweep: flight.wingSweep, grossWeight: flight.grossWeight)
+//        flight.takeoffSpeed = speedTable.getTOSpeed(wingSweep: flight.wingSweep, grossWeight: flight.grossWeight)
     }
 
     @IBAction func grossWeightDidEndEditing(_ sender: UITextField) {
         flight.grossWeight = Double(sender.text!)!
         //TODO: For testing only
-        speedTable.findGrossWeightIndex(grossWeight: flight.grossWeight)
-        flight.rotateSpeed = speedTable.getRotateSpeed(wingsweep: flight.wingSweep, grossWeight: flight.grossWeight)
-        flight.takeoffSpeed = speedTable.getTOSpeed(wingSweep: flight.wingSweep, grossWeight: flight.grossWeight)
+//        speedTable.findGrossWeightIndex(grossWeight: flight.grossWeight)
+//        flight.rotateSpeed = speedTable.getRotateSpeed(wingsweep: flight.wingSweep, grossWeight: flight.grossWeight)
+//        flight.takeoffSpeed = speedTable.getTOSpeed(wingSweep: flight.wingSweep, grossWeight: flight.grossWeight)
         
     }
     
@@ -94,7 +93,7 @@ class TOLDViewController: UIViewController {
         flight.pressureAltitude = Double(sender.text!)!
         
         //TODO: Remove once code implemented
-        var testTOF = tOF.getTakeoffFactor(tempF: flight.temperature, altitude: flight.pressureAltitude)
+//        var testTOF = tOF.getTakeoffFactor(tempF: flight.temperature, altitude: flight.pressureAltitude)
     }
     
     func stylize() {

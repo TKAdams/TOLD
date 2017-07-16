@@ -10,13 +10,24 @@ import Foundation
 
 class Flight {
     
+    var tOFTable: TakeoffFactors = TakeoffFactors()
+    var speedTable: SpeedTable = SpeedTable()
+    var maxAB: MaxAB = MaxAB()
+    
     var grossWeight: Double = 0.0
     var wingSweep: Bool = true //wing sweep true = 15 WS or 20 WS
                                 //wing sweep false = 20 WS SEF/SIS OFF
-    var fieldLength: Double = 0.0
+    var fieldLength: Double = 0.0 {
+        didSet {
+            
+        }
+    }
+    
     var pressureAltitude: Double = 0.0
     var temperature: Double = 0.0   //temperature in ºF
     var rCR: Double = 0.0
+    
+    var tOF: Double = 0.0
     
     var refusalSpeedFactor: Double = 0.0
     var refusalSpeed: Double = 0.0
