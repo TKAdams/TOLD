@@ -11,7 +11,7 @@ import Foundation
 class MaxAB {
     
 //    This class represents the maxAB tables in the IFG - Currently 15 AUGUST 2016
-//    It consists of a triple array of integers.
+//    It consists of a three dimensional array of integers.
 //    The FIRST index represents a particular GWT and holds an array of arrays that is the maxab table.
 //        index 0 = GWT 210
 //        index 21 = GWT 420
@@ -25,8 +25,8 @@ class MaxAB {
 //        index 3 = Climb 2 engines
 //        index 4 = Break CAUTION
 //        index 5 = Break DANGER
-//        index 6 = CFL dry NORM
-//        index 7 = CFL dry 20 WS S/S OFF
+//        index 6 = CFL dry (26) NORM
+//        index 7 = CFL dry (26) 20 WS S/S OFF
 //        index 8 = CFL wet (12) NORM
 //        index 9 = CFL wet (12) 20 WS S/S OFF
 //        index 10 = CFL icy (9) NORM
@@ -44,8 +44,44 @@ class MaxAB {
         
         data = CSVReader.cleanRows(file: data!)
         let csvStringRows = CSVReader.convertCSVDataToStringArray(data: data!)
-        //maxAB = CSVReader.convertStringArrayToIntArray(stringData: csvStringRows)
+        maxAB = convertMaxABStringArraytoIntArray(stringData: csvStringRows)
         
         
+    }
+    
+    func convertMaxABStringArraytoIntArray (stringData: [[String]]) -> [[[Int]]] {
+        
+        let tables: Int = 22
+        let rowsTOFs: Int = 9
+        let colsValues: Int =  11
+
+        var intArray: [[[Int]]] = Array(repeating: Array(repeating: Array (repeating: 0, count: colsValues), count: rowsTOFs), count: tables)
+        
+        for table in 0...(tables-1) {
+            for rowTOF in 0...(rowsTOFs-1) {
+                for colsValues in 0...(colsValues-1) {
+
+                    var stringDataRow: Int = table * 9 + rowTOF
+                    var tempString = stringData[stringDataRow][colsValues + 2]
+                    
+                    tempString = tempString.replacingOccurrences(of: "\\s", with: "", options: .regularExpression)
+                    
+                    switch tempString{
+                    case "N/A":
+                        intArray[table][rowTOF][colsValues] = 10001
+                    case "NO":
+                        intArray[table][rowTOF][colsValues] = 10002
+                    case "DATA":
+                        intArray[table][rowTOF][colsValues] = 10002
+                    case "----":
+                        intArray[table][rowTOF][colsValues] = 10003
+                    default:
+                        intArray[table][rowTOF][colsValues] = Int(tempString)!
+                    }
+                }
+            }
+        }
+
+        return intArray
     }
 }

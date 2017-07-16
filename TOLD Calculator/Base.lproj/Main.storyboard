@@ -76,7 +76,7 @@
                                                             <segment title="+"/>
                                                             <segment title="-"/>
                                                         </segments>
-                                                        <color key="tintColor" red="0.080904118716716766" green="0.050908654928207397" blue="0.90213876962661743" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="tintColor" red="0.0075342161580920219" green="0.27251085638999939" blue="0.66157633066177368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </segmentedControl>
                                                 </subviews>
                                             </stackView>
@@ -96,7 +96,7 @@
                                                     <segment title="C"/>
                                                     <segment title="F"/>
                                                 </segments>
-                                                <color key="tintColor" red="0.080904118716716766" green="0.050908654928207397" blue="0.90213876962661743" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.011764705882352941" green="0.29019607843137252" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
@@ -167,7 +167,7 @@
                                                             <segment title="12"/>
                                                             <segment title="26"/>
                                                         </segments>
-                                                        <color key="tintColor" red="0.080904118716716766" green="0.050908654928207397" blue="0.90213876962661743" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="tintColor" red="0.0075342161580920219" green="0.27251085638999939" blue="0.66157633066177368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </segmentedControl>
                                                 </subviews>
                                             </stackView>
@@ -179,7 +179,7 @@
                                             <segment title="15 &amp; 20 WS"/>
                                             <segment title="15 &amp; 20 S/S OFF"/>
                                         </segments>
-                                        <color key="tintColor" red="0.080904118716716766" green="0.050908654928207397" blue="0.90213876962661743" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.0075342161580920219" green="0.27251085638999939" blue="0.66157633066177368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="wingSweepDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Cbm-p3-6b5"/>
                                         </connections>
@@ -395,7 +395,7 @@ Danger</string>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.93270548414163257" blue="0.38377576428171722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.79607843137254897" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="NB1-SE-vfy" secondAttribute="trailing" id="8VW-ms-Fvi"/>
                             <constraint firstItem="hWZ-LJ-LZM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="102" id="CXz-hO-Q69"/>
@@ -412,6 +412,7 @@ Danger</string>
                     </view>
                     <connections>
                         <outlet property="CelciusVsFahrenheit" destination="23Q-mM-0n9" id="cyk-zv-nO6"/>
+                        <outlet property="TOLDView" destination="8bC-Xf-vdC" id="ubC-xI-n6U"/>
                         <outlet property="pressureAltitude" destination="ORy-am-gYF" id="xwm-7n-1XB"/>
                         <outlet property="tempPlusOrMinus" destination="yRM-3r-qKG" id="Q36-ij-cxl"/>
                         <outlet property="temperature" destination="k7U-c4-v7n" id="FXe-Ae-lws"/>

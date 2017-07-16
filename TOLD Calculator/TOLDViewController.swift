@@ -14,15 +14,18 @@ class TOLDViewController: UIViewController {
     var flight: Flight = Flight()
     var tOF: TakeoffFactors = TakeoffFactors()
     var speedTable: SpeedTable = SpeedTable()
+    var maxAB: MaxAB = MaxAB()
     
     @IBOutlet weak var temperature: UITextField!
     @IBOutlet weak var tempPlusOrMinus: UISegmentedControl!
+    @IBOutlet var TOLDView: UIView!
     @IBOutlet weak var pressureAltitude: UITextField!
     @IBOutlet weak var CelciusVsFahrenheit: UISegmentedControl! //0 = C, 1 = F Default C
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        stylize()
 
         // Do any additional setup after loading the view.
     }
@@ -72,7 +75,7 @@ class TOLDViewController: UIViewController {
     @IBAction func temperatureEditingDidEnd(_ sender: UITextField) {
         if sender.text == "" {
             sender.text = "0"
-            sender.backgroundColor = UIColor.red
+            sender.backgroundColor = UIColor.TOLDColor.TOLDRed
         }
         flight.temperature = flight.setTemperature(temp: sender.text!, cORf: CelciusVsFahrenheit.selectedSegmentIndex)
         if tempPlusOrMinus.selectedSegmentIndex == 1 {
@@ -92,6 +95,11 @@ class TOLDViewController: UIViewController {
         
         //TODO: Remove once code implemented
         var testTOF = tOF.getTakeoffFactor(tempF: flight.temperature, altitude: flight.pressureAltitude)
+    }
+    
+    func stylize() {
+        TOLDView.backgroundColor = UIColor.TOLDColor.Gold
+        CelciusVsFahrenheit.tintColor = UIColor.TOLDColor.TOLDBlue
     }
     
     /*
