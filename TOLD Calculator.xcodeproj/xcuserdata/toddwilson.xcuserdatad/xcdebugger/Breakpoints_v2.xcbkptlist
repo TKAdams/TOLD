@@ -23,13 +23,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TOLD Calculator/TakeoffFactors.swift"
-            timestampString = "521525529.721955"
+            filePath = "TOLD Calculator/Flight.swift"
+            timestampString = "522119829.827648"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "getTakeoffFactor(tempF:altitude:)"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "updateTOFDependants(tof:gwt:wingSweep:rcr:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
