@@ -42,6 +42,7 @@ class RefusalFactor{
         print("lowGW is \(index)")
         return index
     }
+    
     func getRefusalSpeed(gWt: Double, tOF:Double)->Double{
         var i:Int = 0
         var j:Int = 0

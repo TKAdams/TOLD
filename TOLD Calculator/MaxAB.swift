@@ -23,8 +23,8 @@ class MaxAB {
 //        index 1 = TOR 20 WS S/S OFF
 //        index 2 = Climb 3 engines
 //        index 3 = Climb 2 engines
-//        index 4 = Break CAUTION
-//        index 5 = Break DANGER
+//        index 4 = Brake CAUTION
+//        index 5 = Brake DANGER
 //        index 6 = CFL dry (26) NORM
 //        index 7 = CFL dry (26) 20 WS S/S OFF
 //        index 8 = CFL wet (12) NORM

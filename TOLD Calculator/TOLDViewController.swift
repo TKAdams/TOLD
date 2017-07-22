@@ -22,12 +22,15 @@ class TOLDViewController: UIViewController {
     @IBOutlet weak var pressureAltitude: UITextField!
     @IBOutlet weak var CelciusVsFahrenheit: UISegmentedControl! //0 = C, 1 = F Default C
     @IBOutlet weak var threeEngClimb: UILabel!
-
     @IBOutlet weak var twoEngClimb: UILabel!
+    @IBOutlet weak var brakeDanger: UILabel!
+    @IBOutlet weak var brakeCaution: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         stylize()
+
 
     }
 
@@ -107,6 +110,9 @@ class TOLDViewController: UIViewController {
     func refresh() {
         self.threeEngClimb.text = String(Int(flight.threeEngineClimb))
         self.twoEngClimb.text = String(Int(flight.twoEngineClimb))
+        self.brakeCaution.text = String(Int(flight.brakeCaution))
+        self.brakeDanger.text = String(Int(flight.brakeDanger))
+        
     }
     
     /*

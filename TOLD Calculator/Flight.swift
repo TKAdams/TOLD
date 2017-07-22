@@ -54,8 +54,8 @@ class Flight {
     var takeoffSpeed: Double = 0.0
     var twoEngineClimb: Double = 0.0
     var threeEngineClimb: Double = 0.0
-    var breakCaution: Double = 0.0
-    var breakDanger: Double = 0.0
+    var brakeCaution: Double = 0.0
+    var brakeDanger: Double = 0.0
     var takeOffDistance: Double = 0.0
     var cFL: Double = 0.0
     
@@ -92,6 +92,8 @@ class Flight {
         
         threeEngineClimb = threeEngineClimb(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
         twoEngineClimb = twoEngineClimb(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
+        brakeCaution = brakeCaution(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
+        brakeDanger = brakeDanger(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
         
     }
     
@@ -171,6 +173,24 @@ class Flight {
         threeEngineClimb = interpolateIFG(gwtUpperIndex: gwtUpperIndex, TOFUpperIndex: TOFUpperIndex, deltaGWT: deltaGWT, deltaTOF: deltaTOF, outputIndex: OutputIndex)
         
         return threeEngineClimb
+    }
+    
+    func brakeCaution (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double) -> Double {
+        var brakeCaution: Double = 0.0
+        let OutputIndex: Int = TOLDOutput.BrakeCaution.rawValue
+        
+        brakeCaution = interpolateIFG(gwtUpperIndex: gwtUpperIndex, TOFUpperIndex: TOFUpperIndex, deltaGWT: deltaGWT, deltaTOF: deltaTOF, outputIndex: OutputIndex)
+        
+        return brakeCaution
+    }
+    
+    func brakeDanger (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double) -> Double {
+        var brakeDanger: Double = 0.0
+        let OutputIndex: Int = TOLDOutput.BrakeDanger.rawValue
+        
+        brakeDanger = interpolateIFG(gwtUpperIndex: gwtUpperIndex, TOFUpperIndex: TOFUpperIndex, deltaGWT: deltaGWT, deltaTOF: deltaTOF, outputIndex: OutputIndex)
+        
+        return brakeDanger
     }
     
     func interpolateIFG (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double, outputIndex: Int) -> Double {
