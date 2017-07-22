@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4D22B71F20477500C61443 /* RefusalFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D22B61F20477500C61443 /* RefusalFactor.swift */; };
+		CE4D22B91F20485100C61443 /* RefusalFactorChart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE4D22B81F20485100C61443 /* RefusalFactorChart.csv */; };
 		CED3A0B71F0A92C8005A6B69 /* SpeedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3A0B61F0A92C8005A6B69 /* SpeedTable.swift */; };
 		CED3A0BB1F0A94A6005A6B69 /* Speedschart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CED3A0BA1F0A94A6005A6B69 /* Speedschart.csv */; };
 		D32B2FE31F1A5F41002AAC67 /* maxab.csv in Resources */ = {isa = PBXBuildFile; fileRef = D32B2FE21F1A5F41002AAC67 /* maxab.csv */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE4D22B61F20477500C61443 /* RefusalFactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefusalFactor.swift; sourceTree = "<group>"; };
+		CE4D22B81F20485100C61443 /* RefusalFactorChart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RefusalFactorChart.csv; path = Resources/RefusalFactorChart.csv; sourceTree = SOURCE_ROOT; };
 		CED3A0B61F0A92C8005A6B69 /* SpeedTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedTable.swift; sourceTree = "<group>"; };
 		CED3A0BA1F0A94A6005A6B69 /* Speedschart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Speedschart.csv; path = Resources/Speedschart.csv; sourceTree = SOURCE_ROOT; };
 		D32B2FE21F1A5F41002AAC67 /* maxab.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = maxab.csv; path = Resources/maxab.csv; sourceTree = SOURCE_ROOT; };
@@ -158,6 +162,7 @@
 		D3F23C461F08919300D71A01 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				CE4D22B81F20485100C61443 /* RefusalFactorChart.csv */,
 				D32B2FE21F1A5F41002AAC67 /* maxab.csv */,
 				D3AEA83C1F0F355E0052F7F7 /* TakeoffFactor2.csv */,
 				D3DB90FF1F0C82F600CEF54E /* TakeoffFactor.csv */,
@@ -200,6 +205,7 @@
 				D3F23C611F09FEEB00D71A01 /* TakeoffFactors.swift */,
 				CED3A0B61F0A92C8005A6B69 /* SpeedTable.swift */,
 				D32B2FE41F1A5FFB002AAC67 /* MaxAB.swift */,
+				CE4D22B61F20477500C61443 /* RefusalFactor.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D32B2FE31F1A5F41002AAC67 /* maxab.csv in Resources */,
+				CE4D22B91F20485100C61443 /* RefusalFactorChart.csv in Resources */,
 				D3F23C5E1F09F89100D71A01 /* IFG (15 Aug 16).pdf in Resources */,
 				D3F23C231F08917800D71A01 /* LaunchScreen.storyboard in Resources */,
 				D3DB91001F0C82F600CEF54E /* TakeoffFactor.csv in Resources */,
@@ -348,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3F23C621F09FEEB00D71A01 /* TakeoffFactors.swift in Sources */,
+				CE4D22B71F20477500C61443 /* RefusalFactor.swift in Sources */,
 				D3F23C4C1F08922300D71A01 /* TOLDViewController.swift in Sources */,
 				D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */,
 				CED3A0B71F0A92C8005A6B69 /* SpeedTable.swift in Sources */,
