@@ -80,7 +80,7 @@ class RefusalFactor{
         
     }
     
-    func getRefusalSpeed (gWT:Double, fieldLength: Double)->Double{
+//    func getRefusalSpeed (gWT:Double, fieldLength: Double)->Double{
         
-    }
+//    }
 }
