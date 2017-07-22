@@ -13,6 +13,7 @@ class Flight {
     var tOFTable: TakeoffFactors = TakeoffFactors()
     var speedTable: SpeedTable = SpeedTable()
     var maxAB: MaxAB = MaxAB()
+    var rSF: RefusalFactor = RefusalFactor()
     
     var grossWeight: Double = 0.0 {
         didSet {
@@ -38,6 +39,10 @@ class Flight {
     var tOF: Double = 0.0 {
         didSet {
             updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
+//            Test:Remove when code implemented
+//              rSF.getLowTOF(tOF: tOF)
+//              rSF.getLowGW(gWt:grossWeight)
+//              rSF.getRefusalSpeed(gWt: grossWeight, tOF: tOF)
         }
     }
 
