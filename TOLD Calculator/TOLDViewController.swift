@@ -21,7 +21,9 @@ class TOLDViewController: UIViewController {
     @IBOutlet var TOLDView: UIView!
     @IBOutlet weak var pressureAltitude: UITextField!
     @IBOutlet weak var CelciusVsFahrenheit: UISegmentedControl! //0 = C, 1 = F Default C
+    @IBOutlet weak var threeEngClimb: UILabel!
 
+    @IBOutlet weak var twoEngClimb: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,6 +62,7 @@ class TOLDViewController: UIViewController {
 //        flight.rotateSpeed = speedTable.getRotateSpeed(wingsweep: flight.wingSweep, grossWeight: flight.grossWeight)
 //        flight.takeoffSpeed = speedTable.getTOSpeed(wingSweep: flight.wingSweep, grossWeight: flight.grossWeight)
         
+        refresh()
     }
     
     @IBAction func temperatureEditingDidBegin(_ sender: UITextField) {
@@ -80,25 +83,30 @@ class TOLDViewController: UIViewController {
         if tempPlusOrMinus.selectedSegmentIndex == 1 {
             flight.temperature *= -1
         }
-        
+        refresh()
     }
         
     @IBAction func pressureAltitudeEditingDidBegin(_ sender: UITextField) {
         if sender.text == "0" {
             sender.text = ""
         }
+        refresh()
     }
     
     @IBAction func pressureAltitudeEditingDidEnd(_ sender: UITextField) {
         flight.pressureAltitude = Double(sender.text!)!
         
-        //TODO: Remove once code implemented
-//        var testTOF = tOF.getTakeoffFactor(tempF: flight.temperature, altitude: flight.pressureAltitude)
+        refresh()
     }
     
     func stylize() {
         TOLDView.backgroundColor = UIColor.TOLDColor.Gold
         CelciusVsFahrenheit.tintColor = UIColor.TOLDColor.TOLDBlue
+    }
+    
+    func refresh() {
+        self.threeEngClimb.text = String(Int(flight.threeEngineClimb))
+        self.twoEngClimb.text = String(Int(flight.twoEngineClimb))
     }
     
     /*

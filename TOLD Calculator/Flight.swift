@@ -52,6 +52,8 @@ class Flight {
     var decisionSpeed: Double = 0.0
     var rotateSpeed: Double = 0.0
     var takeoffSpeed: Double = 0.0
+    var twoEngineClimb: Double = 0.0
+    var threeEngineClimb: Double = 0.0
     var breakCaution: Double = 0.0
     var breakDanger: Double = 0.0
     var takeOffDistance: Double = 0.0
@@ -88,6 +90,8 @@ class Flight {
         var perDeltaGWT: Double = percentDeltaGWT(gwt: gwt)
         var perDeltaTOF: Double = percentDeltaTOF(tof: tof)
         
+        threeEngineClimb = threeEngineClimb(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
+        twoEngineClimb = twoEngineClimb(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
         
     }
     
@@ -135,20 +139,67 @@ class Flight {
     }
     
     func percentDeltaTOF (tof: Double) -> Double {
-        var tofTable: Double = 60.0
+        var tofTable: Double = 20.0
         var percentDiff: Double = 0.0
         
         while tofTable < tof {
             tofTable += 5
         }
         tofTable -= 5
-        if tof < 60 {
+        if tof < 20 {
             percentDiff = 0.0
         } else {
             percentDiff = (tof - tofTable)/5
         }
         
         return percentDiff
+    }
+
+    func twoEngineClimb (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double) -> Double {
+        var threeEngineClimb: Double = 0.0
+        let OutputIndex: Int = TOLDOutput.Climb2Engines.rawValue
+        
+        twoEngineClimb = interpolateIFG(gwtUpperIndex: gwtUpperIndex, TOFUpperIndex: TOFUpperIndex, deltaGWT: deltaGWT, deltaTOF: deltaTOF, outputIndex: OutputIndex)
+        
+        return twoEngineClimb
+    }
+    
+    func threeEngineClimb (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double) -> Double {
+        var threeEngineClimb: Double = 0.0
+        let OutputIndex: Int = TOLDOutput.Climb3Engines.rawValue
+        
+        threeEngineClimb = interpolateIFG(gwtUpperIndex: gwtUpperIndex, TOFUpperIndex: TOFUpperIndex, deltaGWT: deltaGWT, deltaTOF: deltaTOF, outputIndex: OutputIndex)
+        
+        return threeEngineClimb
+    }
+    
+    func interpolateIFG (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double, outputIndex: Int) -> Double {
+        let gi: Int = gwtUpperIndex - 1
+        let gj: Int = gwtUpperIndex
+        let ti: Int = TOFUpperIndex - 1
+        let tj: Int = TOFUpperIndex
+        let z: Int = outputIndex
+        
+        var a: Double = 0.0
+        var b: Double = 0.0
+        var c: Double = 0.0
+        var d: Double = 0.0
+        
+        var ac: Double = 0.0
+        var bd: Double = 0.0
+        var value: Double = 0.0
+        
+        a = Double(maxAB.maxAB[gi][ti][z])
+        b = Double(maxAB.maxAB[gi][tj][z])
+        c = Double(maxAB.maxAB[gj][ti][z])
+        d = Double(maxAB.maxAB[gj][tj][z])
+        
+        ac = (c - a) * deltaGWT + a
+        bd = (d - b) * deltaGWT + b
+        
+        value = (bd - ac) * deltaTOF + ac
+        
+        return value
     }
     
 }
