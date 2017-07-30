@@ -19,12 +19,15 @@ class TOLDViewController: UIViewController {
     @IBOutlet weak var temperature: UITextField!
     @IBOutlet weak var tempPlusOrMinus: UISegmentedControl!
     @IBOutlet var TOLDView: UIView!
+    @IBOutlet weak var fieldLength: UITextField!
     @IBOutlet weak var pressureAltitude: UITextField!
+    @IBOutlet weak var rCR: UISegmentedControl!
     @IBOutlet weak var CelciusVsFahrenheit: UISegmentedControl! //0 = C, 1 = F Default C
     @IBOutlet weak var threeEngClimb: UILabel!
     @IBOutlet weak var twoEngClimb: UILabel!
     @IBOutlet weak var brakeDanger: UILabel!
     @IBOutlet weak var brakeCaution: UILabel!
+    @IBOutlet weak var cFL: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +52,7 @@ class TOLDViewController: UIViewController {
     }
     
     @IBAction func wingSweepDidChange(_ sender: UISegmentedControl){
+
         switch sender.selectedSegmentIndex {
         case 0: flight.wingSweep = true
         case 1: flight.wingSweep = false
@@ -102,6 +106,15 @@ class TOLDViewController: UIViewController {
         refresh()
     }
     
+    @IBAction func rCRValueChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0: flight.rCR = 0
+        case 1: flight.rCR = 1
+        case 2: flight.rCR = 2
+        default: flight.rCR = 2
+        }
+    }
+    
     func stylize() {
         TOLDView.backgroundColor = UIColor.TOLDColor.Gold
         CelciusVsFahrenheit.tintColor = UIColor.TOLDColor.TOLDBlue
@@ -112,6 +125,7 @@ class TOLDViewController: UIViewController {
         self.twoEngClimb.text = String(Int(flight.twoEngineClimb))
         self.brakeCaution.text = String(Int(flight.brakeCaution))
         self.brakeDanger.text = String(Int(flight.brakeDanger))
+        self.cFL.text = String(Int(flight.cFL))
         
     }
     

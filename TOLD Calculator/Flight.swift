@@ -34,7 +34,7 @@ class Flight {
             tOF = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
         }
     }
-    var rCR: Double = 0.0
+    var rCR: Int = 0
     
     var tOF: Double = 0.0 {
         didSet {
@@ -78,7 +78,7 @@ class Flight {
         return tempF
     }
     
-    func updateTOFDependants (tof: Double, gwt: Double, wingSweep: Bool, rcr: Double) {
+    func updateTOFDependants (tof: Double, gwt: Double, wingSweep: Bool, rcr: Int) {
         var i: Int = 0  //gwt index
         var j: Int = 0  //tof index
         
@@ -94,7 +94,7 @@ class Flight {
         twoEngineClimb = twoEngineClimb(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
         brakeCaution = brakeCaution(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
         brakeDanger = brakeDanger(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
-        
+        cFL = cfl(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, rcr: rCR, wingsweep: wingSweep)
     }
     
     func findUpperGWTIndex (gwt: Double) -> Int {
@@ -191,6 +191,34 @@ class Flight {
         brakeDanger = interpolateIFG(gwtUpperIndex: gwtUpperIndex, TOFUpperIndex: TOFUpperIndex, deltaGWT: deltaGWT, deltaTOF: deltaTOF, outputIndex: OutputIndex)
         
         return brakeDanger
+    }
+    
+    func cfl (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double, rcr: Int, wingsweep: Bool) -> Double {
+        var cfl: Double = 0.0
+        var OutputIndex: Int = 0
+        
+        switch rcr {
+        case 0:
+            OutputIndex = TOLDOutput.CFLIcyNorm.rawValue
+        case 1:
+            if wingsweep == true {
+                OutputIndex = TOLDOutput.CFLWetNorm.rawValue
+            } else {
+                OutputIndex = TOLDOutput.CFLWetOff.rawValue
+            }
+        case 2:
+            if wingsweep == true {
+                OutputIndex = TOLDOutput.CFLDryNorm.rawValue
+            } else {
+                OutputIndex = TOLDOutput.CFLDryOff.rawValue
+            }
+        default:
+            OutputIndex = TOLDOutput.CFLDryNorm.rawValue
+        }
+        
+        cfl = interpolateIFG(gwtUpperIndex: gwtUpperIndex, TOFUpperIndex: TOFUpperIndex, deltaGWT: deltaGWT, deltaTOF: deltaTOF, outputIndex: OutputIndex)
+
+        return cfl
     }
     
     func interpolateIFG (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double, outputIndex: Int) -> Double {

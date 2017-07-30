@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -168,6 +168,10 @@
                                                             <segment title="26"/>
                                                         </segments>
                                                         <color key="tintColor" red="0.0075342161580920219" green="0.27251085638999939" blue="0.66157633066177368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="rCREditingDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="BTW-CY-mwI"/>
+                                                            <action selector="rCRValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="5Zg-C7-l24"/>
+                                                        </connections>
                                                     </segmentedControl>
                                                 </subviews>
                                             </stackView>
@@ -415,7 +419,10 @@ Danger</string>
                         <outlet property="TOLDView" destination="8bC-Xf-vdC" id="ubC-xI-n6U"/>
                         <outlet property="brakeCaution" destination="n24-jo-S1V" id="5N6-ri-VUB"/>
                         <outlet property="brakeDanger" destination="9yD-rN-Ce0" id="K5s-LD-VOU"/>
+                        <outlet property="cFL" destination="G3t-iH-VhX" id="bCo-cm-RqL"/>
+                        <outlet property="fieldLength" destination="rX5-3i-6kV" id="KTD-4i-OkS"/>
                         <outlet property="pressureAltitude" destination="ORy-am-gYF" id="xwm-7n-1XB"/>
+                        <outlet property="rCR" destination="y3U-aT-1Zw" id="mWN-9l-OWm"/>
                         <outlet property="tempPlusOrMinus" destination="yRM-3r-qKG" id="Q36-ij-cxl"/>
                         <outlet property="temperature" destination="k7U-c4-v7n" id="FXe-Ae-lws"/>
                         <outlet property="threeEngClimb" destination="aaT-NV-ski" id="pWg-wJ-5QR"/>
