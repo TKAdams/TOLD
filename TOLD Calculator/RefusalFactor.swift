@@ -43,7 +43,7 @@ class RefusalFactor{
         return index
     }
     
-    func getRefusalSpeed(gWt: Double, tOF:Double)->Double{
+    func getRefusalFactor(gWt: Double, tOF:Double)->Double{
         var i:Int = 0
         var j:Int = 0
         var refusalFactor:Double = 0.0
@@ -75,7 +75,7 @@ class RefusalFactor{
         
         refusalFactor = (perDiffGW * (gWIntHigh - gWIntLow)) + gWIntLow
         
-//        print("refusal factor is \(refusalFactor)")
+        print("refusal factor is \(refusalFactor)")
         
         return refusalFactor
         

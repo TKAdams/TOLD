@@ -28,6 +28,11 @@ class TOLDViewController: UIViewController {
     @IBOutlet weak var brakeDanger: UILabel!
     @IBOutlet weak var brakeCaution: UILabel!
     @IBOutlet weak var cFL: UILabel!
+    @IBOutlet weak var rS: UILabel!
+    
+    @IBOutlet weak var takeOffSpeed: UILabel!
+    @IBOutlet weak var rotateSpeed: UILabel!
+    @IBOutlet weak var decisionSpeed: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,16 +63,12 @@ class TOLDViewController: UIViewController {
         case 1: flight.wingSweep = false
         default: flight.wingSweep = true
         }
-//        flight.rotateSpeed = speedTable.getRotateSpeed(wingsweep: flight.wingSweep, grossWeight: flight.grossWeight)
-//        flight.takeoffSpeed = speedTable.getTOSpeed(wingSweep: flight.wingSweep, grossWeight: flight.grossWeight)
+        
+        refresh()
     }
 
     @IBAction func grossWeightDidEndEditing(_ sender: UITextField) {
         flight.grossWeight = Double(sender.text!)!
-        //TODO: For testing only
-//        speedTable.findGrossWeightIndex(grossWeight: flight.grossWeight)
-//        flight.rotateSpeed = speedTable.getRotateSpeed(wingsweep: flight.wingSweep, grossWeight: flight.grossWeight)
-//        flight.takeoffSpeed = speedTable.getTOSpeed(wingSweep: flight.wingSweep, grossWeight: flight.grossWeight)
         
         refresh()
     }
@@ -106,6 +107,20 @@ class TOLDViewController: UIViewController {
         refresh()
     }
     
+    @IBAction func fieldLengthEditingDidBegin(_ sender: UITextField) {
+        if sender.text == "0" {
+            sender.text = ""
+        }
+        if sender.backgroundColor != nil {
+            sender.backgroundColor = nil
+        }
+        refresh()
+    }
+    
+    @IBAction func fieldLengthEditingDidEnd(_ sender: UITextField) {
+        flight.takeOffDistance = Double(sender.text!)!
+    }
+    
     @IBAction func rCRValueChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0: flight.rCR = 0
@@ -113,7 +128,9 @@ class TOLDViewController: UIViewController {
         case 2: flight.rCR = 2
         default: flight.rCR = 2
         }
+        refresh()
     }
+
     
     func stylize() {
         TOLDView.backgroundColor = UIColor.TOLDColor.Gold
@@ -126,7 +143,10 @@ class TOLDViewController: UIViewController {
         self.brakeCaution.text = String(Int(flight.brakeCaution))
         self.brakeDanger.text = String(Int(flight.brakeDanger))
         self.cFL.text = String(Int(flight.cFL))
-        
+        self.rS.text = String(Int(flight.refusalSpeed))
+        self.rotateSpeed.text = String(Int(flight.rotateSpeed))
+        self.takeOffSpeed.text = String(Int(flight.takeoffSpeed))
+        self.decisionSpeed.text = String(Int(flight.decisionSpeed))
     }
     
     /*

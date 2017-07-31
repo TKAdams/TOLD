@@ -14,14 +14,24 @@ class Flight {
     var speedTable: SpeedTable = SpeedTable()
     var maxAB: MaxAB = MaxAB()
     var rSF: RefusalFactor = RefusalFactor()
+    var rS: RefusalSpeed = RefusalSpeed()
+    var rSCorr: RSCorrection = RSCorrection()
     
     var grossWeight: Double = 0.0 {
         didSet {
             updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
+            takeoffSpeed = speedTable.getTOSpeed(wingSweep: wingSweep, grossWeight: grossWeight)
+            rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
+            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
         }
     }
-    var wingSweep: Bool = true //wing sweep true = 15 WS or 20 WS
-                                //wing sweep false = 20 WS SEF/SIS OFF
+    var wingSweep: Bool = true {//wing sweep true = 15 WS or 20 WS, wing sweep false = 20 WS SEF/SIS OFF
+        didSet{
+            takeoffSpeed = speedTable.getTOSpeed(wingSweep: wingSweep, grossWeight: grossWeight)
+            rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
+            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+        }
+    }
     var fieldLength: Double = 0.0
     
     var pressureAltitude: Double = 0.0 {
@@ -34,20 +44,26 @@ class Flight {
             tOF = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
         }
     }
-    var rCR: Int = 0
+
+    
     
     var tOF: Double = 0.0 {
         didSet {
             updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
 //            Test:Remove when code implemented
-//              rSF.getLowTOF(tOF: tOF)
-//              rSF.getLowGW(gWt:grossWeight)
-//              rSF.getRefusalSpeed(gWt: grossWeight, tOF: tOF)
+//              rS.getLowTOF(tOF: tOF)
+//              rS.getLowGW(gWt:grossWeight)
+            refusalSpeedFactor = rSF.getRefusalFactor(gWt: grossWeight, tOF: tOF)
+            if takeOffDistance > 8000{
+                refusalSpeed = rS.getRefusalSpeed(takeOffDistance: takeOffDistance, refusalFactor: refusalSpeedFactor)
+                decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+            } //What is the best way to do this? It will fail if the tOF updates and takeoff Length is not set yet. So I made the if statement to be the lowest takeoff distance.
+            
         }
     }
-
     
-    var refusalSpeedFactor: Double = 0.0
+
+    var unCorrRefusalSpeed: Double = 0.0
     var refusalSpeed: Double = 0.0
     var decisionSpeed: Double = 0.0
     var rotateSpeed: Double = 0.0
@@ -56,8 +72,26 @@ class Flight {
     var threeEngineClimb: Double = 0.0
     var brakeCaution: Double = 0.0
     var brakeDanger: Double = 0.0
-    var takeOffDistance: Double = 0.0
     var cFL: Double = 0.0
+    var refusalSpeedFactor: Double = 0.0
+
+    
+    var takeOffDistance: Double = 0.0{
+        didSet{
+            unCorrRefusalSpeed = rS.getRefusalSpeed(takeOffDistance: takeOffDistance, refusalFactor: refusalSpeedFactor)
+            refusalSpeed = rSCorr.updateRS(refusalSpeed: unCorrRefusalSpeed, rCR: rCR)
+            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+        }
+    }
+    
+    var rCR: Int = 2{
+        didSet{
+            if takeOffDistance > 8000{                                            //Best Way?
+            refusalSpeed = rSCorr.updateRS(refusalSpeed: unCorrRefusalSpeed, rCR: rCR)
+            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+            }
+        }
+    }
     
     func setTemperature (temp: String, cORf: Int) -> Double {
 
@@ -249,5 +283,14 @@ class Flight {
         
         return value
     }
-    
+ 
+    func getDecisionSpeed(rotateSpeed:Double, refusalSpeed:Double) -> Double{
+        if rotateSpeed < refusalSpeed{
+            decisionSpeed = rotateSpeed
+        }
+        else{
+            decisionSpeed = refusalSpeed
+        }
+        return decisionSpeed
+    }
 }
