@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -140,11 +140,15 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3000" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rX5-3i-6kV">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rX5-3i-6kV">
                                                 <rect key="frame" x="134.5" y="0.0" width="178.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <action selector="fieldLengthEditingDidBegin:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="oRw-9Y-0i9"/>
+                                                    <action selector="fieldLengthEditingDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="jCI-ZV-C25"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -160,7 +164,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="y3U-aT-1Zw">
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="y3U-aT-1Zw">
                                                         <rect key="frame" x="51" y="0.0" width="262" height="29"/>
                                                         <segments>
                                                             <segment title="9"/>
@@ -416,13 +420,18 @@ Danger</string>
                     </view>
                     <connections>
                         <outlet property="CelciusVsFahrenheit" destination="23Q-mM-0n9" id="cyk-zv-nO6"/>
+                        <outlet property="RS" destination="qI9-Kr-2be" id="QNb-V2-q71"/>
                         <outlet property="TOLDView" destination="8bC-Xf-vdC" id="ubC-xI-n6U"/>
                         <outlet property="brakeCaution" destination="n24-jo-S1V" id="5N6-ri-VUB"/>
                         <outlet property="brakeDanger" destination="9yD-rN-Ce0" id="K5s-LD-VOU"/>
                         <outlet property="cFL" destination="G3t-iH-VhX" id="bCo-cm-RqL"/>
+                        <outlet property="decisionSpeed" destination="qkI-mE-0q1" id="EsL-dq-nSH"/>
                         <outlet property="fieldLength" destination="rX5-3i-6kV" id="KTD-4i-OkS"/>
                         <outlet property="pressureAltitude" destination="ORy-am-gYF" id="xwm-7n-1XB"/>
                         <outlet property="rCR" destination="y3U-aT-1Zw" id="mWN-9l-OWm"/>
+                        <outlet property="rS" destination="qI9-Kr-2be" id="Nmt-gI-yjq"/>
+                        <outlet property="rotateSpeed" destination="y35-ef-VDO" id="fOP-aD-8n1"/>
+                        <outlet property="takeOffSpeed" destination="B6A-kj-G8b" id="zmO-hc-wun"/>
                         <outlet property="tempPlusOrMinus" destination="yRM-3r-qKG" id="Q36-ij-cxl"/>
                         <outlet property="temperature" destination="k7U-c4-v7n" id="FXe-Ae-lws"/>
                         <outlet property="threeEngClimb" destination="aaT-NV-ski" id="pWg-wJ-5QR"/>

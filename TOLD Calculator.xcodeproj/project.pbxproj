@@ -11,6 +11,10 @@
 		CE4D22B91F20485100C61443 /* RefusalFactorChart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE4D22B81F20485100C61443 /* RefusalFactorChart.csv */; };
 		CED3A0B71F0A92C8005A6B69 /* SpeedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3A0B61F0A92C8005A6B69 /* SpeedTable.swift */; };
 		CED3A0BB1F0A94A6005A6B69 /* Speedschart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CED3A0BA1F0A94A6005A6B69 /* Speedschart.csv */; };
+		CED95C1A1F2DBCE400CA828F /* RefusalSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED95C191F2DBCE400CA828F /* RefusalSpeed.swift */; };
+		CED95C1C1F2DBD7E00CA828F /* RefusalSpeedChart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CED95C1B1F2DBD7E00CA828F /* RefusalSpeedChart.csv */; };
+		CED95C201F2E8BCA00CA828F /* RSCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED95C1F1F2E8BCA00CA828F /* RSCorrection.swift */; };
+		CED95C261F2E98A800CA828F /* RSCorrectionChart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CED95C251F2E98A800CA828F /* RSCorrectionChart.csv */; };
 		D32B2FE31F1A5F41002AAC67 /* maxab.csv in Resources */ = {isa = PBXBuildFile; fileRef = D32B2FE21F1A5F41002AAC67 /* maxab.csv */; };
 		D32B2FE51F1A5FFB002AAC67 /* MaxAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B2FE41F1A5FFB002AAC67 /* MaxAB.swift */; };
 		D32B2FE81F1BA10F002AAC67 /* UIColor+TOLDColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B2FE71F1BA10F002AAC67 /* UIColor+TOLDColor.swift */; };
@@ -54,6 +58,10 @@
 		CE4D22B81F20485100C61443 /* RefusalFactorChart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RefusalFactorChart.csv; path = Resources/RefusalFactorChart.csv; sourceTree = SOURCE_ROOT; };
 		CED3A0B61F0A92C8005A6B69 /* SpeedTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedTable.swift; sourceTree = "<group>"; };
 		CED3A0BA1F0A94A6005A6B69 /* Speedschart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Speedschart.csv; path = Resources/Speedschart.csv; sourceTree = SOURCE_ROOT; };
+		CED95C191F2DBCE400CA828F /* RefusalSpeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefusalSpeed.swift; sourceTree = SOURCE_ROOT; };
+		CED95C1B1F2DBD7E00CA828F /* RefusalSpeedChart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RefusalSpeedChart.csv; path = Resources/RefusalSpeedChart.csv; sourceTree = SOURCE_ROOT; };
+		CED95C1F1F2E8BCA00CA828F /* RSCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCorrection.swift; sourceTree = "<group>"; };
+		CED95C251F2E98A800CA828F /* RSCorrectionChart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RSCorrectionChart.csv; path = Resources/RSCorrectionChart.csv; sourceTree = SOURCE_ROOT; };
 		D32B2FE21F1A5F41002AAC67 /* maxab.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = maxab.csv; path = Resources/maxab.csv; sourceTree = SOURCE_ROOT; };
 		D32B2FE41F1A5FFB002AAC67 /* MaxAB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxAB.swift; sourceTree = "<group>"; };
 		D32B2FE71F1BA10F002AAC67 /* UIColor+TOLDColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TOLDColor.swift"; sourceTree = "<group>"; };
@@ -164,6 +172,8 @@
 		D3F23C461F08919300D71A01 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				CED95C251F2E98A800CA828F /* RSCorrectionChart.csv */,
+				CED95C1B1F2DBD7E00CA828F /* RefusalSpeedChart.csv */,
 				CE4D22B81F20485100C61443 /* RefusalFactorChart.csv */,
 				D32B2FE21F1A5F41002AAC67 /* maxab.csv */,
 				D3AEA83C1F0F355E0052F7F7 /* TakeoffFactor2.csv */,
@@ -208,6 +218,8 @@
 				CED3A0B61F0A92C8005A6B69 /* SpeedTable.swift */,
 				D32B2FE41F1A5FFB002AAC67 /* MaxAB.swift */,
 				CE4D22B61F20477500C61443 /* RefusalFactor.swift */,
+				CED95C191F2DBCE400CA828F /* RefusalSpeed.swift */,
+				CED95C1F1F2E8BCA00CA828F /* RSCorrection.swift */,
 				D3334A801F238DEE000C63D6 /* TOLDOutput.swift */,
 			);
 			name = Models;
@@ -323,7 +335,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED95C1C1F2DBD7E00CA828F /* RefusalSpeedChart.csv in Resources */,
 				D32B2FE31F1A5F41002AAC67 /* maxab.csv in Resources */,
+				CED95C261F2E98A800CA828F /* RSCorrectionChart.csv in Resources */,
 				CE4D22B91F20485100C61443 /* RefusalFactorChart.csv in Resources */,
 				D3F23C5E1F09F89100D71A01 /* IFG (15 Aug 16).pdf in Resources */,
 				D3F23C231F08917800D71A01 /* LaunchScreen.storyboard in Resources */,
@@ -357,6 +371,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED95C201F2E8BCA00CA828F /* RSCorrection.swift in Sources */,
+				CED95C1A1F2DBCE400CA828F /* RefusalSpeed.swift in Sources */,
 				D3F23C621F09FEEB00D71A01 /* TakeoffFactors.swift in Sources */,
 				CE4D22B71F20477500C61443 /* RefusalFactor.swift in Sources */,
 				D3F23C4C1F08922300D71A01 /* TOLDViewController.swift in Sources */,
