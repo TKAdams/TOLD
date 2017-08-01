@@ -24,8 +24,9 @@ extension UIColor {
 extension UIColor {
     struct TOLDColor {
         static let Gold = UIColor(netHex: 0xFFCB39)
-        static let TOLDBlue = UIColor(netHex: 0x034AA6)
-        static let TOLDRed = UIColor(netHex: 0xBF281B)
+        static let Blue = UIColor(netHex: 0x034AA6)
+        static let Red = UIColor(netHex: 0xBF281B)
+        static let Yellow = UIColor(netHex: 0xFFFD24)
     }
 
 }

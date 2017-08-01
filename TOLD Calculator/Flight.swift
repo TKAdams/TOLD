@@ -46,7 +46,6 @@ class Flight {
     }
 
     
-    
     var tOF: Double = 0.0 {
         didSet {
             updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
