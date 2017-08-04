@@ -30,6 +30,7 @@ class Flight {
             takeoffSpeed = speedTable.getTOSpeed(wingSweep: wingSweep, grossWeight: grossWeight)
             rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
             decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+            updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
         }
     }
     var fieldLength: Double = 0.0
@@ -88,6 +89,7 @@ class Flight {
             if takeOffDistance > 8000{                                            //Best Way?
             refusalSpeed = rSCorr.updateRS(refusalSpeed: unCorrRefusalSpeed, rCR: rCR)
             decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+            updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
             }
         }
     }
