@@ -91,16 +91,23 @@ class TOLDViewController: UIViewController {
         
         refresh()
     }
-    
-    @IBAction func fieldLengthEditingDidBegin(_ sender: UITextField) {
 
+    @IBAction func fieldLengthEditingDidBegin(_ sender: UITextField) {
+        
         editingField(tf: sender)
     }
+
+    
     
     @IBAction func fieldLengthEditingDidEnd(_ sender: UITextField) {
 
-        validateField(tf: sender, min: 10000, max: 20000)
-        flight.takeOffDistance = Double(sender.text!)!
+        validateField(tf: sender, min: 9000, max: 20000)
+        if Int(sender.text!)! > 8000 {
+            flight.takeOffDistance = Double(sender.text!)!}
+        else {
+            sender.text="Invalid Entry"
+            sender.backgroundColor = UIColor.TOLDColor.Red
+        }
         refresh()
     }
 
@@ -126,7 +133,7 @@ class TOLDViewController: UIViewController {
     }
     
     func editingField(tf: UITextField) {
-        if tf.text == "0" {
+        if (tf.text == "0") || (tf.text == "Invalid Entry") {
             tf.text = ""
         }
         if tf.backgroundColor != nil {
