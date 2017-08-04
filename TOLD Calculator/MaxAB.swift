@@ -31,9 +31,9 @@ class MaxAB {
 //        index 9 = CFL wet (12) 20 WS S/S OFF
 //        index 10 = CFL icy (9) NORM
 //    Special int values will represent nonintegar values on the chart
-//        10001 = N/A
-//        10002 = No Data
-//        10003 = ----
+//        100001 = N/A
+//        100002 = No Data
+//        100003 = ----
     
     var maxAB: [[[Int]]] = []
     let tOSFilename: String = "maxab"
@@ -68,13 +68,13 @@ class MaxAB {
                     
                     switch tempString{
                     case "N/A":
-                        intArray[table][rowTOF][colsValues] = 10001
+                        intArray[table][rowTOF][colsValues] = 100001
                     case "NO":
-                        intArray[table][rowTOF][colsValues] = 10002
+                        intArray[table][rowTOF][colsValues] = 100002
                     case "DATA":
-                        intArray[table][rowTOF][colsValues] = 10002
+                        intArray[table][rowTOF][colsValues] = 100002
                     case "----":
-                        intArray[table][rowTOF][colsValues] = 10003
+                        intArray[table][rowTOF][colsValues] = 100003
                     default:
                         intArray[table][rowTOF][colsValues] = Int(tempString)!
                     }
