@@ -152,6 +152,23 @@ class TOLDViewController: UIViewController {
         }
     }
     
+    func outputValue (number: Double) -> String {
+        var value: String = ""
+        
+        switch number {
+        case 100001:
+            value = "N/A"
+        case 100002:
+            value = "No Data"
+        case 100003:
+            value = "----"
+        default:
+            value = String(Int(number))
+        }
+        
+        return value
+    }
+    
     func stylize() {
         TOLDView.backgroundColor = UIColor.TOLDColor.Gold
         CelciusVsFahrenheit.tintColor = UIColor.TOLDColor.Blue
@@ -163,11 +180,11 @@ class TOLDViewController: UIViewController {
     }
     
     func refresh() {
-        self.threeEngClimb.text = String(Int(flight.threeEngineClimb))
-        self.twoEngClimb.text = String(Int(flight.twoEngineClimb))
-        self.brakeCaution.text = String(Int(flight.brakeCaution))
-        self.brakeDanger.text = String(Int(flight.brakeDanger))
-        self.cFL.text = String(Int(flight.cFL))
+        self.threeEngClimb.text = outputValue(number: flight.threeEngineClimb)
+        self.twoEngClimb.text = outputValue(number: flight.twoEngineClimb)
+        self.brakeCaution.text = outputValue(number: flight.brakeCaution)
+        self.brakeDanger.text = outputValue(number: flight.brakeDanger)
+        self.cFL.text = outputValue(number: flight.cFL)
         self.rS.text = String(Int(flight.refusalSpeed))
         self.rotateSpeed.text = String(Int(flight.rotateSpeed))
         self.takeOffSpeed.text = String(Int(flight.takeoffSpeed))

@@ -272,19 +272,66 @@ class Flight {
         var bd: Double = 0.0
         var value: Double = 0.0
         
+        var outOfBounds = false
+        
         a = Double(maxAB.maxAB[gi][ti][z])
         b = Double(maxAB.maxAB[gi][tj][z])
         c = Double(maxAB.maxAB[gj][ti][z])
         d = Double(maxAB.maxAB[gj][tj][z])
         
-        ac = (c - a) * deltaGWT + a
-        bd = (d - b) * deltaGWT + b
+        outOfBounds = checkBounds(a: a, b: b, c: c, d: d)
         
-        value = (bd - ac) * deltaTOF + ac
+        if outOfBounds == true {
+            value = setOutOfBoundsTag(a: a, b: b, c: c, d: d)
+        } else {
+            ac = (c - a) * deltaGWT + a
+            bd = (d - b) * deltaGWT + b
+        
+            value = (bd - ac) * deltaTOF + ac
+        }
+            
+        return value
+    }
+    
+    func checkBounds (a: Double, b: Double, c: Double, d: Double) -> Bool {
+        var oob = false
+        
+        if a > 100000 {
+            oob = true
+        }
+        if b > 100000 {
+            oob = true
+        }
+        if c > 100000 {
+            oob = true
+        }
+        if d > 100000 {
+            oob = true
+        }
+        
+        return oob
+    }
+    
+    func setOutOfBoundsTag (a: Double, b: Double, c: Double, d: Double) -> Double {
+        var value = 0.0
+        
+        //Return the highest value.
+        if a > value {
+            value = a
+        }
+        if b > value {
+            value = b
+        }
+        if c > value {
+            value = c
+        }
+        if d > value {
+            value = d
+        }
         
         return value
     }
- 
+    
     func getDecisionSpeed(rotateSpeed:Double, refusalSpeed:Double) -> Double{
         if rotateSpeed < refusalSpeed{
             decisionSpeed = rotateSpeed
