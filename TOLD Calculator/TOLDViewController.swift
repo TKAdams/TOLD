@@ -10,7 +10,7 @@ import UIKit
 
 class TOLDViewController: UIViewController {
 
-    var flight: Flight = Flight()
+    var flight: Flight! //= Flight()
 
     //MARK: - Input variables
     

@@ -13,10 +13,13 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var flight = Flight()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let navController = window!.rootViewController as! UINavigationController
+        let controller = navController.viewControllers[0] as! TOLDViewController
+        controller.flight = flight
         return true
     }
 
