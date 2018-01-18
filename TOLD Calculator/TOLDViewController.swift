@@ -179,12 +179,12 @@ class TOLDViewController: UIViewController {
     }
     
     func stylize() {
-        TOLDView.backgroundColor = UIColor.TOLDColor.Gold
-        CelciusVsFahrenheit.tintColor = UIColor.TOLDColor.Blue
-        grossWeight.backgroundColor = UIColor.TOLDColor.Red
-        temperature.backgroundColor = UIColor.TOLDColor.Red
-        pressureAltitude.backgroundColor = UIColor.TOLDColor.Red
-        fieldLength.backgroundColor = UIColor.TOLDColor.Red
+//        TOLDView.backgroundColor = UIColor.TOLDColor.Gold
+//        CelciusVsFahrenheit.tintColor = UIColor.TOLDColor.Blue
+//        grossWeight.backgroundColor = UIColor.TOLDColor.Red
+//        temperature.backgroundColor = UIColor.TOLDColor.Red
+//        pressureAltitude.backgroundColor = UIColor.TOLDColor.Red
+//        fieldLength.backgroundColor = UIColor.TOLDColor.Red
         
     }
     
