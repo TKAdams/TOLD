@@ -37,11 +37,20 @@ class TOLDViewController: UIViewController {
     @IBOutlet weak var brakeDanger: UILabel!
     @IBOutlet weak var cFL: UILabel!
   
-    
+    // MARK: - View controller delegate
     override func viewDidLoad() {
         super.viewDidLoad()
-
         stylize()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
 
     override func didReceiveMemoryWarning() {
