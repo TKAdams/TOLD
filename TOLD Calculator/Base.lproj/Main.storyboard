@@ -245,7 +245,7 @@ Danger</string>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyg-fQ-FGS">
                                 <rect key="frame" x="0.0" y="123" width="320" height="253"/>
                                 <connections>
-                                    <segue destination="Qyx-NA-6ZV" kind="embed" id="4LE-pd-5pd"/>
+                                    <segue destination="Qyx-NA-6ZV" kind="embed" identifier="EmbedInput" id="4LE-pd-5pd"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -587,6 +587,16 @@ Danger</string>
                             <outlet property="delegate" destination="Qyx-NA-6ZV" id="Avo-yq-Wlu"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="CelciusVsFahrenheit" destination="23Q-mM-0n9" id="FSe-Oq-IOF"/>
+                        <outlet property="fieldLength" destination="rX5-3i-6kV" id="aLJ-7f-CCg"/>
+                        <outlet property="grossWeight" destination="A4i-9u-Nkr" id="aI6-Ib-J8R"/>
+                        <outlet property="pressureAltitude" destination="ORy-am-gYF" id="290-26-Mpm"/>
+                        <outlet property="rCR" destination="y3U-aT-1Zw" id="bRL-qp-vRC"/>
+                        <outlet property="tempPlusOrMinus" destination="yRM-3r-qKG" id="u4k-yH-k2U"/>
+                        <outlet property="temperature" destination="k7U-c4-v7n" id="eia-V4-XPY"/>
+                        <outlet property="wingSweep" destination="rDl-gZ-ewu" id="bjD-Iq-HVT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmP-zk-QMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

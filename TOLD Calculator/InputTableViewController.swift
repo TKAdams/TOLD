@@ -9,10 +9,25 @@
 import UIKit
 
 class InputTableViewController: UITableViewController {
+    
+    var flight: Flight!
+
+    //MARK: - Input variables
+    
+    @IBOutlet weak var grossWeight: UITextField!
+    @IBOutlet weak var temperature: UITextField!
+    @IBOutlet weak var tempPlusOrMinus: UISegmentedControl!
+    @IBOutlet weak var CelciusVsFahrenheit: UISegmentedControl! //0 = C, 1 = F Default C
+    @IBOutlet weak var pressureAltitude: UITextField!
+    @IBOutlet weak var fieldLength: UITextField!
+    @IBOutlet weak var rCR: UISegmentedControl!
+    @IBOutlet weak var wingSweep: UISegmentedControl!
+    @IBOutlet var TOLDView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Flight = \(flight)")
+        stylize()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -91,5 +106,15 @@ class InputTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    // MARK: - Appearance
+    
+    func stylize() {
+//        TOLDView.backgroundColor = UIColor.TOLDColor.Gold
+        CelciusVsFahrenheit.tintColor = UIColor.TOLDColor.Blue
+        grossWeight.backgroundColor = UIColor.TOLDColor.Red
+        temperature.backgroundColor = UIColor.TOLDColor.Red
+        pressureAltitude.backgroundColor = UIColor.TOLDColor.Red
+        fieldLength.backgroundColor = UIColor.TOLDColor.Red
+        
+    }
 }
