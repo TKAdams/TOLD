@@ -27,6 +27,7 @@ extension UIColor {
         static let Blue = UIColor(netHex: 0x034AA6)
         static let Red = UIColor(netHex: 0xBF281B)
         static let Yellow = UIColor(netHex: 0xFFFD24)
+        static let CalcBackground = UIColor(netHex: 0xFFCB39)
     }
 
 }

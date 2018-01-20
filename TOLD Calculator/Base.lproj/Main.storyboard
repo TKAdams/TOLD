@@ -315,7 +315,9 @@ Danger</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OUD-WJ-ZLg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="253"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.87083333330000001" green="0.0" blue="0.032594458069999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="1" green="0.79607843140000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="0.79607843140000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="TTI-SN-RcJ">
                                 <cells>
@@ -377,7 +379,7 @@ Danger</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="23Q-mM-0n9">
-                                                    <rect key="frame" x="255" y="6" width="49" height="33"/>
+                                                    <rect key="frame" x="264" y="6" width="49" height="33"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="49" id="BBF-Ux-olE"/>
                                                         <constraint firstAttribute="height" constant="32" id="kV4-B3-LGG"/>
@@ -400,8 +402,8 @@ Danger</string>
                                                     </segments>
                                                     <color key="tintColor" red="0.0075342161580920219" green="0.27251085638999939" blue="0.66157633066177368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </segmentedControl>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7U-c4-v7n">
-                                                    <rect key="frame" x="197" y="6" width="58" height="32"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7U-c4-v7n">
+                                                    <rect key="frame" x="203" y="6" width="58" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="sjg-0q-z59"/>
                                                         <constraint firstAttribute="width" constant="58" id="wTu-gN-j4C"/>
@@ -418,11 +420,11 @@ Danger</string>
                                             <constraints>
                                                 <constraint firstItem="yRM-3r-qKG" firstAttribute="leading" secondItem="s8g-YE-1bi" secondAttribute="trailing" constant="6" id="5cW-Tq-0Lo"/>
                                                 <constraint firstItem="s8g-YE-1bi" firstAttribute="leading" secondItem="vI6-n0-R1n" secondAttribute="leading" constant="16" id="B1c-rR-xeI"/>
-                                                <constraint firstItem="k7U-c4-v7n" firstAttribute="leading" secondItem="yRM-3r-qKG" secondAttribute="trailing" constant="-3" id="LgR-u4-g7C"/>
+                                                <constraint firstItem="k7U-c4-v7n" firstAttribute="leading" secondItem="yRM-3r-qKG" secondAttribute="trailing" constant="3" id="LgR-u4-g7C"/>
                                                 <constraint firstItem="k7U-c4-v7n" firstAttribute="centerY" secondItem="vI6-n0-R1n" secondAttribute="centerY" id="YOk-St-AsX"/>
                                                 <constraint firstItem="s8g-YE-1bi" firstAttribute="centerY" secondItem="vI6-n0-R1n" secondAttribute="centerY" id="c89-MC-NQ2"/>
                                                 <constraint firstItem="yRM-3r-qKG" firstAttribute="centerY" secondItem="vI6-n0-R1n" secondAttribute="centerY" id="maB-05-LXy"/>
-                                                <constraint firstItem="23Q-mM-0n9" firstAttribute="leading" secondItem="k7U-c4-v7n" secondAttribute="trailing" id="qtu-1t-E2j"/>
+                                                <constraint firstItem="23Q-mM-0n9" firstAttribute="leading" secondItem="k7U-c4-v7n" secondAttribute="trailing" constant="3" id="qtu-1t-E2j"/>
                                                 <constraint firstItem="23Q-mM-0n9" firstAttribute="centerY" secondItem="vI6-n0-R1n" secondAttribute="centerY" id="zXn-Sc-LVT"/>
                                             </constraints>
                                         </tableViewCellContentView>
