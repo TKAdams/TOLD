@@ -130,26 +130,26 @@ class TOLDViewController: UIViewController {
 //        refresh()
 //    }
 //    
-    func editingField(tf: UITextField) {
-        if (tf.text == "0") || (tf.text == "Invalid Entry") {
-            tf.text = ""
-        }
-        if tf.backgroundColor != nil {
-            tf.backgroundColor = nil
-        }
-    }
-
-    func validateField(tf: UITextField, min: Double, max: Double) {
-        if tf.text == "" {
-            tf.text = "0"
-            tf.backgroundColor = UIColor.TOLDColor.Red
-        } else {
-            if (Double(tf.text!)! < min) || (Double(tf.text!)! > max) {
-                tf.backgroundColor = UIColor.TOLDColor.Yellow
-            }
-        }
-    }
-    
+//    func editingField(tf: UITextField) {
+//        if (tf.text == "0") || (tf.text == "Invalid Entry") {
+//            tf.text = ""
+//        }
+//        if tf.backgroundColor != nil {
+//            tf.backgroundColor = nil
+//        }
+//    }
+//
+//    func validateField(tf: UITextField, min: Double, max: Double) {
+//        if tf.text == "" {
+//            tf.text = "0"
+//            tf.backgroundColor = UIColor.TOLDColor.Red
+//        } else {
+//            if (Double(tf.text!)! < min) || (Double(tf.text!)! > max) {
+//                tf.backgroundColor = UIColor.TOLDColor.Yellow
+//            }
+//        }
+//    }
+	
     func outputValue (number: Double) -> String {
         var value: String = ""
         
@@ -196,6 +196,7 @@ class TOLDViewController: UIViewController {
         if segue.identifier == "EmbedInput" {
             let controller = segue.destination as! InputTableViewController
             controller.flight = flight
+			controller.parentController = segue.source as! TOLDViewController
         }
     }
 
