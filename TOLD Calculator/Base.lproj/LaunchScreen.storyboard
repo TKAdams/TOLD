@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,13 +17,16 @@
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gx3-9r-E1i">
-                                <rect key="frame" x="16" y="0.0" width="343" height="113"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TOLD" translatesAutoresizingMaskIntoConstraints="NO" id="9iV-Om-9qI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1218"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gx3-9r-E1i">
+                                <rect key="frame" x="105.33333333333333" y="52" width="164.33333333333337" height="82"/>
                                 <attributedString key="attributedText">
                                     <fragment content="B-1B TOLD Calculator">
                                         <attributes>
@@ -34,20 +37,33 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="B1" translatesAutoresizingMaskIntoConstraints="NO" id="KaT-yx-YxT">
-                                <rect key="frame" x="8" y="20" width="351" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="B1" translatesAutoresizingMaskIntoConstraints="NO" id="KaT-yx-YxT">
+                                <rect key="frame" x="5" y="134" width="365" height="644"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.79607843140000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KaT-yx-YxT" firstAttribute="leading" secondItem="9iV-Om-9qI" secondAttribute="leading" constant="5" id="7gD-sI-o4x"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="KaT-yx-YxT" secondAttribute="bottom" id="Ctc-Og-TBH"/>
+                            <constraint firstItem="Gx3-9r-E1i" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Emp-4r-2yd"/>
+                            <constraint firstItem="9iV-Om-9qI" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="PWq-fX-AOr"/>
+                            <constraint firstItem="KaT-yx-YxT" firstAttribute="top" secondItem="Gx3-9r-E1i" secondAttribute="bottom" id="Q8w-Lp-DRF"/>
+                            <constraint firstAttribute="trailing" secondItem="9iV-Om-9qI" secondAttribute="trailing" id="VP5-pL-S5H"/>
+                            <constraint firstItem="KaT-yx-YxT" firstAttribute="trailing" secondItem="9iV-Om-9qI" secondAttribute="trailing" constant="-5" id="a7C-LO-RfH"/>
+                            <constraint firstItem="Gx3-9r-E1i" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bwR-f4-DsX"/>
+                            <constraint firstItem="9iV-Om-9qI" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-44" id="oRN-tj-UPK"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="9iV-Om-9qI" secondAttribute="bottom" constant="-440" id="pWi-oc-JaZ"/>
+                            <constraint firstItem="Gx3-9r-E1i" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" id="sKm-xE-XNj"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.399999999999999" y="373.89162561576359"/>
         </scene>
     </scenes>
     <resources>
         <image name="B1" width="357" height="382"/>
+        <image name="TOLD" width="563" height="1218"/>
     </resources>
 </document>
