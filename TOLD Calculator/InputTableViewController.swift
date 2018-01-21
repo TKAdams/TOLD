@@ -68,16 +68,22 @@ class InputTableViewController: UITableViewController {
     // MARK: - Appearance
  
     func stylize() {
-        CelciusVsFahrenheit.tintColor = UIColor.TOLDColor.Blue
-        grossWeight.backgroundColor = UIColor.TOLDColor.Red
-        temperature.backgroundColor = UIColor.TOLDColor.Red
-        pressureAltitude.backgroundColor = UIColor.TOLDColor.Red
-        fieldLength.backgroundColor = UIColor.TOLDColor.Red
-        tableView.backgroundColor = UIColor.TOLDColor.CalcBackground
-        rCR.tintColor = UIColor.TOLDColor.Detail
-        CelciusVsFahrenheit.tintColor = UIColor.TOLDColor.Detail
-        tempPlusOrMinus.tintColor = UIColor.TOLDColor.Detail
-        wingSweep.tintColor = UIColor.TOLDColor.Detail
+		tableView.backgroundColor = UIColor.TOLDColor.CalcBackground
+		
+		//Textfields
+		let textFields: [UITextField] = [grossWeight, temperature, pressureAltitude, fieldLength]
+		
+		for textField in textFields {
+			textField.backgroundColor = UIColor.TOLDColor.Red
+		}
+		
+		//Segmented controls
+		let buttons: [UISegmentedControl] = [rCR, CelciusVsFahrenheit, tempPlusOrMinus, wingSweep]
+		
+		for button in buttons {
+			button.tintColor = UIColor.TOLDColor.Detail
+			button.backgroundColor = UIColor.TOLDColor.ButtonBackground
+		}
     }
 }
 
