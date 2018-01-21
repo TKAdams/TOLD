@@ -72,8 +72,12 @@ class InputTableViewController: UITableViewController {
 	}
 
 	@IBAction func temperatureEditingDidEnd(_ sender: UITextField) {
+		if CelciusVsFahrenheit.selectedSegmentIndex == 1 {
+			validateField(tf: sender, min: -20.0, max: 120.0)
+		} else {
+			validateField(tf: sender, min: -28, max: 48)
+		}
 
-		validateField(tf: sender, min: -20.0, max: 120.0)
 		flight.temperature = flight.setTemperature(temp: sender.text!, cORf: CelciusVsFahrenheit.selectedSegmentIndex)
 		if tempPlusOrMinus.selectedSegmentIndex == 1 {
 			flight.temperature *= -1
@@ -100,17 +104,12 @@ class InputTableViewController: UITableViewController {
 		editingField(tf: sender)
 	}
 
-
-
 	@IBAction func fieldLengthEditingDidEnd(_ sender: UITextField) {
 
-		validateField(tf: sender, min: 9000, max: 20000)
-		if Int(sender.text!)! > 8000 {
-			flight.takeOffDistance = Double(sender.text!)!}
-		else {
-			sender.text="Invalid Entry"
-			sender.backgroundColor = UIColor.TOLDColor.Red
-		}
+		validateField(tf: sender, min: 8000, max: 13500)
+
+		flight.takeOffDistance = Double(sender.text!)!
+		
 		parentController.refresh()
 	}
 
@@ -151,6 +150,7 @@ class InputTableViewController: UITableViewController {
 		} else {
 			if (Double(tf.text!)! < min) || (Double(tf.text!)! > max) {
 				tf.backgroundColor = UIColor.TOLDColor.Yellow
+				tf.text = "0"
 			}
 		}
 	}
