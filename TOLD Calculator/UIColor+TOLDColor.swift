@@ -28,7 +28,8 @@ extension UIColor {
         static let Red = UIColor(red:0.65, green:0.30, blue:0.33, alpha:1.00)
         static let Yellow = UIColor(netHex: 0xFFFD24)
         static let CalcBackground = UIColor.init(red: 0.97, green: 0.90, blue: 0.67, alpha: 1.00)
-        static let Detail = UIColor(red:0.33, green:0.38, blue:0.66, alpha:1.00)
+//        static let Detail = UIColor(red:0.33, green:0.38, blue:0.66, alpha:1.00)
+		static let Detail = UIColor(red:0.14, green:0.15, blue:0.68, alpha:1.00)
 		static let ButtonBackground = UIColor(red:1.00, green:0.97, blue:0.84, alpha:1.00)
     }
 
