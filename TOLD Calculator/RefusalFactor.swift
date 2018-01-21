@@ -21,10 +21,12 @@ class RefusalFactor{
         refusalFactorTable = CSVReader.convertStringArrayToIntArray(stringData: csvStringRows)
         
     }
+	
+	// TODO: Review this function
     func getHighTOF (tOF:Double)-> Int{
         var index=0
         while Double(refusalFactorTable[0][index]) < tOF{
-            if(index < 17){
+            if(index < 15){
                 index+=1
             }
         }

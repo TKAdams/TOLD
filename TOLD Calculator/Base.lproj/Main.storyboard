@@ -346,6 +346,10 @@ Danger</string>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="grossWeightDidBeginEditing:" destination="Qyx-NA-6ZV" eventType="editingDidBegin" id="f30-d2-JaV"/>
+                                                        <action selector="grossWeightDidEndEditing:" destination="Qyx-NA-6ZV" eventType="editingDidEnd" id="0IH-dY-ZHY"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -407,6 +411,10 @@ Danger</string>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="temperatureEditingDidBegin:" destination="Qyx-NA-6ZV" eventType="editingDidBegin" id="aUt-4W-wch"/>
+                                                        <action selector="temperatureEditingDidEnd:" destination="Qyx-NA-6ZV" eventType="editingDidEnd" id="56M-sF-uIW"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -436,6 +444,10 @@ Danger</string>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="pressureAltitudeEditingDidBegin:" destination="Qyx-NA-6ZV" eventType="editingDidBegin" id="xbm-fX-NeI"/>
+                                                        <action selector="pressureAltitudeEditingDidEnd:" destination="Qyx-NA-6ZV" eventType="editingDidEnd" id="Cen-dt-01i"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pressure Altitude:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGh-h7-MtA">
                                                     <rect key="frame" x="16" y="6" width="175" height="32"/>
@@ -482,6 +494,10 @@ Danger</string>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="fieldLengthEditingDidBegin:" destination="Qyx-NA-6ZV" eventType="editingDidBegin" id="PGy-SU-iLn"/>
+                                                        <action selector="fieldLengthEditingDidEnd:" destination="Qyx-NA-6ZV" eventType="editingDidEnd" id="haR-D5-73g"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -521,6 +537,9 @@ Danger</string>
                                                         <segment title="26"/>
                                                     </segments>
                                                     <color key="tintColor" red="0.0075342161580920219" green="0.27251085638999939" blue="0.66157633066177368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="rCRValueChanged:" destination="Qyx-NA-6ZV" eventType="valueChanged" id="obD-5t-eI9"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -549,6 +568,9 @@ Danger</string>
                                                         <segment title="15 &amp; 20 S/S OFF"/>
                                                     </segments>
                                                     <color key="tintColor" red="0.0075342161580920219" green="0.27251085638999939" blue="0.66157633066177368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="wingSweepDidChange:" destination="Qyx-NA-6ZV" eventType="valueChanged" id="owL-hd-mxj"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>

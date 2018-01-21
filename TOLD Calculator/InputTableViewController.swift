@@ -29,11 +29,7 @@ class InputTableViewController: UITableViewController {
         super.viewDidLoad()
         print("Flight = \(flight)")
         stylize()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,58 +82,58 @@ class InputTableViewController: UITableViewController {
 		parentController.refresh()
 	}
 
-	//    @IBAction func pressureAltitudeEditingDidBegin(_ sender: UITextField) {
-	//
-	//        editingField(tf: sender)
-	//    }
-	//
-	//    @IBAction func pressureAltitudeEditingDidEnd(_ sender: UITextField) {
-	//
-	//        validateField(tf: sender, min: 0.0, max: 6000.0)
-	//        flight.pressureAltitude = Double(sender.text!)!
-	//
-	//        refresh()
-	//    }
-	//
-	//    @IBAction func fieldLengthEditingDidBegin(_ sender: UITextField) {
-	//
-	//        editingField(tf: sender)
-	//    }
-	//
-	//
-	//
-	//    @IBAction func fieldLengthEditingDidEnd(_ sender: UITextField) {
-	//
-	//        validateField(tf: sender, min: 9000, max: 20000)
-	//        if Int(sender.text!)! > 8000 {
-	//            flight.takeOffDistance = Double(sender.text!)!}
-	//        else {
-	//            sender.text="Invalid Entry"
-	//            sender.backgroundColor = UIColor.TOLDColor.Red
-	//        }
-	//        refresh()
-	//    }
-	//
-	//    @IBAction func rCRValueChanged(_ sender: UISegmentedControl) {
-	//        switch sender.selectedSegmentIndex {
-	//        case 0: flight.rCR = 0
-	//        case 1: flight.rCR = 1
-	//        case 2: flight.rCR = 2
-	//        default: flight.rCR = 2
-	//        }
-	//        refresh()
-	//    }
-	//
-	//    @IBAction func wingSweepDidChange(_ sender: UISegmentedControl){
-	//
-	//        switch sender.selectedSegmentIndex {
-	//        case 0: flight.wingSweep = true
-	//        case 1: flight.wingSweep = false
-	//        default: flight.wingSweep = true
-	//        }
-	//
-	//        refresh()
-	//    }
+	@IBAction func pressureAltitudeEditingDidBegin(_ sender: UITextField) {
+
+		editingField(tf: sender)
+	}
+
+	@IBAction func pressureAltitudeEditingDidEnd(_ sender: UITextField) {
+
+		validateField(tf: sender, min: 0.0, max: 6000.0)
+		flight.pressureAltitude = Double(sender.text!)!
+
+		parentController.refresh()
+	}
+
+	@IBAction func fieldLengthEditingDidBegin(_ sender: UITextField) {
+
+		editingField(tf: sender)
+	}
+
+
+
+	@IBAction func fieldLengthEditingDidEnd(_ sender: UITextField) {
+
+		validateField(tf: sender, min: 9000, max: 20000)
+		if Int(sender.text!)! > 8000 {
+			flight.takeOffDistance = Double(sender.text!)!}
+		else {
+			sender.text="Invalid Entry"
+			sender.backgroundColor = UIColor.TOLDColor.Red
+		}
+		parentController.refresh()
+	}
+
+	@IBAction func rCRValueChanged(_ sender: UISegmentedControl) {
+		switch sender.selectedSegmentIndex {
+		case 0: flight.rCR = 0
+		case 1: flight.rCR = 1
+		case 2: flight.rCR = 2
+		default: flight.rCR = 2
+		}
+		parentController.refresh()
+	}
+
+	@IBAction func wingSweepDidChange(_ sender: UISegmentedControl){
+
+		switch sender.selectedSegmentIndex {
+		case 0: flight.wingSweep = true
+		case 1: flight.wingSweep = false
+		default: flight.wingSweep = true
+		}
+
+		parentController.refresh()
+	}
 	
 	func editingField(tf: UITextField) {
 		if (tf.text == "0") || (tf.text == "Invalid Entry") {
