@@ -74,6 +74,10 @@ class InputTableViewController: UITableViewController {
         pressureAltitude.backgroundColor = UIColor.TOLDColor.Red
         fieldLength.backgroundColor = UIColor.TOLDColor.Red
         tableView.backgroundColor = UIColor.TOLDColor.CalcBackground
+        rCR.tintColor = UIColor.TOLDColor.Detail
+        CelciusVsFahrenheit.tintColor = UIColor.TOLDColor.Detail
+        tempPlusOrMinus.tintColor = UIColor.TOLDColor.Detail
+        wingSweep.tintColor = UIColor.TOLDColor.Detail
     }
 }
 
