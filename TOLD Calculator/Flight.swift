@@ -54,10 +54,11 @@ class Flight {
 //              rS.getLowTOF(tOF: tOF)
 //              rS.getLowGW(gWt:grossWeight)
             refusalSpeedFactor = rSF.getRefusalFactor(gWt: grossWeight, tOF: tOF)
-            if takeOffDistance > 8000{
+            if takeOffDistance != 0 {
                 refusalSpeed = rS.getRefusalSpeed(takeOffDistance: takeOffDistance, refusalFactor: refusalSpeedFactor)
                 decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
-            } //What is the best way to do this? It will fail if the tOF updates and takeoff Length is not set yet. So I made the if statement to be the lowest takeoff distance.
+            } //What is the best way to do this? It will fail if the tOF updates and takeoff Length is
+              //not set yet. So I made the if statement to be the lowest takeoff distance.//
             
         }
     }
