@@ -62,8 +62,7 @@ class InputTableViewController: UITableViewController {
 	@IBAction func grossWeightDidEndEditing(_ sender: UITextField) {
 		validateField(tf: sender, min: 210.0, max: 420.0)
 		flight.grossWeight = Double(sender.text!)!
-
-		parentController.refresh()
+		calculate()
 	}
 
 	@IBAction func temperatureEditingDidBegin(_ sender: UITextField) {
@@ -82,8 +81,7 @@ class InputTableViewController: UITableViewController {
 		if tempPlusOrMinus.selectedSegmentIndex == 1 {
 			flight.temperature *= -1
 		}
-
-		parentController.refresh()
+		calculate()
 	}
 
 	@IBAction func pressureAltitudeEditingDidBegin(_ sender: UITextField) {
@@ -95,8 +93,7 @@ class InputTableViewController: UITableViewController {
 
 		validateField(tf: sender, min: 0.0, max: 6000.0)
 		flight.pressureAltitude = Double(sender.text!)!
-
-		parentController.refresh()
+		calculate()
 	}
 
 	@IBAction func fieldLengthEditingDidBegin(_ sender: UITextField) {
@@ -107,10 +104,8 @@ class InputTableViewController: UITableViewController {
 	@IBAction func fieldLengthEditingDidEnd(_ sender: UITextField) {
 
 		validateField(tf: sender, min: 8000, max: 13500)
-
-		flight.takeOffDistance = Double(sender.text!)!
-		
-		parentController.refresh()
+		flight.fieldLength = Double(sender.text!)!
+		calculate()
 	}
 
 	@IBAction func rCRValueChanged(_ sender: UISegmentedControl) {
@@ -120,7 +115,7 @@ class InputTableViewController: UITableViewController {
 		case 2: flight.rCR = 2
 		default: flight.rCR = 2
 		}
-		parentController.refresh()
+		calculate()
 	}
 
 	@IBAction func wingSweepDidChange(_ sender: UISegmentedControl){
@@ -130,8 +125,7 @@ class InputTableViewController: UITableViewController {
 		case 1: flight.wingSweep = false
 		default: flight.wingSweep = true
 		}
-
-		parentController.refresh()
+		calculate()
 	}
 	
 	func editingField(tf: UITextField) {
@@ -150,8 +144,19 @@ class InputTableViewController: UITableViewController {
 		} else {
 			if (Double(tf.text!)! < min) || (Double(tf.text!)! > max) {
 				tf.backgroundColor = UIColor.TOLDColor.Yellow
-				tf.text = "0"
 			}
+		}
+	}
+	
+	func calculate() {
+		//Trigger a calculation if all four fields validate. Here fields without a
+		//a background color have already been validated.
+		if grossWeight.backgroundColor == nil && temperature.backgroundColor == nil &&
+			pressureAltitude.backgroundColor == nil && fieldLength.backgroundColor == nil {
+			
+			//If calculations made...show the results
+			flight.process()
+			parentController.refresh()
 		}
 	}
 

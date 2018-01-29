@@ -17,51 +17,56 @@ class Flight {
     var rS: RefusalSpeed = RefusalSpeed()
     var rSCorr: RSCorrection = RSCorrection()
     
-    var grossWeight: Double = 0.0 {
-        didSet {
-            updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
-            takeoffSpeed = speedTable.getTOSpeed(wingSweep: wingSweep, grossWeight: grossWeight)
-            rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
-            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
-        }
-    }
-    var wingSweep: Bool = true {//wing sweep true = 15 WS or 20 WS, wing sweep false = 20 WS SEF/SIS OFF
-        didSet{
-            takeoffSpeed = speedTable.getTOSpeed(wingSweep: wingSweep, grossWeight: grossWeight)
-            rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
-            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
-            updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
-        }
-    }
+    var grossWeight: Double = 0.0
+//	{
+//        didSet {
+//            updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
+//            takeoffSpeed = speedTable.getTOSpeed(wingSweep: wingSweep, grossWeight: grossWeight)
+//            rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
+//            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+//        }
+//    }
+    var wingSweep: Bool = true //wing sweep true = 15 WS or 20 WS, wing sweep false = 20 WS SEF/SIS OFF
+//	{
+//        didSet{
+//            takeoffSpeed = speedTable.getTOSpeed(wingSweep: wingSweep, grossWeight: grossWeight)
+//            rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
+//            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+//            updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
+//        }
+//    }
     var fieldLength: Double = 0.0
     
-    var pressureAltitude: Double = 0.0 {
-        didSet {
-            tOF = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
-        }
-    }
-    var temperature: Double = 0.0  { //temperature in ºF
-        didSet {
-            tOF = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
-        }
-    }
+    var pressureAltitude: Double = 0.0
+//	{
+//        didSet {
+//            tOF = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
+//        }
+//    }
+    var temperature: Double = 0.0 //temperature in ºF
+//	{
+//        didSet {
+//            tOF = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
+//        }
+//    }
 
     
-    var tOF: Double = 0.0 {
-        didSet {
-            updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
-//            Test:Remove when code implemented
-//              rS.getLowTOF(tOF: tOF)
-//              rS.getLowGW(gWt:grossWeight)
-            refusalSpeedFactor = rSF.getRefusalFactor(gWt: grossWeight, tOF: tOF)
-            if takeOffDistance > 8000{
-                refusalSpeed = rS.getRefusalSpeed(takeOffDistance: takeOffDistance, refusalFactor: refusalSpeedFactor)
-                decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
-            } //What is the best way to do this? It will fail if the tOF updates and takeoff Length is not set yet. So I made the if statement to be the lowest takeoff distance.
-            
-        }
-    }
-    
+    var tOF: Double = 0.0
+//	{
+//        didSet {
+//            updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
+////            Test:Remove when code implemented
+////              rS.getLowTOF(tOF: tOF)
+////              rS.getLowGW(gWt:grossWeight)
+//            refusalSpeedFactor = rSF.getRefusalFactor(gWt: grossWeight, tOF: tOF)
+//            if takeOffDistance > 8000{
+//                refusalSpeed = rS.getRefusalSpeed(takeOffDistance: takeOffDistance, refusalFactor: refusalSpeedFactor)
+//                decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+//            } //What is the best way to do this? It will fail if the tOF updates and takeoff Length is not set yet. So I made the if statement to be the lowest takeoff distance.
+//
+//        }
+//    }
+	
 
     var unCorrRefusalSpeed: Double = 0.0
     var refusalSpeed: Double = 0.0
@@ -76,23 +81,47 @@ class Flight {
     var refusalSpeedFactor: Double = 0.0
 
     
-    var takeOffDistance: Double = 0.0{
-        didSet{
-            unCorrRefusalSpeed = rS.getRefusalSpeed(takeOffDistance: takeOffDistance, refusalFactor: refusalSpeedFactor)
-            refusalSpeed = rSCorr.updateRS(refusalSpeed: unCorrRefusalSpeed, rCR: rCR)
-            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
-        }
-    }
-    
-    var rCR: Int = 2{
-        didSet{
-            if takeOffDistance > 8000{                                            //Best Way?
-            refusalSpeed = rSCorr.updateRS(refusalSpeed: unCorrRefusalSpeed, rCR: rCR)
-            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
-            updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
-            }
-        }
-    }
+    var takeOffDistance: Double = 0.0
+//	{
+//        didSet{
+//            unCorrRefusalSpeed = rS.getRefusalSpeed(takeOffDistance: takeOffDistance, refusalFactor: refusalSpeedFactor)
+//            refusalSpeed = rSCorr.updateRS(refusalSpeed: unCorrRefusalSpeed, rCR: rCR)
+//            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+//        }
+//    }
+	
+    var rCR: Int = 2
+//	{
+//        didSet{
+//            if takeOffDistance > 8000{                                            //Best Way?
+//            refusalSpeed = rSCorr.updateRS(refusalSpeed: unCorrRefusalSpeed, rCR: rCR)
+//            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+//            updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
+//            }
+//        }
+//    }
+	
+	func process() {
+		//only conduct the processing if inputs are within the table limits.
+		//This should never be triggered unless everything is validated, but will double check.
+		if grossWeight >= 210 && grossWeight <= 420 &&
+			temperature  >= -20 && temperature <= 120 &&
+			pressureAltitude >= 0 && pressureAltitude <= 6000 &&
+			fieldLength >= 8000 && fieldLength <= 13500 {
+			
+			tOF = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
+			updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
+			takeoffSpeed = speedTable.getTOSpeed(wingSweep: wingSweep, grossWeight: grossWeight)
+			rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
+			decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+			refusalSpeedFactor = rSF.getRefusalFactor(gWt: grossWeight, tOF: tOF)
+			refusalSpeed = rS.getRefusalSpeed(takeOffDistance: takeOffDistance, refusalFactor: refusalSpeedFactor)
+			decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+			unCorrRefusalSpeed = rS.getRefusalSpeed(takeOffDistance: takeOffDistance, refusalFactor: refusalSpeedFactor)
+			
+		}
+		
+	}
     
     func setTemperature (temp: String, cORf: Int) -> Double {
 
@@ -122,8 +151,8 @@ class Flight {
         
         //Calculate Percent deltas
         
-        var perDeltaGWT: Double = percentDeltaGWT(gwt: gwt)
-        var perDeltaTOF: Double = percentDeltaTOF(tof: tof)
+        let perDeltaGWT: Double = percentDeltaGWT(gwt: gwt)
+        let perDeltaTOF: Double = percentDeltaTOF(tof: tof)
         
         threeEngineClimb = threeEngineClimb(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
         twoEngineClimb = twoEngineClimb(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)

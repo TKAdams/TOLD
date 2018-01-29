@@ -21,6 +21,7 @@ class RefusalSpeed{
         
         
     }
+	
     func getHighRW (takeOffDistance:Double)-> Int{
         var index=0
         while Double(refusalSpeedTable[0][index]) < takeOffDistance {
