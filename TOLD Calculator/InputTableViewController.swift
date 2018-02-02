@@ -28,8 +28,11 @@ class InputTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Flight = \(flight)")
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        gestureRecognizer.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(gestureRecognizer)
+        parentController.view.addGestureRecognizer(gestureRecognizer)
         stylize()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -147,10 +150,23 @@ class InputTableViewController: UITableViewController {
 			}
 		}
 	}
+    
+    @objc func hideKeyboard(_gestureRecognizer: UITapGestureRecognizer) {
+        if grossWeight.isFirstResponder {
+            grossWeight.resignFirstResponder()
+        } else if temperature.isFirstResponder {
+            temperature.resignFirstResponder()
+        } else if pressureAltitude.isFirstResponder {
+            pressureAltitude.resignFirstResponder()
+        } else if fieldLength.isFirstResponder {
+            fieldLength.resignFirstResponder()
+        }
+    }
 	
 	func calculate() {
 		//Trigger a calculation if all four fields validate. Here fields without a
 		//a background color have already been validated.
+
 		if grossWeight.backgroundColor == nil && temperature.backgroundColor == nil &&
 			pressureAltitude.backgroundColor == nil && fieldLength.backgroundColor == nil {
 			
