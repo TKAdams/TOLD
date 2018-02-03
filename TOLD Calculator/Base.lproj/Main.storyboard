@@ -22,9 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="th6-ah-fsw">
-                                <rect key="frame" x="16" y="64" width="288" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="th6-ah-fsw">
+                                <rect key="frame" x="17" y="64" width="286" height="55"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="TOLD Calculator">
@@ -40,18 +39,6 @@
                                     <segue destination="Eso-Ma-QJq" kind="show" id="cbi-ww-Zfh"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p5s-02-Zq0">
-                                <rect key="frame" x="16" y="64" width="288" height="51.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="TOLD Calculator">
-                                        <attributes>
-                                            <font key="NSFont" size="43" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="NB1-SE-vfy">
                                 <rect key="frame" x="16" y="384" width="288" height="176"/>
                                 <subviews>
@@ -261,7 +248,7 @@ Danger</string>
                                 </constraints>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyg-fQ-FGS">
-                                <rect key="frame" x="0.0" y="123" width="320" height="253"/>
+                                <rect key="frame" x="0.0" y="119" width="320" height="257"/>
                                 <connections>
                                     <segue destination="Qyx-NA-6ZV" kind="embed" identifier="EmbedInput" id="4LE-pd-5pd"/>
                                 </connections>
@@ -272,12 +259,11 @@ Danger</string>
                             <constraint firstAttribute="trailingMargin" secondItem="NB1-SE-vfy" secondAttribute="trailing" id="8VW-ms-Fvi"/>
                             <constraint firstItem="NB1-SE-vfy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JfL-ed-ihb"/>
                             <constraint firstItem="tyg-fQ-FGS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nl3-Gh-my4"/>
-                            <constraint firstItem="p5s-02-Zq0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="VPS-aE-DIl"/>
-                            <constraint firstItem="p5s-02-Zq0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Y25-Tu-5Cw"/>
-                            <constraint firstItem="p5s-02-Zq0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aUx-3b-q4F"/>
+                            <constraint firstItem="tyg-fQ-FGS" firstAttribute="top" secondItem="th6-ah-fsw" secondAttribute="bottom" id="SEf-8i-AcK"/>
                             <constraint firstItem="NB1-SE-vfy" firstAttribute="top" secondItem="tyg-fQ-FGS" secondAttribute="bottom" constant="8" symbolic="YES" id="b6s-Tz-dkX"/>
                             <constraint firstItem="tyg-fQ-FGS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g5d-vb-Vlr"/>
-                            <constraint firstItem="tyg-fQ-FGS" firstAttribute="top" secondItem="p5s-02-Zq0" secondAttribute="bottom" constant="8" symbolic="YES" id="na0-UD-osO"/>
+                            <constraint firstItem="th6-ah-fsw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oOV-bl-UmJ"/>
+                            <constraint firstItem="th6-ah-fsw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sPE-6q-7tW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NB1-SE-vfy" secondAttribute="bottom" constant="8" symbolic="YES" id="vKZ-qA-6ok"/>
                         </constraints>
                     </view>
@@ -331,7 +317,7 @@ Danger</string>
             <objects>
                 <tableViewController id="Qyx-NA-6ZV" customClass="InputTableViewController" customModule="TOLD_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OUD-WJ-ZLg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="253"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="257"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.87083333330000001" green="0.0" blue="0.032594458069999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="1" green="0.79607843140000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
