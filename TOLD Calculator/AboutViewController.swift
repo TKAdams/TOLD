@@ -9,6 +9,8 @@
 import UIKit
 
 class AboutViewController: UIViewController {
+	
+	//This will control the about page.
 
     override func viewDidLoad() {
         super.viewDidLoad()
