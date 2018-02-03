@@ -131,6 +131,8 @@ class InputTableViewController: UITableViewController {
 		calculate()
 	}
 	
+	//MARK: - General field functions
+	
 	func editingField(tf: UITextField) {
 		if (tf.text == "0") || (tf.text == "Invalid Entry") {
 			tf.text = ""
@@ -147,6 +149,7 @@ class InputTableViewController: UITableViewController {
 		} else {
 			if (Double(tf.text!)! < min) || (Double(tf.text!)! > max) {
 				tf.backgroundColor = UIColor.TOLDColor.Yellow
+				hudWarning()
 			}
 		}
 	}
@@ -174,6 +177,17 @@ class InputTableViewController: UITableViewController {
 			flight.process()
 			parentController.refresh()
 		}
+	}
+	
+	func hudWarning() {
+		let hudView = HUDView.hud(inView: navigationController!.view, animated: true)
+		hudView.text = "Warning"
+		
+		let delayInSeconds = 0.6
+		DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds,
+			execute: {
+			hudView.hide()
+			})
 	}
 
     /*

@@ -23,6 +23,7 @@
 		D392307E20103B6700EF75D9 /* InputTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D392307D20103B6700EF75D9 /* InputTableViewController.swift */; };
 		D3AEA83D1F0F355E0052F7F7 /* TakeoffFactor2.csv in Resources */ = {isa = PBXBuildFile; fileRef = D3AEA83C1F0F355E0052F7F7 /* TakeoffFactor2.csv */; };
 		D3DB91001F0C82F600CEF54E /* TakeoffFactor.csv in Resources */ = {isa = PBXBuildFile; fileRef = D3DB90FF1F0C82F600CEF54E /* TakeoffFactor.csv */; };
+		D3DBA7DD202669F6001BD681 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBA7DC202669F6001BD681 /* HUDView.swift */; };
 		D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C151F08917800D71A01 /* AppDelegate.swift */; };
 		D3F23C1B1F08917800D71A01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F23C191F08917800D71A01 /* Main.storyboard */; };
 		D3F23C1E1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3F23C1C1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld */; };
@@ -72,6 +73,7 @@
 		D392307D20103B6700EF75D9 /* InputTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewController.swift; sourceTree = "<group>"; };
 		D3AEA83C1F0F355E0052F7F7 /* TakeoffFactor2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TakeoffFactor2.csv; path = Resources/TakeoffFactor2.csv; sourceTree = SOURCE_ROOT; };
 		D3DB90FF1F0C82F600CEF54E /* TakeoffFactor.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TakeoffFactor.csv; path = Resources/TakeoffFactor.csv; sourceTree = SOURCE_ROOT; };
+		D3DBA7DC202669F6001BD681 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		D3F23C121F08917800D71A01 /* TOLD Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TOLD Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F23C151F08917800D71A01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3F23C1A1F08917800D71A01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		D3F23C491F0891C400D71A01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D3DBA7DC202669F6001BD681 /* HUDView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				CED95C201F2E8BCA00CA828F /* RSCorrection.swift in Sources */,
 				CED95C1A1F2DBCE400CA828F /* RefusalSpeed.swift in Sources */,
 				D30FCFEE2026284E007B6E2E /* AboutViewController.swift in Sources */,
+				D3DBA7DD202669F6001BD681 /* HUDView.swift in Sources */,
 				D3F23C621F09FEEB00D71A01 /* TakeoffFactors.swift in Sources */,
 				CE4D22B71F20477500C61443 /* RefusalFactor.swift in Sources */,
 				D3F23C4C1F08922300D71A01 /* TOLDViewController.swift in Sources */,
