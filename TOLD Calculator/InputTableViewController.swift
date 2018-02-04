@@ -183,7 +183,7 @@ class InputTableViewController: UITableViewController {
 		let hudView = HUDView.hud(inView: navigationController!.view, animated: true)
 		hudView.text = "Warning"
 		
-		let delayInSeconds = 0.6
+		let delayInSeconds = 1.0
 		DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds,
 			execute: {
 			hudView.hide()

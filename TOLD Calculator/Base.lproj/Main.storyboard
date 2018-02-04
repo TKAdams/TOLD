@@ -618,12 +618,21 @@ Danger</string>
                     <view key="view" contentMode="scaleToFill" id="eo3-hU-p4O">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Warning" translatesAutoresizingMaskIntoConstraints="NO" id="viB-6v-BV1">
+                                <rect key="frame" x="16" y="72" width="288" height="346"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9IL-ZT-v9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1658" y="37"/>
+            <point key="canvasLocation" x="1657.5" y="36.971830985915496"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Warning" width="48" height="44"/>
+    </resources>
 </document>

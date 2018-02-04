@@ -25,8 +25,8 @@ class HUDView: UIView {
 	}
 
 	override func draw(_ rect: CGRect) {
-		let boxWidth: CGFloat = 96
-		let boxHeight: CGFloat = 96
+		let boxWidth: CGFloat = 120
+		let boxHeight: CGFloat = 120
 		
 		let boxRect = CGRect(
 			x: round((bounds.size.width - boxWidth) / 2),
@@ -36,8 +36,36 @@ class HUDView: UIView {
 		
 		let roundedRect = UIBezierPath(roundedRect: boxRect, cornerRadius: 10)
 		
-		UIColor(white: 0.3, alpha: 0.8).setFill()
+//        UIColor(white: 0.3, alpha: 0.9).setFill()
+        UIColor.TOLDColor.Warning.setFill()
 		roundedRect.fill()
+        
+        // Draw warning symbol
+        if let image = UIImage(named: "Warning") {
+            let imagePoint = CGPoint(
+                x: center.x - round(image.size.width / 2),
+                y: center.y - round(image.size.height / 2) - boxHeight / 8)
+            image.draw(at: imagePoint)
+        }
+        
+        // Draw warning text
+//        let attribs = [
+//            NSAttributedStringKey.font.rawvalue: UIFont.systemFont(ofSize: 16),
+//            NSAttributedStringKey.foregroundColor.rawvalue: UIColor.white ] as [String: Any]
+        let attribs = [
+            NSForegroundColorAttributeName: UIColor.yellow,
+            NSFontAttributeName: UIFont.boldSystemFont(ofSize: 16),
+            ]
+
+        text = "Out of range!"
+        
+        let textSize = text.size(attributes: attribs)
+
+        let textPoint = CGPoint(
+            x: center.x - round(textSize.width / 2),
+            y: center.y - round(textSize.height / 2) + boxHeight / 4)
+
+        text.draw(at: textPoint, withAttributes: attribs)
 	}
 	
 	// MARK:- Public methods

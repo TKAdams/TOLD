@@ -26,6 +26,7 @@ extension UIColor {
         static let Gold = UIColor(netHex: 0xFFCB39)
         static let Blue = UIColor(netHex: 0x034AA6)
         static let Red = UIColor(red:0.65, green:0.30, blue:0.33, alpha:1.00)
+        static let Warning = UIColor(red:0.65, green:0.30, blue:0.33, alpha:0.9)
         static let Yellow = UIColor(netHex: 0xFFFD24)
         static let CalcBackground = UIColor.init(red: 0.97, green: 0.90, blue: 0.67, alpha: 1.00)
 //        static let Detail = UIColor(red:0.33, green:0.38, blue:0.66, alpha:1.00)
