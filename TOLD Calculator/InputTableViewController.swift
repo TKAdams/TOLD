@@ -87,6 +87,16 @@ class InputTableViewController: UITableViewController {
 		calculate()
 	}
 
+    @IBAction func temperatureUnitsDidChange(_ sender: UISegmentedControl) {
+        if CelciusVsFahrenheit.selectedSegmentIndex == 1 {
+            validateField(tf: temperature, min: -20.0, max: 120.0)
+            temperature.backgroundColor = nil
+        } else {
+            validateField(tf: temperature, min: -28, max: 48)
+        }
+        calculate()
+    }
+    
 	@IBAction func pressureAltitudeEditingDidBegin(_ sender: UITextField) {
 
 		editingField(tf: sender)
