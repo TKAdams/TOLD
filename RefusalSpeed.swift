@@ -22,9 +22,9 @@ class RefusalSpeed{
         
     }
 	
-    func getHighRW (takeOffDistance:Double)-> Int{
-        var index=1
-        while Double(refusalSpeedTable[0][index]) < takeOffDistance {
+    func getHighRW (availableRunway: Double)-> Int{
+        var index = 1
+        while Double(refusalSpeedTable[0][index]) < availableRunway {
             if(index < 14){
                 index+=1
             }
@@ -34,7 +34,7 @@ class RefusalSpeed{
     }
     
     func getHighRF (refusalFactor:Double) -> Int{
-        var index = 0
+        var index = 1
         while Double(refusalSpeedTable[index][0]) < refusalFactor {
             if index < 22 {
                 index += 1
@@ -44,13 +44,13 @@ class RefusalSpeed{
         return index
     }
     
-    func getRefusalSpeed(takeOffDistance: Double, refusalFactor:Double)->Double{
+    func getRefusalSpeed(availableRunway: Double, refusalFactor:Double)->Double{
         var i:Int = 0
         var j:Int = 0
         var refusalSpeed:Double = 0.0
         
         i=getHighRF(refusalFactor: refusalFactor)
-        j=getHighRW(takeOffDistance: takeOffDistance)
+        j=getHighRW(availableRunway: availableRunway)
        
         
         let a = Double(refusalSpeedTable[i-1][j-1]) //Low GW and Low TOF
@@ -58,24 +58,29 @@ class RefusalSpeed{
         let c = Double(refusalSpeedTable[i][j-1])   //High GW and Low TOF
         let d = Double(refusalSpeedTable[i][j])     //Low GW and Low TOF
         
-//        print ("a=\(a) b=\(b) c=\(c) d=\(d)")
+        print ("a=\(a) b=\(b) c=\(c) d=\(d)")
         
         let rSFHigh = Double(refusalSpeedTable[i][0])     //High GW
         let rSFLow = Double(refusalSpeedTable[i-1][0])    //Low GW
         let rWHigh = Double(refusalSpeedTable[0][j])    //High TOF
         let rWLow = Double(refusalSpeedTable[0][j-1])   //Low TOF
         
-//        print("rWHigh = \(rWHigh) rWLow = \(rWLow) rsFHigh = \(rSFHigh) rsFLow = \(rSFLow)")
+        print("rWHigh = \(rWHigh) rWLow = \(rWLow) rsFHigh = \(rSFHigh) rsFLow = \(rSFLow)")
         
-        let perDiffRW = ((takeOffDistance-rWLow)/(rWHigh-rWLow))     //The percent diff for GW
-        let perDiffRSF = ((refusalFactor-rSFLow)/(rSFHigh-rSFLow)) //The percent diff for TOF
+        let perDiffRW = ((availableRunway-rWLow)/(rWHigh-rWLow))     //The percent diff for RW
+        let perDiffRSF = ((refusalFactor-rSFLow)/(rSFHigh-rSFLow)) //The percent diff for RSF
         
 //        print("perDiffRW = \(perDiffGW) perDiffTOF = \(perDiffTOF)")
         
-        let rWIntLow = (perDiffRSF * (a - b)) + b
-        let rWIntHigh = (perDiffRSF * (c - d)) + d
+//        let rWIntLow = (perDiffRSF * (a - b)) + b
+//        let rWIntHigh = (perDiffRSF * (c - d)) + d
+//
+//        refusalSpeed = (perDiffRW * (rWIntHigh - rWIntLow)) + rWIntLow
         
-        refusalSpeed = (perDiffRW * (rWIntHigh - rWIntLow)) + rWIntLow
+        let ac = (perDiffRSF * (c - a)) + a
+        let bd = (perDiffRSF * (d - b)) + b
+        
+        refusalSpeed = (perDiffRW * (bd - ac)) + ac
         
         print("refusal Speed is \(refusalSpeed)")
         
