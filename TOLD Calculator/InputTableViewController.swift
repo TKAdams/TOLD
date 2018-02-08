@@ -87,6 +87,20 @@ class InputTableViewController: UITableViewController {
 		calculate()
 	}
 
+    @IBAction func temperatureUnitsDidChange(_ sender: UISegmentedControl) {
+        if CelciusVsFahrenheit.selectedSegmentIndex == 1 {
+            validateField(tf: temperature, min: -20.0, max: 120.0)
+            temperature.backgroundColor = nil
+        } else {
+            validateField(tf: temperature, min: -28, max: 48)
+        }
+        flight.temperature = flight.setTemperature(temp: temperature.text!, cORf: CelciusVsFahrenheit.selectedSegmentIndex)
+        if tempPlusOrMinus.selectedSegmentIndex == 1 {
+            flight.temperature *= -1
+        }
+        calculate()
+    }
+    
 	@IBAction func pressureAltitudeEditingDidBegin(_ sender: UITextField) {
 
 		editingField(tf: sender)
@@ -107,7 +121,7 @@ class InputTableViewController: UITableViewController {
 	@IBAction func fieldLengthEditingDidEnd(_ sender: UITextField) {
 
 		validateField(tf: sender, min: 8000, max: 13500)
-		flight.fieldLength = Double(sender.text!)!
+		flight.availableRunway = Double(sender.text!)!
 		calculate()
 	}
 
