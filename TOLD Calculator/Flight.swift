@@ -36,6 +36,9 @@ class Flight {
     var brakeDanger: Double = 0.0
     var cFL: Double = 0.0
     var refusalSpeedFactor: Double = 0.0
+
+    var tOR: Double = 0.0
+
     var takeOffDistance: Double = 0.0
     var rCR: Int = 2
 
@@ -97,6 +100,7 @@ class Flight {
         brakeCaution = brakeCaution(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
         brakeDanger = brakeDanger(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
         cFL = cfl(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, rcr: rCR, wingsweep: wingSweep)
+        tOR = getTOR(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, wingSweep: wingSweep)
     }
     
     func findUpperGWTIndex (gwt: Double) -> Int {
@@ -307,5 +311,24 @@ class Flight {
             decisionSpeed = refusalSpeed
         }
         return decisionSpeed
+    }
+    
+    func getTOR (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double, wingSweep: Bool) -> Double {
+        var tOR = 0.0
+        var OutputIndex = 0
+        
+        if wingSweep == true {
+            OutputIndex = TOLDOutput.TORNorm.rawValue
+        }
+        else{
+            OutputIndex = TOLDOutput.TOROff.rawValue
+        }
+
+        tOR = interpolateIFG(gwtUpperIndex: gwtUpperIndex, TOFUpperIndex: TOFUpperIndex, deltaGWT: deltaGWT, deltaTOF: deltaTOF, outputIndex: OutputIndex)
+        
+        print("takeoff Roll is = \(tOR)")
+        
+        return tOR
+      
     }
 }
