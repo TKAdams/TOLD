@@ -28,8 +28,11 @@ class InputTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Flight = \(flight)")
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        gestureRecognizer.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(gestureRecognizer)
+        parentController.view.addGestureRecognizer(gestureRecognizer)
         stylize()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,8 +65,7 @@ class InputTableViewController: UITableViewController {
 	@IBAction func grossWeightDidEndEditing(_ sender: UITextField) {
 		validateField(tf: sender, min: 210.0, max: 420.0)
 		flight.grossWeight = Double(sender.text!)!
-
-		parentController.refresh()
+		calculate()
 	}
 
 	@IBAction func temperatureEditingDidBegin(_ sender: UITextField) {
@@ -82,10 +84,23 @@ class InputTableViewController: UITableViewController {
 		if tempPlusOrMinus.selectedSegmentIndex == 1 {
 			flight.temperature *= -1
 		}
-
-		parentController.refresh()
+		calculate()
 	}
 
+    @IBAction func temperatureUnitsDidChange(_ sender: UISegmentedControl) {
+        if CelciusVsFahrenheit.selectedSegmentIndex == 1 {
+            validateField(tf: temperature, min: -20.0, max: 120.0)
+            temperature.backgroundColor = nil
+        } else {
+            validateField(tf: temperature, min: -28, max: 48)
+        }
+        flight.temperature = flight.setTemperature(temp: temperature.text!, cORf: CelciusVsFahrenheit.selectedSegmentIndex)
+        if tempPlusOrMinus.selectedSegmentIndex == 1 {
+            flight.temperature *= -1
+        }
+        calculate()
+    }
+    
 	@IBAction func pressureAltitudeEditingDidBegin(_ sender: UITextField) {
 
 		editingField(tf: sender)
@@ -95,8 +110,7 @@ class InputTableViewController: UITableViewController {
 
 		validateField(tf: sender, min: 0.0, max: 6000.0)
 		flight.pressureAltitude = Double(sender.text!)!
-
-		parentController.refresh()
+		calculate()
 	}
 
 	@IBAction func fieldLengthEditingDidBegin(_ sender: UITextField) {
@@ -107,10 +121,8 @@ class InputTableViewController: UITableViewController {
 	@IBAction func fieldLengthEditingDidEnd(_ sender: UITextField) {
 
 		validateField(tf: sender, min: 8000, max: 13500)
-
-		flight.takeOffDistance = Double(sender.text!)!
-		
-		parentController.refresh()
+		flight.availableRunway = Double(sender.text!)!
+		calculate()
 	}
 
 	@IBAction func rCRValueChanged(_ sender: UISegmentedControl) {
@@ -120,7 +132,7 @@ class InputTableViewController: UITableViewController {
 		case 2: flight.rCR = 2
 		default: flight.rCR = 2
 		}
-		parentController.refresh()
+		calculate()
 	}
 
 	@IBAction func wingSweepDidChange(_ sender: UISegmentedControl){
@@ -130,9 +142,10 @@ class InputTableViewController: UITableViewController {
 		case 1: flight.wingSweep = false
 		default: flight.wingSweep = true
 		}
-
-		parentController.refresh()
+		calculate()
 	}
+	
+	//MARK: - General field functions
 	
 	func editingField(tf: UITextField) {
 		if (tf.text == "0") || (tf.text == "Invalid Entry") {
@@ -150,9 +163,45 @@ class InputTableViewController: UITableViewController {
 		} else {
 			if (Double(tf.text!)! < min) || (Double(tf.text!)! > max) {
 				tf.backgroundColor = UIColor.TOLDColor.Yellow
-				tf.text = "0"
+				hudWarning()
 			}
 		}
+	}
+    
+    @objc func hideKeyboard(_gestureRecognizer: UITapGestureRecognizer) {
+        if grossWeight.isFirstResponder {
+            grossWeight.resignFirstResponder()
+        } else if temperature.isFirstResponder {
+            temperature.resignFirstResponder()
+        } else if pressureAltitude.isFirstResponder {
+            pressureAltitude.resignFirstResponder()
+        } else if fieldLength.isFirstResponder {
+            fieldLength.resignFirstResponder()
+        }
+    }
+	
+	func calculate() {
+		//Trigger a calculation if all four fields validate. Here fields without a
+		//a background color have already been validated.
+
+		if grossWeight.backgroundColor == nil && temperature.backgroundColor == nil &&
+			pressureAltitude.backgroundColor == nil && fieldLength.backgroundColor == nil {
+			
+			//If calculations made...show the results
+			flight.process()
+			parentController.refresh()
+		}
+	}
+	
+	func hudWarning() {
+		let hudView = HUDView.hud(inView: navigationController!.view, animated: true)
+		hudView.text = "Warning"
+		
+		let delayInSeconds = 1.0
+		DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds,
+			execute: {
+			hudView.hide()
+			})
 	}
 
     /*

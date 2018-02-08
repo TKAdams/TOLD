@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uD1-xf-6hA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uD1-xf-6hA">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,18 +22,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p5s-02-Zq0">
-                                <rect key="frame" x="16" y="64" width="288" height="51.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="TOLD Calculator">
-                                        <attributes>
-                                            <font key="NSFont" size="43" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="th6-ah-fsw">
+                                <rect key="frame" x="17" y="64" width="286" height="55"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="TOLD Calculator">
+                                            <attributes>
+                                                <font key="NSFont" size="36" name="HelveticaNeue-Bold"/>
+                                                <font key="NSOriginalFont" size="36" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="Eso-Ma-QJq" kind="show" id="cbi-ww-Zfh"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="NB1-SE-vfy">
                                 <rect key="frame" x="16" y="384" width="288" height="176"/>
                                 <subviews>
@@ -243,7 +248,7 @@ Danger</string>
                                 </constraints>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyg-fQ-FGS">
-                                <rect key="frame" x="0.0" y="123" width="320" height="253"/>
+                                <rect key="frame" x="0.0" y="119" width="320" height="257"/>
                                 <connections>
                                     <segue destination="Qyx-NA-6ZV" kind="embed" identifier="EmbedInput" id="4LE-pd-5pd"/>
                                 </connections>
@@ -254,12 +259,11 @@ Danger</string>
                             <constraint firstAttribute="trailingMargin" secondItem="NB1-SE-vfy" secondAttribute="trailing" id="8VW-ms-Fvi"/>
                             <constraint firstItem="NB1-SE-vfy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JfL-ed-ihb"/>
                             <constraint firstItem="tyg-fQ-FGS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nl3-Gh-my4"/>
-                            <constraint firstItem="p5s-02-Zq0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="VPS-aE-DIl"/>
-                            <constraint firstItem="p5s-02-Zq0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Y25-Tu-5Cw"/>
-                            <constraint firstItem="p5s-02-Zq0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aUx-3b-q4F"/>
+                            <constraint firstItem="tyg-fQ-FGS" firstAttribute="top" secondItem="th6-ah-fsw" secondAttribute="bottom" id="SEf-8i-AcK"/>
                             <constraint firstItem="NB1-SE-vfy" firstAttribute="top" secondItem="tyg-fQ-FGS" secondAttribute="bottom" constant="8" symbolic="YES" id="b6s-Tz-dkX"/>
                             <constraint firstItem="tyg-fQ-FGS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g5d-vb-Vlr"/>
-                            <constraint firstItem="tyg-fQ-FGS" firstAttribute="top" secondItem="p5s-02-Zq0" secondAttribute="bottom" constant="8" symbolic="YES" id="na0-UD-osO"/>
+                            <constraint firstItem="th6-ah-fsw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oOV-bl-UmJ"/>
+                            <constraint firstItem="th6-ah-fsw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sPE-6q-7tW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NB1-SE-vfy" secondAttribute="bottom" constant="8" symbolic="YES" id="vKZ-qA-6ok"/>
                         </constraints>
                     </view>
@@ -313,7 +317,7 @@ Danger</string>
             <objects>
                 <tableViewController id="Qyx-NA-6ZV" customClass="InputTableViewController" customModule="TOLD_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OUD-WJ-ZLg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="253"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="257"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.87083333330000001" green="0.0" blue="0.032594458069999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="1" green="0.79607843140000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -389,6 +393,9 @@ Danger</string>
                                                         <segment title="F"/>
                                                     </segments>
                                                     <color key="tintColor" red="0.011764705882352941" green="0.29019607843137252" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="temperatureUnitsDidChange:" destination="Qyx-NA-6ZV" eventType="valueChanged" id="Mfm-1L-YhF"/>
+                                                    </connections>
                                                 </segmentedControl>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yRM-3r-qKG">
                                                     <rect key="frame" x="153" y="6" width="47" height="33"/>
@@ -601,7 +608,34 @@ Danger</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmP-zk-QMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1650" y="38"/>
+            <point key="canvasLocation" x="846" y="612"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="HRj-l5-6UE">
+            <objects>
+                <viewController id="Eso-Ma-QJq" customClass="AboutViewController" customModule="TOLD_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nif-we-FsU"/>
+                        <viewControllerLayoutGuide type="bottom" id="jXf-QM-4Hc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eo3-hU-p4O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Warning" translatesAutoresizingMaskIntoConstraints="NO" id="viB-6v-BV1">
+                                <rect key="frame" x="16" y="72" width="288" height="346"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9IL-ZT-v9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1657.5" y="36.971830985915496"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Warning" width="48" height="44"/>
+    </resources>
 </document>
