@@ -50,8 +50,18 @@ class RefusalFactor{
         var j:Int = 0
         var refusalFactor:Double = 0.0
         
-        i=getHighGW(gWt: gWt)
-        j=getHighTOF(tOF: tOF)
+        i=getHighGW(gWt: gWt) //Rows
+        j=getHighTOF(tOF: tOF) //Columns
+        
+        /*
+         Use this diagram for the interpolation calculation:
+                    colLow      colHigh
+        rowLow      a           b
+                    |           |
+                    ac -    x - bd
+                    |           |
+        rowHigh     c           d
+         */
         
         let a = Double(refusalFactorTable[i-1][j-1]) //Low GW and Low TOF
         let b = Double(refusalFactorTable[i-1][j])   //Low GW and High TOF
@@ -72,11 +82,6 @@ class RefusalFactor{
         
         print("perDiffGW = \(perDiffGW) perDiffTOF = \(perDiffTOF)")
         
-//        let gWIntLow = (perDiffTOF * (a - b)) + b
-//        let gWIntHigh = (perDiffTOF * (c - d)) + d
-//
-//        refusalFactor = (perDiffGW * (gWIntHigh - gWIntLow)) + gWIntLow
-        
         let ac = (perDiffGW * (c - a)) + a
         let bd = (perDiffGW * (d - b)) + b
         
@@ -88,7 +93,4 @@ class RefusalFactor{
         
     }
     
-//    func getRefusalSpeed (gWT:Double, fieldLength: Double)->Double{
-        
-//    }
 }
