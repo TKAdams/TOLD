@@ -16,6 +16,8 @@ class Flight {
     var rSF: RefusalFactor = RefusalFactor()
     var rS: RefusalSpeed = RefusalSpeed()
     var rSCorr: RSCorrection = RSCorrection()
+    var twoEngineClimbCorr: TwoEngineClimbCorrection = TwoEngineClimbCorrection()
+    var threeEngineClimbCorr: ThreeEngineClimbCorrection = ThreeEngineClimbCorrection()
     
     var grossWeight: Double = 0.0
 
@@ -36,6 +38,9 @@ class Flight {
     var brakeDanger: Double = 0.0
     var cFL: Double = 0.0
     var refusalSpeedFactor: Double = 0.0
+    var test: Double = 0.0
+    var twoEngineClimbCorrection: Double = 0.0
+
 
     var tOR: Double = 0.0
 
@@ -59,7 +64,7 @@ class Flight {
 			refusalSpeed = rS.getRefusalSpeed(availableRunway: takeOffDistance, refusalFactor: refusalSpeedFactor)
 			decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
 			unCorrRefusalSpeed = rS.getRefusalSpeed(availableRunway: takeOffDistance, refusalFactor: refusalSpeedFactor)
-			
+
 		}
 		
 	}
@@ -95,8 +100,12 @@ class Flight {
         let perDeltaGWT: Double = percentDeltaGWT(gwt: gwt)
         let perDeltaTOF: Double = percentDeltaTOF(tof: tof)
         
-        threeEngineClimb = threeEngineClimb(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
-        twoEngineClimb = twoEngineClimb(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
+// TODO: Wingsweep->Int, add temp to function variables
+        //  threeEngineClimb = correctedThreeEngineClimb(gwt: grossWeight, temp: temperature, gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, wingSweep: wingSweep)
+        
+// TODO: Wingsweep->Int, add Temp to Function variables
+        //  twoEngineClimb = correctedTwoEngineClimb(gwt: grossWeight, temp: temperature, gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, wingSweep: wingSweep)
+        
         brakeCaution = brakeCaution(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
         brakeDanger = brakeDanger(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
         cFL = cfl(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, rcr: rCR, wingsweep: wingSweep)
@@ -330,5 +339,81 @@ class Flight {
         
         return tOR
       
+    }
+    
+    func correctedTwoEngineClimb (gwt: Double , temp: Double, gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double, wingSweep: Int) -> Double{
+        
+        var correctedTwoEngineClimb: Double = 0
+        var uncorrectedTwoEngineClimb: Double = 0
+        var twoEngineClimbCorrection: Double = 0
+        
+        
+        uncorrectedTwoEngineClimb = twoEngineClimb(gwtUpperIndex: gwtUpperIndex, TOFUpperIndex: TOFUpperIndex, deltaGWT: deltaGWT, deltaTOF: deltaTOF)
+        twoEngineClimbCorrection = twoEngineClimbCorr.getTwoEngineClimbCorrection(gwt: gwt, temp: temp)
+        
+        switch wingSweep{
+        
+        case 0:
+            correctedTwoEngineClimb = uncorrectedTwoEngineClimb + twoEngineClimbCorrection
+            
+        case 1:
+            if (twoEngineClimbCorrection > 1500){
+                correctedTwoEngineClimb = uncorrectedTwoEngineClimb + twoEngineClimbCorrection + 25
+            } else if (twoEngineClimbCorrection < 500){
+                correctedTwoEngineClimb = uncorrectedTwoEngineClimb + twoEngineClimbCorrection - 25
+            } else {
+                correctedTwoEngineClimb = uncorrectedTwoEngineClimb + twoEngineClimbCorrection
+            }
+        
+        case 2:
+            if (twoEngineClimbCorrection > 1500){
+                correctedTwoEngineClimb = uncorrectedTwoEngineClimb + twoEngineClimbCorrection + 25
+            } else if (twoEngineClimbCorrection < 500){
+                correctedTwoEngineClimb = uncorrectedTwoEngineClimb + twoEngineClimbCorrection - 25
+            } else {
+                correctedTwoEngineClimb = uncorrectedTwoEngineClimb + twoEngineClimbCorrection
+            }
+        default:
+            correctedTwoEngineClimb = uncorrectedTwoEngineClimb + twoEngineClimbCorrection
+        }
+        return correctedTwoEngineClimb
+    }
+    
+    func correctedThreeEngineClimb (gwt: Double , temp: Double, gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double, wingSweep: Int) -> Double{
+        
+        var correctedThreeEngineClimb: Double = 0
+        var uncorrectedThreeEngineClimb: Double = 0
+        var threeEngineClimbCorrection: Double = 0
+        
+        
+        uncorrectedThreeEngineClimb = threeEngineClimb(gwtUpperIndex: gwtUpperIndex, TOFUpperIndex: TOFUpperIndex, deltaGWT: deltaGWT, deltaTOF: deltaTOF)
+        threeEngineClimbCorrection = threeEngineClimbCorr.getThreeEngineClimbCorrection(gwt: gwt, temp: temp)
+        
+        switch wingSweep{
+            
+        case 0:
+            correctedThreeEngineClimb = uncorrectedThreeEngineClimb + threeEngineClimbCorrection
+            
+        case 1:
+            if (threeEngineClimbCorrection > 1500){
+                correctedThreeEngineClimb = uncorrectedThreeEngineClimb + threeEngineClimbCorrection + 25
+            } else if (threeEngineClimbCorrection < 500){
+                correctedThreeEngineClimb = uncorrectedThreeEngineClimb + threeEngineClimbCorrection - 25
+            } else {
+                correctedThreeEngineClimb = uncorrectedThreeEngineClimb + threeEngineClimbCorrection
+            }
+            
+        case 2:
+            if (threeEngineClimbCorrection > 1500){
+                correctedThreeEngineClimb = uncorrectedThreeEngineClimb + threeEngineClimbCorrection + 25
+            } else if (threeEngineClimbCorrection < 500){
+                correctedThreeEngineClimb = uncorrectedThreeEngineClimb + threeEngineClimbCorrection - 25
+            } else {
+                correctedThreeEngineClimb = uncorrectedThreeEngineClimb + threeEngineClimbCorrection
+            }
+        default:
+            correctedThreeEngineClimb = uncorrectedThreeEngineClimb + threeEngineClimbCorrection
+        }
+        return correctedThreeEngineClimb
     }
 }
