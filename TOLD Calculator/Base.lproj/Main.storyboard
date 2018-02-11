@@ -566,13 +566,14 @@ Danger</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rDl-gZ-ewu">
-                                                    <rect key="frame" x="20" y="6" width="280" height="33"/>
+                                                    <rect key="frame" x="20" y="6" width="281" height="33"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="SqH-UI-YwQ"/>
                                                     </constraints>
                                                     <segments>
-                                                        <segment title="15 &amp; 20 WS"/>
-                                                        <segment title="15 &amp; 20 S/S OFF"/>
+                                                        <segment title="15º WS"/>
+                                                        <segment title="20º WS"/>
+                                                        <segment title="20º S/S Off"/>
                                                     </segments>
                                                     <color key="tintColor" red="0.0075342161580920219" green="0.27251085638999939" blue="0.66157633066177368" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
@@ -622,10 +623,18 @@ Danger</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Warning" translatesAutoresizingMaskIntoConstraints="NO" id="viB-6v-BV1">
-                                <rect key="frame" x="16" y="72" width="288" height="346"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="B1" translatesAutoresizingMaskIntoConstraints="NO" id="v0T-36-ik3">
+                                <rect key="frame" x="16" y="72" width="288" height="218"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zgt-Gu-P3G">
+                                <rect key="frame" x="40" y="321" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -636,6 +645,6 @@ Danger</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Warning" width="48" height="44"/>
+        <image name="B1" width="357" height="382"/>
     </resources>
 </document>

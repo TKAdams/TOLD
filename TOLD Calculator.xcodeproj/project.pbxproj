@@ -16,6 +16,7 @@
 		CED95C201F2E8BCA00CA828F /* RSCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED95C1F1F2E8BCA00CA828F /* RSCorrection.swift */; };
 		CED95C261F2E98A800CA828F /* RSCorrectionChart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CED95C251F2E98A800CA828F /* RSCorrectionChart.csv */; };
 		D30FCFEE2026284E007B6E2E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30FCFED2026284E007B6E2E /* AboutViewController.swift */; };
+		D31F3A442030AE1E00926498 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F3A432030AE1E00926498 /* Math.swift */; };
 		D32B2FE31F1A5F41002AAC67 /* maxab.csv in Resources */ = {isa = PBXBuildFile; fileRef = D32B2FE21F1A5F41002AAC67 /* maxab.csv */; };
 		D32B2FE51F1A5FFB002AAC67 /* MaxAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B2FE41F1A5FFB002AAC67 /* MaxAB.swift */; };
 		D32B2FE81F1BA10F002AAC67 /* UIColor+TOLDColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B2FE71F1BA10F002AAC67 /* UIColor+TOLDColor.swift */; };
@@ -66,6 +67,7 @@
 		CED95C1F1F2E8BCA00CA828F /* RSCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCorrection.swift; sourceTree = "<group>"; };
 		CED95C251F2E98A800CA828F /* RSCorrectionChart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RSCorrectionChart.csv; path = Resources/RSCorrectionChart.csv; sourceTree = SOURCE_ROOT; };
 		D30FCFED2026284E007B6E2E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		D31F3A432030AE1E00926498 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		D32B2FE21F1A5F41002AAC67 /* maxab.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = maxab.csv; path = Resources/maxab.csv; sourceTree = SOURCE_ROOT; };
 		D32B2FE41F1A5FFB002AAC67 /* MaxAB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxAB.swift; sourceTree = "<group>"; };
 		D32B2FE71F1BA10F002AAC67 /* UIColor+TOLDColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TOLDColor.swift"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				D3F23C631F0A711400D71A01 /* CSVReader.swift */,
 				D32B2FE71F1BA10F002AAC67 /* UIColor+TOLDColor.swift */,
+				D31F3A432030AE1E00926498 /* Math.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				D3F23C4C1F08922300D71A01 /* TOLDViewController.swift in Sources */,
 				D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */,
 				CED3A0B71F0A92C8005A6B69 /* SpeedTable.swift in Sources */,
+				D31F3A442030AE1E00926498 /* Math.swift in Sources */,
 				D3334A811F238DEE000C63D6 /* TOLDOutput.swift in Sources */,
 				D32B2FE81F1BA10F002AAC67 /* UIColor+TOLDColor.swift in Sources */,
 				D3F23C521F0929F600D71A01 /* Flight.swift in Sources */,

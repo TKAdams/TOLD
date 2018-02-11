@@ -52,7 +52,9 @@ class RefusalFactor{
         
         i=getHighGW(gWt: gWt) //Rows
         j=getHighTOF(tOF: tOF) //Columns
-        
+		
+		Math.interpolateTable(table: refusalFactorTable, rowValue: gWt, colValue: tOF)
+		
         /*
          Use this diagram for the interpolation calculation:
                     colLow      colHigh
