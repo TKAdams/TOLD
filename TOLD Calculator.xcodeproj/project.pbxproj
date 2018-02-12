@@ -22,6 +22,10 @@
 		D32B2FE81F1BA10F002AAC67 /* UIColor+TOLDColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B2FE71F1BA10F002AAC67 /* UIColor+TOLDColor.swift */; };
 		D3334A811F238DEE000C63D6 /* TOLDOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3334A801F238DEE000C63D6 /* TOLDOutput.swift */; };
 		D392307E20103B6700EF75D9 /* InputTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D392307D20103B6700EF75D9 /* InputTableViewController.swift */; };
+		D39C853B2031125F00F28AEC /* TwoEngineClimbCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */; };
+		D39C853C2031125F00F28AEC /* ThreeEngineClimbCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */; };
+		D39C853E2031129300F28AEC /* twoEngineCorrection.csv in Resources */ = {isa = PBXBuildFile; fileRef = D39C853D2031129300F28AEC /* twoEngineCorrection.csv */; };
+		D39C8540203112AC00F28AEC /* threeEngineCorrection.csv in Resources */ = {isa = PBXBuildFile; fileRef = D39C853F203112AC00F28AEC /* threeEngineCorrection.csv */; };
 		D3AEA83D1F0F355E0052F7F7 /* TakeoffFactor2.csv in Resources */ = {isa = PBXBuildFile; fileRef = D3AEA83C1F0F355E0052F7F7 /* TakeoffFactor2.csv */; };
 		D3DB91001F0C82F600CEF54E /* TakeoffFactor.csv in Resources */ = {isa = PBXBuildFile; fileRef = D3DB90FF1F0C82F600CEF54E /* TakeoffFactor.csv */; };
 		D3DBA7DD202669F6001BD681 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBA7DC202669F6001BD681 /* HUDView.swift */; };
@@ -73,6 +77,10 @@
 		D32B2FE71F1BA10F002AAC67 /* UIColor+TOLDColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TOLDColor.swift"; sourceTree = "<group>"; };
 		D3334A801F238DEE000C63D6 /* TOLDOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOLDOutput.swift; sourceTree = "<group>"; };
 		D392307D20103B6700EF75D9 /* InputTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewController.swift; sourceTree = "<group>"; };
+		D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoEngineClimbCorrection.swift; sourceTree = "<group>"; };
+		D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeEngineClimbCorrection.swift; sourceTree = "<group>"; };
+		D39C853D2031129300F28AEC /* twoEngineCorrection.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = twoEngineCorrection.csv; path = Resources/twoEngineCorrection.csv; sourceTree = SOURCE_ROOT; };
+		D39C853F203112AC00F28AEC /* threeEngineCorrection.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = threeEngineCorrection.csv; path = Resources/threeEngineCorrection.csv; sourceTree = SOURCE_ROOT; };
 		D3AEA83C1F0F355E0052F7F7 /* TakeoffFactor2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TakeoffFactor2.csv; path = Resources/TakeoffFactor2.csv; sourceTree = SOURCE_ROOT; };
 		D3DB90FF1F0C82F600CEF54E /* TakeoffFactor.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TakeoffFactor.csv; path = Resources/TakeoffFactor.csv; sourceTree = SOURCE_ROOT; };
 		D3DBA7DC202669F6001BD681 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
@@ -180,6 +188,8 @@
 		D3F23C461F08919300D71A01 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				D39C853F203112AC00F28AEC /* threeEngineCorrection.csv */,
+				D39C853D2031129300F28AEC /* twoEngineCorrection.csv */,
 				CED95C251F2E98A800CA828F /* RSCorrectionChart.csv */,
 				CED95C1B1F2DBD7E00CA828F /* RefusalSpeedChart.csv */,
 				CE4D22B81F20485100C61443 /* RefusalFactorChart.csv */,
@@ -224,6 +234,8 @@
 		D3F23C4A1F0891CC00D71A01 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */,
+				D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */,
 				D3F23C1C1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld */,
 				D3F23C511F0929F500D71A01 /* Flight.swift */,
 				D3F23C611F09FEEB00D71A01 /* TakeoffFactors.swift */,
@@ -352,8 +364,10 @@
 				CED95C261F2E98A800CA828F /* RSCorrectionChart.csv in Resources */,
 				CE4D22B91F20485100C61443 /* RefusalFactorChart.csv in Resources */,
 				D3F23C5E1F09F89100D71A01 /* IFG (15 Aug 16).pdf in Resources */,
+				D39C8540203112AC00F28AEC /* threeEngineCorrection.csv in Resources */,
 				D3F23C231F08917800D71A01 /* LaunchScreen.storyboard in Resources */,
 				D3DB91001F0C82F600CEF54E /* TakeoffFactor.csv in Resources */,
+				D39C853E2031129300F28AEC /* twoEngineCorrection.csv in Resources */,
 				CED3A0BB1F0A94A6005A6B69 /* Speedschart.csv in Resources */,
 				D3F23C201F08917800D71A01 /* Assets.xcassets in Resources */,
 				D3AEA83D1F0F355E0052F7F7 /* TakeoffFactor2.csv in Resources */,
@@ -399,6 +413,8 @@
 				D3F23C521F0929F600D71A01 /* Flight.swift in Sources */,
 				D3F23C1E1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld in Sources */,
 				D3F23C641F0A711400D71A01 /* CSVReader.swift in Sources */,
+				D39C853C2031125F00F28AEC /* ThreeEngineClimbCorrection.swift in Sources */,
+				D39C853B2031125F00F28AEC /* TwoEngineClimbCorrection.swift in Sources */,
 				D32B2FE51F1A5FFB002AAC67 /* MaxAB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
