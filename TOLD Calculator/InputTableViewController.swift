@@ -138,9 +138,10 @@ class InputTableViewController: UITableViewController {
 	@IBAction func wingSweepDidChange(_ sender: UISegmentedControl){
 
 		switch sender.selectedSegmentIndex {
-		case 0: flight.wingSweep = true
-		case 1: flight.wingSweep = false
-		default: flight.wingSweep = true
+		case 0: flight.wingSweep = 0      // 15 WS
+		case 1: flight.wingSweep = 1      // 20 WS
+        case 2: flight.wingSweep = 2      // 20 WS S/S Off
+		default: flight.wingSweep = 0
 		}
 		calculate()
 	}

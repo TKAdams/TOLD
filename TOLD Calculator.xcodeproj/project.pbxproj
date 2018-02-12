@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE4D22B71F20477500C61443 /* RefusalFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D22B61F20477500C61443 /* RefusalFactor.swift */; };
 		CE4D22B91F20485100C61443 /* RefusalFactorChart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE4D22B81F20485100C61443 /* RefusalFactorChart.csv */; };
+		CEB1185B20312DA000CBBFCE /* Crosswinds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1185A20312DA000CBBFCE /* Crosswinds.swift */; };
 		CED3A0B71F0A92C8005A6B69 /* SpeedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3A0B61F0A92C8005A6B69 /* SpeedTable.swift */; };
 		CED3A0BB1F0A94A6005A6B69 /* Speedschart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CED3A0BA1F0A94A6005A6B69 /* Speedschart.csv */; };
 		CED95C1A1F2DBCE400CA828F /* RefusalSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED95C191F2DBCE400CA828F /* RefusalSpeed.swift */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		CE4D22B61F20477500C61443 /* RefusalFactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefusalFactor.swift; sourceTree = "<group>"; };
 		CE4D22B81F20485100C61443 /* RefusalFactorChart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RefusalFactorChart.csv; path = Resources/RefusalFactorChart.csv; sourceTree = SOURCE_ROOT; };
+		CEB1185A20312DA000CBBFCE /* Crosswinds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crosswinds.swift; sourceTree = "<group>"; };
 		CED3A0B61F0A92C8005A6B69 /* SpeedTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedTable.swift; sourceTree = "<group>"; };
 		CED3A0BA1F0A94A6005A6B69 /* Speedschart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Speedschart.csv; path = Resources/Speedschart.csv; sourceTree = SOURCE_ROOT; };
 		CED95C191F2DBCE400CA828F /* RefusalSpeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefusalSpeed.swift; sourceTree = SOURCE_ROOT; };
@@ -234,8 +236,6 @@
 		D3F23C4A1F0891CC00D71A01 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */,
-				D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */,
 				D3F23C1C1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld */,
 				D3F23C511F0929F500D71A01 /* Flight.swift */,
 				D3F23C611F09FEEB00D71A01 /* TakeoffFactors.swift */,
@@ -245,6 +245,9 @@
 				CED95C191F2DBCE400CA828F /* RefusalSpeed.swift */,
 				CED95C1F1F2E8BCA00CA828F /* RSCorrection.swift */,
 				D3334A801F238DEE000C63D6 /* TOLDOutput.swift */,
+				D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */,
+				D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */,
+				CEB1185A20312DA000CBBFCE /* Crosswinds.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				D30FCFEE2026284E007B6E2E /* AboutViewController.swift in Sources */,
 				D3DBA7DD202669F6001BD681 /* HUDView.swift in Sources */,
 				D3F23C621F09FEEB00D71A01 /* TakeoffFactors.swift in Sources */,
+				CEB1185B20312DA000CBBFCE /* Crosswinds.swift in Sources */,
 				CE4D22B71F20477500C61443 /* RefusalFactor.swift in Sources */,
 				D3F23C4C1F08922300D71A01 /* TOLDViewController.swift in Sources */,
 				D3F23C161F08917800D71A01 /* AppDelegate.swift in Sources */,

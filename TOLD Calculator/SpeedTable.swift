@@ -43,7 +43,7 @@ class SpeedTable {
 
     }
     
-    func getRotateSpeed (wingsweep: Bool, grossWeight:Double) -> Double {
+    func getRotateSpeed (wingsweep: Int, grossWeight:Double) -> Double {
         var rotateSpeed: Double = 0
         var i: Int = 0
         var j: Int = 0
@@ -59,17 +59,27 @@ class SpeedTable {
         
         //deltaGrossWeight equals the higher chart gross weight minus the lower chart gross weight in the tables to find the difference in gross weight, this will equal 10. We will then find the delta speed and divide the deltaSpeed/deltaGrossWeight to find the knots per pound.//
         
-        if wingsweep == true {
+        switch wingsweep{
+        case 0:
             deltaSpeed = ((Double(speedChart[j][1])) - (Double(speedChart[i][1]))) //finding chart deltaSpeed//
             knotPerPound=(deltaSpeed / deltaGrossWeight)
             rotateSpeed = Double(speedChart[i][1]) + (deltaGWAndBottomGW*knotPerPound)
             rotateSpeed = rotateSpeed.rounded(.up)
-        }
-        else {
+        case 1:
+            deltaSpeed = ((Double(speedChart[j][1])) - (Double(speedChart[i][1]))) //finding chart deltaSpeed//
+            knotPerPound=(deltaSpeed / deltaGrossWeight)
+            rotateSpeed = Double(speedChart[i][1]) + (deltaGWAndBottomGW*knotPerPound)
+            rotateSpeed = rotateSpeed.rounded(.up)
+        case 2:
             
             deltaSpeed = ((Double(speedChart[j][3])) - (Double(speedChart[i][3])))
             knotPerPound=(deltaSpeed / deltaGrossWeight)
             rotateSpeed = Double(speedChart[i][3]) + (deltaGWAndBottomGW*knotPerPound)
+            rotateSpeed = rotateSpeed.rounded(.up)
+        default:
+            deltaSpeed = ((Double(speedChart[j][1])) - (Double(speedChart[i][1]))) //finding chart deltaSpeed//
+            knotPerPound=(deltaSpeed / deltaGrossWeight)
+            rotateSpeed = Double(speedChart[i][1]) + (deltaGWAndBottomGW*knotPerPound)
             rotateSpeed = rotateSpeed.rounded(.up)
         }
         print(rotateSpeed.rounded(.up))
@@ -77,7 +87,7 @@ class SpeedTable {
     }
     //  Same concept as above, but for the T/O speed which is one index to the right of rotateSpeed
     
-    func getTOSpeed (wingSweep:Bool, grossWeight:Double)-> Double{
+    func getTOSpeed (wingSweep:Int, grossWeight:Double)-> Double{
         var tOSpeed: Double = 0
         var i: Int = 0
         var j: Int = 0
@@ -93,17 +103,26 @@ class SpeedTable {
         
         //deltaGrossWeight equals the higher chart gross weight minus the lower chart gross weight in the tables to find the difference in gross weight, this will equal 10. We will then find the delta speed and divide the deltaSpeed/deltaGrossWeight to find the knots per pound.//
         
-        if wingSweep == true {
+        switch wingSweep {
+        case 0:
             deltaSpeed = ((Double(speedChart[j][2])) - (Double(speedChart[i][2]))) //finding chart deltaSpeed//
             knotPerPound=(deltaSpeed / deltaGrossWeight)
             tOSpeed = Double(speedChart[i][2]) + (deltaGWAndBottomGW*knotPerPound)
             tOSpeed = tOSpeed.rounded(.up)
-        }
-        else {
-            
+        case 1:
+            deltaSpeed = ((Double(speedChart[j][2])) - (Double(speedChart[i][2]))) //finding chart deltaSpeed//
+            knotPerPound=(deltaSpeed / deltaGrossWeight)
+            tOSpeed = Double(speedChart[i][2]) + (deltaGWAndBottomGW*knotPerPound)
+            tOSpeed = tOSpeed.rounded(.up)
+        case 2:
             deltaSpeed = ((Double(speedChart[j][4])) - (Double(speedChart[i][4])))
             knotPerPound=(deltaSpeed / deltaGrossWeight)
             tOSpeed = Double(speedChart[i][4]) + (deltaGWAndBottomGW*knotPerPound)
+            tOSpeed = tOSpeed.rounded(.up)
+        default:
+            deltaSpeed = ((Double(speedChart[j][2])) - (Double(speedChart[i][2]))) //finding chart deltaSpeed//
+            knotPerPound=(deltaSpeed / deltaGrossWeight)
+            tOSpeed = Double(speedChart[i][2]) + (deltaGWAndBottomGW*knotPerPound)
             tOSpeed = tOSpeed.rounded(.up)
         }
         print(tOSpeed.rounded(.up))
