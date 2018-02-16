@@ -57,13 +57,11 @@ class Flight {
             updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR, temp: temperature)
 			takeoffSpeed = speedTable.getTOSpeed(wingSweep: wingSweep, grossWeight: grossWeight)
 			rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
-			decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
 			refusalSpeedFactor = rSF.getRefusalFactor(gWt: grossWeight, tOF: tOF)
-			refusalSpeed = rS.getRefusalSpeed(availableRunway: availableRunway, refusalFactor: refusalSpeedFactor)
 			decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
-            //TODO: something is duplicated here.
 			unCorrRefusalSpeed = rS.getRefusalSpeed(availableRunway: availableRunway, refusalFactor: refusalSpeedFactor)
-
+            refusalSpeed = rSCorr.updateRS(refusalSpeed: unCorrRefusalSpeed, rCR: rCR)
+            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
 		}
 		
 	}
