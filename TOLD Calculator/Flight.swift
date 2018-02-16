@@ -18,12 +18,11 @@ class Flight {
     var rSCorr: RSCorrection = RSCorrection()
     var twoEngineClimbCorr: TwoEngineClimbCorrection = TwoEngineClimbCorrection()
     var threeEngineClimbCorr: ThreeEngineClimbCorrection = ThreeEngineClimbCorrection()
+    var crosswinds: Crosswinds = Crosswinds()
     
     var grossWeight: Double = 0.0
-
-    var wingSweep: Bool = true //wing sweep true = 15 WS or 20 WS, wing sweep false = 20 WS SEF/SIS OFF
+    var wingSweep: Int = 0 // 0 = 15 WS 1 = 20WS 2 = 20WS S/S Off
     var availableRunway: Double = 0.0
-    
     var pressureAltitude: Double = 0.0
     var temperature: Double = 0.0 //temperature in ºF
     var tOF: Double = 0.0
@@ -32,18 +31,17 @@ class Flight {
     var decisionSpeed: Double = 0.0
     var rotateSpeed: Double = 0.0
     var takeoffSpeed: Double = 0.0
-    var twoEngineClimb: Double = 0.0
-    var threeEngineClimb: Double = 0.0
+    var unCorrtwoEngineClimb: Double = 0.0
+    var unCorrthreeEngineClimb: Double = 0.0
     var brakeCaution: Double = 0.0
     var brakeDanger: Double = 0.0
     var cFL: Double = 0.0
     var refusalSpeedFactor: Double = 0.0
     var test: Double = 0.0
     var twoEngineClimbCorrection: Double = 0.0
-
-
+    var twoEngineClimb: Double = 0.0
+    var threeEngineClimb: Double = 0.0
     var tOR: Double = 0.0
-
     var takeOffDistance: Double = 0.0
     var rCR: Int = 2
 
@@ -56,16 +54,14 @@ class Flight {
 			availableRunway >= 8000 && availableRunway <= 13500 {
 			
 			tOF = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
-			updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR)
+            updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR, temp: temperature)
 			takeoffSpeed = speedTable.getTOSpeed(wingSweep: wingSweep, grossWeight: grossWeight)
 			rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
-			decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
 			refusalSpeedFactor = rSF.getRefusalFactor(gWt: grossWeight, tOF: tOF)
-			refusalSpeed = rS.getRefusalSpeed(availableRunway: availableRunway, refusalFactor: refusalSpeedFactor)
 			decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
-            //TODO: something is duplicated here.
 			unCorrRefusalSpeed = rS.getRefusalSpeed(availableRunway: availableRunway, refusalFactor: refusalSpeedFactor)
-
+            refusalSpeed = rSCorr.updateRS(refusalSpeed: unCorrRefusalSpeed, rCR: rCR)
+            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
 		}
 		
 	}
@@ -89,7 +85,7 @@ class Flight {
         return tempF
     }
     
-    func updateTOFDependants (tof: Double, gwt: Double, wingSweep: Bool, rcr: Int) {
+    func updateTOFDependants (tof: Double, gwt: Double, wingSweep: Int, rcr: Int, temp: Double) {
         var i: Int = 0  //gwt index
         var j: Int = 0  //tof index
         
@@ -101,11 +97,9 @@ class Flight {
         let perDeltaGWT: Double = percentDeltaGWT(gwt: gwt)
         let perDeltaTOF: Double = percentDeltaTOF(tof: tof)
         
-// TODO: Wingsweep->Int, add temp to function variables
-        //  threeEngineClimb = correctedThreeEngineClimb(gwt: grossWeight, temp: temperature, gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, wingSweep: wingSweep)
+        threeEngineClimb = correctedThreeEngineClimb(gwt: grossWeight, temp: temperature, gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, wingSweep: wingSweep)
         
-// TODO: Wingsweep->Int, add Temp to Function variables
-        //  twoEngineClimb = correctedTwoEngineClimb(gwt: grossWeight, temp: temperature, gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, wingSweep: wingSweep)
+        twoEngineClimb = correctedTwoEngineClimb(gwt: grossWeight, temp: temperature, gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, wingSweep: wingSweep)
         
         brakeCaution = brakeCaution(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
         brakeDanger = brakeDanger(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
@@ -174,7 +168,7 @@ class Flight {
     }
 
     func twoEngineClimb (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double) -> Double {
-        var threeEngineClimb: Double = 0.0
+        var twoEngineClimb: Double = 0.0
         let OutputIndex: Int = TOLDOutput.Climb2Engines.rawValue
         
         twoEngineClimb = interpolateIFG(gwtUpperIndex: gwtUpperIndex, TOFUpperIndex: TOFUpperIndex, deltaGWT: deltaGWT, deltaTOF: deltaTOF, outputIndex: OutputIndex)
@@ -209,7 +203,7 @@ class Flight {
         return brakeDanger
     }
     
-    func cfl (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double, rcr: Int, wingsweep: Bool) -> Double {
+    func cfl (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double, rcr: Int, wingsweep: Int) -> Double {
         var cfl: Double = 0.0
         var OutputIndex: Int = 0
         
@@ -217,16 +211,26 @@ class Flight {
         case 0:
             OutputIndex = TOLDOutput.CFLIcyNorm.rawValue
         case 1:
-            if wingsweep == true {
-                OutputIndex = TOLDOutput.CFLWetNorm.rawValue
-            } else {
-                OutputIndex = TOLDOutput.CFLWetOff.rawValue
+            switch wingsweep{
+            case 0:
+                OutputIndex = TOLDOutput.CFLWetNorm.rawValue    //9 RCR 15WS
+            case 1:
+                OutputIndex = TOLDOutput.CFLWetNorm.rawValue    //9 RCR 20WS
+            case 2:
+                OutputIndex = TOLDOutput.CFLWetOff.rawValue     //9 RCR 20WS S/S Off
+            default:
+                 OutputIndex = TOLDOutput.CFLWetNorm.rawValue   //9 RCR 15WS
             }
         case 2:
-            if wingsweep == true {
-                OutputIndex = TOLDOutput.CFLDryNorm.rawValue
-            } else {
-                OutputIndex = TOLDOutput.CFLDryOff.rawValue
+            switch wingsweep {
+            case 0:
+                OutputIndex = TOLDOutput.CFLDryNorm.rawValue    //26 RCR 15 WS
+            case 1:
+                OutputIndex = TOLDOutput.CFLDryNorm.rawValue    //26 RCR 20 WS
+            case 2:
+                OutputIndex = TOLDOutput.CFLDryOff.rawValue     //26 RCR 20 WS S/S Off
+            default:
+                OutputIndex = TOLDOutput.CFLDryNorm.rawValue    //26 RCR 15 WS
             }
         default:
             OutputIndex = TOLDOutput.CFLDryNorm.rawValue
@@ -323,15 +327,19 @@ class Flight {
         return decisionSpeed
     }
     
-    func getTOR (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double, wingSweep: Bool) -> Double {
+    func getTOR (gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double, wingSweep: Int) -> Double {
         var tOR = 0.0
         var OutputIndex = 0
         
-        if wingSweep == true {
-            OutputIndex = TOLDOutput.TORNorm.rawValue
-        }
-        else{
-            OutputIndex = TOLDOutput.TOROff.rawValue
+        switch wingSweep {
+        case 0:
+            OutputIndex = TOLDOutput.TORNorm.rawValue     //15 WS TOR
+        case 1:
+            OutputIndex = TOLDOutput.TORNorm.rawValue     //20 WS TOR
+        case 2:
+             OutputIndex = TOLDOutput.TOROff.rawValue     //20 WS S/S Off TOR
+        default:
+            OutputIndex = TOLDOutput.TORNorm.rawValue     //15 WS TOR
         }
 
         tOR = interpolateIFG(gwtUpperIndex: gwtUpperIndex, TOFUpperIndex: TOFUpperIndex, deltaGWT: deltaGWT, deltaTOF: deltaTOF, outputIndex: OutputIndex)
