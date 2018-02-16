@@ -11,7 +11,7 @@ import Foundation
 class Math {
 
 	//The following class looks up and interpolates points on a table.
-	//The return value is an optional and will return nil IF a value passed is of the table.
+	//The return value is an optional and will return nil IF a value passed is off the table.
 	class func interpolateTable(table: [[Int]], rowValue: Double, colValue:Double) -> Double? {
 
 		var value: Double? = 0.0

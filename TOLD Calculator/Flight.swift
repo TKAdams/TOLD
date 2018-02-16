@@ -59,9 +59,10 @@ class Flight {
 			rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
 			decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
 			refusalSpeedFactor = rSF.getRefusalFactor(gWt: grossWeight, tOF: tOF)
-			refusalSpeed = rS.getRefusalSpeed(availableRunway: takeOffDistance, refusalFactor: refusalSpeedFactor)
+			refusalSpeed = rS.getRefusalSpeed(availableRunway: availableRunway, refusalFactor: refusalSpeedFactor)
 			decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
-			unCorrRefusalSpeed = rS.getRefusalSpeed(availableRunway: takeOffDistance, refusalFactor: refusalSpeedFactor)
+            //TODO: something is duplicated here.
+			unCorrRefusalSpeed = rS.getRefusalSpeed(availableRunway: availableRunway, refusalFactor: refusalSpeedFactor)
 
 		}
 		
