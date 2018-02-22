@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1CC2B5203E83D000B6CEAF /* TOR Norm.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B4203E83CF00B6CEAF /* TOR Norm.csv */; };
+		CE1CC2B7203E83DB00B6CEAF /* TORSSoff20.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B6203E83DB00B6CEAF /* TORSSoff20.csv */; };
+		CE1CC2B9203E880900B6CEAF /* TOR.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC2B8203E880900B6CEAF /* TOR.swift */; };
 		CE4D22B71F20477500C61443 /* RefusalFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D22B61F20477500C61443 /* RefusalFactor.swift */; };
 		CE4D22B91F20485100C61443 /* RefusalFactorChart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE4D22B81F20485100C61443 /* RefusalFactorChart.csv */; };
 		CEB1185B20312DA000CBBFCE /* Crosswinds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1185A20312DA000CBBFCE /* Crosswinds.swift */; };
@@ -65,6 +68,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE1CC2B4203E83CF00B6CEAF /* TOR Norm.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "TOR Norm.csv"; path = "Resources/TOR Norm.csv"; sourceTree = SOURCE_ROOT; };
+		CE1CC2B6203E83DB00B6CEAF /* TORSSoff20.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TORSSoff20.csv; path = Resources/TORSSoff20.csv; sourceTree = SOURCE_ROOT; };
+		CE1CC2B8203E880900B6CEAF /* TOR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOR.swift; sourceTree = "<group>"; };
 		CE4D22B61F20477500C61443 /* RefusalFactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefusalFactor.swift; sourceTree = "<group>"; };
 		CE4D22B81F20485100C61443 /* RefusalFactorChart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RefusalFactorChart.csv; path = Resources/RefusalFactorChart.csv; sourceTree = SOURCE_ROOT; };
 		CEB1185A20312DA000CBBFCE /* Crosswinds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crosswinds.swift; sourceTree = "<group>"; };
@@ -195,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				D367B238203E638A00F605A1 /* Climb3Engine.csv */,
+				CE1CC2B4203E83CF00B6CEAF /* TOR Norm.csv */,
+				CE1CC2B6203E83DB00B6CEAF /* TORSSoff20.csv */,
 				D39C853F203112AC00F28AEC /* threeEngineCorrection.csv */,
 				D39C853D2031129300F28AEC /* twoEngineCorrection.csv */,
 				CED95C251F2E98A800CA828F /* RSCorrectionChart.csv */,
@@ -254,6 +262,7 @@
 				D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */,
 				CEB1185A20312DA000CBBFCE /* Crosswinds.swift */,
 				D367B23C203E69F400F605A1 /* WingSweep.swift */,
+				CE1CC2B8203E880900B6CEAF /* TOR.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -375,8 +384,10 @@
 				D3F23C5E1F09F89100D71A01 /* IFG (15 Aug 16).pdf in Resources */,
 				D39C8540203112AC00F28AEC /* threeEngineCorrection.csv in Resources */,
 				D3F23C231F08917800D71A01 /* LaunchScreen.storyboard in Resources */,
+				CE1CC2B5203E83D000B6CEAF /* TOR Norm.csv in Resources */,
 				D3DB91001F0C82F600CEF54E /* TakeoffFactor.csv in Resources */,
 				D39C853E2031129300F28AEC /* twoEngineCorrection.csv in Resources */,
+				CE1CC2B7203E83DB00B6CEAF /* TORSSoff20.csv in Resources */,
 				CED3A0BB1F0A94A6005A6B69 /* Speedschart.csv in Resources */,
 				D3F23C201F08917800D71A01 /* Assets.xcassets in Resources */,
 				D367B239203E638B00F605A1 /* Climb3Engine.csv in Resources */,
@@ -428,6 +439,7 @@
 				D39C853C2031125F00F28AEC /* ThreeEngineClimbCorrection.swift in Sources */,
 				D39C853B2031125F00F28AEC /* TwoEngineClimbCorrection.swift in Sources */,
 				D32B2FE51F1A5FFB002AAC67 /* MaxAB.swift in Sources */,
+				CE1CC2B9203E880900B6CEAF /* TOR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

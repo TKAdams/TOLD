@@ -19,6 +19,7 @@ class Flight {
     var twoEngineClimbCorr: TwoEngineClimbCorrection = TwoEngineClimbCorrection()
     var threeEngineClimbCorr: ThreeEngineClimbCorrection = ThreeEngineClimbCorrection()
     var crosswinds: Crosswinds = Crosswinds()
+    var tOR: TOR = TOR()
     
     var grossWeight: Double = 0.0
     var wingSweep: Int = 0 // 0 = 15 WS 1 = 20WS 2 = 20WS S/S Off
