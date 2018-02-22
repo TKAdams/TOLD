@@ -25,7 +25,7 @@ class Flight {
     var availableRunway: Double = 0.0
     var pressureAltitude: Double = 0.0
     var temperature: Double = 0.0 //temperature in ºF
-    var tOF: Double = 0.0
+//    var tOF: Double = 0.0
     var unCorrRefusalSpeed: Double = 0.0
     var refusalSpeed: Double = 0.0
     var decisionSpeed: Double = 0.0
@@ -46,23 +46,18 @@ class Flight {
     var rCR: Int = 2
 
 	func process() {
-		//only conduct the processing if inputs are within the table limits.
-		//This should never be triggered unless everything is validated, but will double check.
-		if grossWeight >= 210 && grossWeight <= 420 &&
-			temperature  >= -20 && temperature <= 120 &&
-			pressureAltitude >= 0 && pressureAltitude <= 6000 &&
-			availableRunway >= 8000 && availableRunway <= 13500 {
-			
-			tOF = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
-            updateTOFDependants(tof: tOF, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR, temp: temperature)
-			takeoffSpeed = speedTable.getTOSpeed(wingSweep: wingSweep, grossWeight: grossWeight)
-			rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
-			refusalSpeedFactor = rSF.getRefusalFactor(gWt: grossWeight, tOF: tOF)
-			decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
-			unCorrRefusalSpeed = rS.getRefusalSpeed(availableRunway: availableRunway, refusalFactor: refusalSpeedFactor)
-            refusalSpeed = rSCorr.updateRS(refusalSpeed: unCorrRefusalSpeed, rCR: rCR)
-            decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
-		}
+
+//        tOF = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
+        tOFTable.takeoffFactor = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
+        updateTOFDependants(tof: tOFTable.takeoffFactor!, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR, temp: temperature)
+        
+        takeoffSpeed = speedTable.getTOSpeed(wingSweep: wingSweep, grossWeight: grossWeight)
+        rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
+        refusalSpeedFactor = rSF.getRefusalFactor(gWt: grossWeight, tOF: tOF)
+        decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
+        unCorrRefusalSpeed = rS.getRefusalSpeed(availableRunway: availableRunway, refusalFactor: refusalSpeedFactor)
+        refusalSpeed = rSCorr.updateRS(refusalSpeed: unCorrRefusalSpeed, rCR: rCR)
+        decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
 		
 	}
     

@@ -22,6 +22,8 @@
 		D32B2FE51F1A5FFB002AAC67 /* MaxAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B2FE41F1A5FFB002AAC67 /* MaxAB.swift */; };
 		D32B2FE81F1BA10F002AAC67 /* UIColor+TOLDColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B2FE71F1BA10F002AAC67 /* UIColor+TOLDColor.swift */; };
 		D3334A811F238DEE000C63D6 /* TOLDOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3334A801F238DEE000C63D6 /* TOLDOutput.swift */; };
+		D367B239203E638B00F605A1 /* Climb3Engine.csv in Resources */ = {isa = PBXBuildFile; fileRef = D367B238203E638A00F605A1 /* Climb3Engine.csv */; };
+		D367B23D203E69F400F605A1 /* WingSweep.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367B23C203E69F400F605A1 /* WingSweep.swift */; };
 		D392307E20103B6700EF75D9 /* InputTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D392307D20103B6700EF75D9 /* InputTableViewController.swift */; };
 		D39C853B2031125F00F28AEC /* TwoEngineClimbCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */; };
 		D39C853C2031125F00F28AEC /* ThreeEngineClimbCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */; };
@@ -78,6 +80,8 @@
 		D32B2FE41F1A5FFB002AAC67 /* MaxAB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxAB.swift; sourceTree = "<group>"; };
 		D32B2FE71F1BA10F002AAC67 /* UIColor+TOLDColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TOLDColor.swift"; sourceTree = "<group>"; };
 		D3334A801F238DEE000C63D6 /* TOLDOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOLDOutput.swift; sourceTree = "<group>"; };
+		D367B238203E638A00F605A1 /* Climb3Engine.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Climb3Engine.csv; path = ../../../../Documents/Climb3Engine.csv; sourceTree = "<group>"; };
+		D367B23C203E69F400F605A1 /* WingSweep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingSweep.swift; sourceTree = "<group>"; };
 		D392307D20103B6700EF75D9 /* InputTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewController.swift; sourceTree = "<group>"; };
 		D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoEngineClimbCorrection.swift; sourceTree = "<group>"; };
 		D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeEngineClimbCorrection.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 		D3F23C461F08919300D71A01 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				D367B238203E638A00F605A1 /* Climb3Engine.csv */,
 				D39C853F203112AC00F28AEC /* threeEngineCorrection.csv */,
 				D39C853D2031129300F28AEC /* twoEngineCorrection.csv */,
 				CED95C251F2E98A800CA828F /* RSCorrectionChart.csv */,
@@ -248,6 +253,7 @@
 				D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */,
 				D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */,
 				CEB1185A20312DA000CBBFCE /* Crosswinds.swift */,
+				D367B23C203E69F400F605A1 /* WingSweep.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				D39C853E2031129300F28AEC /* twoEngineCorrection.csv in Resources */,
 				CED3A0BB1F0A94A6005A6B69 /* Speedschart.csv in Resources */,
 				D3F23C201F08917800D71A01 /* Assets.xcassets in Resources */,
+				D367B239203E638B00F605A1 /* Climb3Engine.csv in Resources */,
 				D3AEA83D1F0F355E0052F7F7 /* TakeoffFactor2.csv in Resources */,
 				D3F23C5C1F09F6C500D71A01 /* testTOF.csv in Resources */,
 				D3F23C1B1F08917800D71A01 /* Main.storyboard in Resources */,
@@ -400,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D367B23D203E69F400F605A1 /* WingSweep.swift in Sources */,
 				D392307E20103B6700EF75D9 /* InputTableViewController.swift in Sources */,
 				CED95C201F2E8BCA00CA828F /* RSCorrection.swift in Sources */,
 				CED95C1A1F2DBCE400CA828F /* RefusalSpeed.swift in Sources */,
