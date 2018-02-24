@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5FB8106B2041E47200FD8C81 /* Climb3Engine.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5FB8106A2041E47200FD8C81 /* Climb3Engine.csv */; };
+		5FCED3EF2041F2F9004BB9B6 /* TwoEngineClimb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCED3EE2041F2F9004BB9B6 /* TwoEngineClimb.swift */; };
+		5FCED3F12041F309004BB9B6 /* ThreeEngineClimb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCED3F02041F309004BB9B6 /* ThreeEngineClimb.swift */; };
 		CE1CC2B5203E83D000B6CEAF /* TOR Norm.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B4203E83CF00B6CEAF /* TOR Norm.csv */; };
 		CE1CC2B7203E83DB00B6CEAF /* TORSSoff20.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B6203E83DB00B6CEAF /* TORSSoff20.csv */; };
 		CE1CC2B9203E880900B6CEAF /* TOR.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC2B8203E880900B6CEAF /* TOR.swift */; };
@@ -85,6 +87,8 @@
 
 /* Begin PBXFileReference section */
 		5FB8106A2041E47200FD8C81 /* Climb3Engine.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Climb3Engine.csv; path = Resources/Climb3Engine.csv; sourceTree = SOURCE_ROOT; };
+		5FCED3EE2041F2F9004BB9B6 /* TwoEngineClimb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoEngineClimb.swift; sourceTree = "<group>"; };
+		5FCED3F02041F309004BB9B6 /* ThreeEngineClimb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeEngineClimb.swift; sourceTree = "<group>"; };
 		CE1CC2B4203E83CF00B6CEAF /* TOR Norm.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "TOR Norm.csv"; path = "Resources/TOR Norm.csv"; sourceTree = SOURCE_ROOT; };
 		CE1CC2B6203E83DB00B6CEAF /* TORSSoff20.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TORSSoff20.csv; path = Resources/TORSSoff20.csv; sourceTree = SOURCE_ROOT; };
 		CE1CC2B8203E880900B6CEAF /* TOR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOR.swift; sourceTree = "<group>"; };
@@ -311,6 +315,8 @@
 				CEB1185A20312DA000CBBFCE /* Crosswinds.swift */,
 				D367B23C203E69F400F605A1 /* WingSweep.swift */,
 				CE1CC2B8203E880900B6CEAF /* TOR.swift */,
+				5FCED3EE2041F2F9004BB9B6 /* TwoEngineClimb.swift */,
+				5FCED3F02041F309004BB9B6 /* ThreeEngineClimb.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -488,6 +494,8 @@
 				CED95C1A1F2DBCE400CA828F /* RefusalSpeed.swift in Sources */,
 				D30FCFEE2026284E007B6E2E /* AboutViewController.swift in Sources */,
 				D3DBA7DD202669F6001BD681 /* HUDView.swift in Sources */,
+				5FCED3F12041F309004BB9B6 /* ThreeEngineClimb.swift in Sources */,
+				5FCED3EF2041F2F9004BB9B6 /* TwoEngineClimb.swift in Sources */,
 				D3F23C621F09FEEB00D71A01 /* TakeoffFactors.swift in Sources */,
 				CEB1185B20312DA000CBBFCE /* Crosswinds.swift in Sources */,
 				CE4D22B71F20477500C61443 /* RefusalFactor.swift in Sources */,

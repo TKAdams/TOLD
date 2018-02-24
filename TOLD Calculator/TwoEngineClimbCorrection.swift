@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class TwoEngineClimb{
+class TwoEngineClimb2{
     var uncorrectedTwoEngineClimbTable:[[Int]] = []
     var twoEngineClimbCorrectionTable:[[Int]] = []
     var twoEngineClimbCorrection: Double = 0
