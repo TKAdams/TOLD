@@ -1,18 +1,20 @@
 //
-//  TwoEngineClimbCorrection.swift
+//  TwoEngineClimb.swift
 //  TOLD Calculator
 //
-//  Created by Travis Adams on 2/10/18.
+//  Created by TODD WILSON on 2/24/18.
 //  Copyright © 2018 TODD WILSON. All rights reserved.
 //
 
 import Foundation
+
 class TwoEngineClimb{
     var uncorrectedTwoEngineClimbTable:[[Int]] = []
     var twoEngineClimbCorrectionTable:[[Int]] = []
     var twoEngineClimbCorrection: Double = 0
     let uncorrectedTwoEngineClimbFilename: String = "Climb2Engine"
     let twoEngineClimbCorrectionFilename: String = "twoEngineCorrection"
+    
     init () {
         
         var data = CSVReader.readDataFromCSV(fileName: twoEngineClimbCorrectionFilename, fileType: "csv")
@@ -31,7 +33,7 @@ class TwoEngineClimb{
     
     func getUncorrectedTwoEngineClimb (gwt: Double, tof: Double) -> Double? {
         var uncorrectedTwoEngineClimb: Double?
-    
+        
         uncorrectedTwoEngineClimb = Math.interpolateTable(table: uncorrectedTwoEngineClimbTable, rowValue: gwt, colValue: tof)
         return uncorrectedTwoEngineClimb
     }
@@ -49,37 +51,33 @@ class TwoEngineClimb{
         var twoEngineClimbCorrection: Double?
         
         uncorrectedTwoEngineClimb = getUncorrectedTwoEngineClimb(gwt: gwt, tof: tof)
-        twoEngineClimbCorrection = getThreeEngineClimbCorrection(gwt: gwt, temp: temp)
+        twoEngineClimbCorrection = getTwoEngineClimbCorrection(gwt: gwt, temp: temp)
+        let baseClimb = uncorrectedTwoEngineClimb! + twoEngineClimbCorrection!
         
         switch wingSweep{
             
         case .WS15:
-            correctedTwoEngineClimb = uncorrectedTwoEngineClimb! + twoEngineClimbCorrection!
+            correctedTwoEngineClimb = baseClimb
             
         case .WS20:
             if (twoEngineClimbCorrection! > 1500){
-                correctedTwoEngineClimb = uncorrectedThreeEngineClimb! + twoEngineClimbCorrection! + 25
+                correctedTwoEngineClimb = baseClimb + 25
             } else if (twoEngineClimbCorrection! < 500){
-                correctedTwoEngineClimb = uncorrectedTwoEngineClimb! + twoEngineClimbCorrection! - 25
+                correctedTwoEngineClimb = baseClimb - 25
             } else {
-                correctedTwoEngineClimb = uncorrectedTwoEngineClimb! + twoEngineClimbCorrection!
+                correctedTwoEngineClimb = baseClimb
             }
             
         case .SSoff20:
             if (twoEngineClimbCorrection! > 1500){
-                correctedTwoEngineClimb = uncorrectedTwoEngineClimb! + twoEngineClimbCorrection! + 25
+                correctedTwoEngineClimb = baseClimb + 25
             } else if (twoEngineClimbCorrection! < 500){
-                correctedTwoEngineClimb = uncorrectedTwoEngineClimb! + twoEngineClimbCorrection! - 25
+                correctedTwoEngineClimb = baseClimb - 25
             } else {
-                correctedTwoEngineClimb = uncorrectedTwoEngineClimb! + twoEngineClimbCorrection!
+                correctedTwoEngineClimb = baseClimb
             }
-        default:
-            correctedTwongineClimb = uncorrectedTwoEngineClimb! + twoEngineClimbCorrection!
         }
         
         return correctedTwoEngineClimb
     }
 }
-    
-
-

@@ -1,12 +1,13 @@
 //
-//  ThreeEngineClimbCorrection.swift
+//  ThreeEngineClimb.swift
 //  TOLD Calculator
 //
-//  Created by Travis Adams on 2/11/18.
+//  Created by TODD WILSON on 2/24/18.
 //  Copyright © 2018 TODD WILSON. All rights reserved.
 //
 
 import Foundation
+
 class ThreeEngineClimb{
     var uncorrectedThreeEngineClimbTable:[[Int]] = []
     var threeEngineClimbCorrectionTable:[[Int]] = []
@@ -23,11 +24,11 @@ class ThreeEngineClimb{
         threeEngineClimbCorrectionTable = CSVReader.convertStringArrayToIntArray(stringData: csvStringRows)
         
         data = CSVReader.readDataFromCSV(fileName: uncorrectedThreeEngineClimbFilename, fileType: "csv")
-
+        
         data = CSVReader.cleanRows(file: data!)
         csvStringRows = CSVReader.convertCSVDataToStringArray(data: data!)
         uncorrectedThreeEngineClimbTable = CSVReader.convertStringArrayToIntArray(stringData: csvStringRows)
-
+        
     }
     
     func getUncorrectedThreeEngineClimb (gwt: Double, tof: Double) -> Double? {
@@ -44,7 +45,7 @@ class ThreeEngineClimb{
         var threeEngineClimbCorrection: Double?
         
         threeEngineClimbCorrection = Math.interpolateTable(table: threeEngineClimbCorrectionTable, rowValue: temp, colValue: gwt)
-
+        
         return threeEngineClimbCorrection
     }
     
@@ -55,37 +56,33 @@ class ThreeEngineClimb{
         
         uncorrectedThreeEngineClimb = getUncorrectedThreeEngineClimb(gwt: gwt, tof: tof)
         threeEngineClimbCorrection = getThreeEngineClimbCorrection(gwt: gwt, temp: temp)
+        let baseClimb = uncorrectedThreeEngineClimb! + threeEngineClimbCorrection!
         
         switch wingSweep{
             
         case .WS15:
-            correctedThreeEngineClimb = uncorrectedThreeEngineClimb! + threeEngineClimbCorrection!
+            correctedThreeEngineClimb = baseClimb
             
         case .WS20:
             if (threeEngineClimbCorrection! > 1500){
-                correctedThreeEngineClimb = uncorrectedThreeEngineClimb! + threeEngineClimbCorrection! + 25
+                correctedThreeEngineClimb = baseClimb + 25
             } else if (threeEngineClimbCorrection! < 500){
-                correctedThreeEngineClimb = uncorrectedThreeEngineClimb! + threeEngineClimbCorrection! - 25
+                correctedThreeEngineClimb = baseClimb - 25
             } else {
-                correctedThreeEngineClimb = uncorrectedThreeEngineClimb! + threeEngineClimbCorrection!
+                correctedThreeEngineClimb = baseClimb
             }
             
         case .SSoff20:
             if (threeEngineClimbCorrection! > 1500){
-                correctedThreeEngineClimb = uncorrectedThreeEngineClimb! + threeEngineClimbCorrection! + 25
+                correctedThreeEngineClimb = baseClimb + 25
             } else if (threeEngineClimbCorrection! < 500){
-                correctedThreeEngineClimb = uncorrectedThreeEngineClimb! + threeEngineClimbCorrection! - 25
+                correctedThreeEngineClimb = baseClimb - 25
             } else {
-                correctedThreeEngineClimb = uncorrectedThreeEngineClimb! + threeEngineClimbCorrection!
+                correctedThreeEngineClimb = baseClimb
             }
-        default:
-            correctedThreeEngineClimb = uncorrectedThreeEngineClimb! + threeEngineClimbCorrection!
         }
         
         return correctedThreeEngineClimb
     }
     
 }
-
-
-
