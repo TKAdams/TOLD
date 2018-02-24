@@ -42,6 +42,7 @@
 		D367B23D203E69F400F605A1 /* WingSweep.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367B23C203E69F400F605A1 /* WingSweep.swift */; };
 		D367B2422041B93700F605A1 /* BreakCaution.csv in Resources */ = {isa = PBXBuildFile; fileRef = D367B2402041B93600F605A1 /* BreakCaution.csv */; };
 		D367B2432041B93700F605A1 /* BreakDanger.csv in Resources */ = {isa = PBXBuildFile; fileRef = D367B2412041B93600F605A1 /* BreakDanger.csv */; };
+		D367B2452041BA7800F605A1 /* Climb2Engine.csv in Resources */ = {isa = PBXBuildFile; fileRef = D367B2442041BA7800F605A1 /* Climb2Engine.csv */; };
 		D392307E20103B6700EF75D9 /* InputTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D392307D20103B6700EF75D9 /* InputTableViewController.swift */; };
 		D39C853B2031125F00F28AEC /* TwoEngineClimbCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */; };
 		D39C853C2031125F00F28AEC /* ThreeEngineClimbCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */; };
@@ -118,6 +119,7 @@
 		D367B23C203E69F400F605A1 /* WingSweep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingSweep.swift; sourceTree = "<group>"; };
 		D367B2402041B93600F605A1 /* BreakCaution.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BreakCaution.csv; path = Resources/BreakCaution.csv; sourceTree = SOURCE_ROOT; };
 		D367B2412041B93600F605A1 /* BreakDanger.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BreakDanger.csv; path = Resources/BreakDanger.csv; sourceTree = SOURCE_ROOT; };
+		D367B2442041BA7800F605A1 /* Climb2Engine.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Climb2Engine.csv; path = Resources/Climb2Engine.csv; sourceTree = SOURCE_ROOT; };
 		D392307D20103B6700EF75D9 /* InputTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewController.swift; sourceTree = "<group>"; };
 		D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoEngineClimbCorrection.swift; sourceTree = "<group>"; };
 		D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeEngineClimbCorrection.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		D3F23C461F08919300D71A01 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				D367B2442041BA7800F605A1 /* Climb2Engine.csv */,
 				D367B2402041B93600F605A1 /* BreakCaution.csv */,
 				D367B2412041B93600F605A1 /* BreakDanger.csv */,
 				D367B238203E638A00F605A1 /* Climb3Engine.csv */,
@@ -432,6 +435,7 @@
 				D39C8540203112AC00F28AEC /* threeEngineCorrection.csv in Resources */,
 				D3F23C231F08917800D71A01 /* LaunchScreen.storyboard in Resources */,
 				CE1CC2B5203E83D000B6CEAF /* TOR Norm.csv in Resources */,
+				D367B2452041BA7800F605A1 /* Climb2Engine.csv in Resources */,
 				CE1CC2BD20411BF100B6CEAF /* CFLNorm.csv in Resources */,
 				D3DB91001F0C82F600CEF54E /* TakeoffFactor.csv in Resources */,
 				CE1CC2C320412A2F00B6CEAF /* IcyCFLNorm.csv in Resources */,
