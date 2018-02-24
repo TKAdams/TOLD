@@ -40,6 +40,8 @@
 		D3334A811F238DEE000C63D6 /* TOLDOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3334A801F238DEE000C63D6 /* TOLDOutput.swift */; };
 		D367B239203E638B00F605A1 /* Climb3Engine.csv in Resources */ = {isa = PBXBuildFile; fileRef = D367B238203E638A00F605A1 /* Climb3Engine.csv */; };
 		D367B23D203E69F400F605A1 /* WingSweep.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367B23C203E69F400F605A1 /* WingSweep.swift */; };
+		D367B2422041B93700F605A1 /* BreakCaution.csv in Resources */ = {isa = PBXBuildFile; fileRef = D367B2402041B93600F605A1 /* BreakCaution.csv */; };
+		D367B2432041B93700F605A1 /* BreakDanger.csv in Resources */ = {isa = PBXBuildFile; fileRef = D367B2412041B93600F605A1 /* BreakDanger.csv */; };
 		D392307E20103B6700EF75D9 /* InputTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D392307D20103B6700EF75D9 /* InputTableViewController.swift */; };
 		D39C853B2031125F00F28AEC /* TwoEngineClimbCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */; };
 		D39C853C2031125F00F28AEC /* ThreeEngineClimbCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */; };
@@ -114,6 +116,8 @@
 		D3334A801F238DEE000C63D6 /* TOLDOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOLDOutput.swift; sourceTree = "<group>"; };
 		D367B238203E638A00F605A1 /* Climb3Engine.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Climb3Engine.csv; path = ../../../../Documents/Climb3Engine.csv; sourceTree = "<group>"; };
 		D367B23C203E69F400F605A1 /* WingSweep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingSweep.swift; sourceTree = "<group>"; };
+		D367B2402041B93600F605A1 /* BreakCaution.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BreakCaution.csv; path = Resources/BreakCaution.csv; sourceTree = SOURCE_ROOT; };
+		D367B2412041B93600F605A1 /* BreakDanger.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BreakDanger.csv; path = Resources/BreakDanger.csv; sourceTree = SOURCE_ROOT; };
 		D392307D20103B6700EF75D9 /* InputTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewController.swift; sourceTree = "<group>"; };
 		D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoEngineClimbCorrection.swift; sourceTree = "<group>"; };
 		D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeEngineClimbCorrection.swift; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 		D3F23C461F08919300D71A01 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				D367B2402041B93600F605A1 /* BreakCaution.csv */,
+				D367B2412041B93600F605A1 /* BreakDanger.csv */,
 				D367B238203E638A00F605A1 /* Climb3Engine.csv */,
 				CE1CC2B4203E83CF00B6CEAF /* TOR Norm.csv */,
 				CE1CC2B6203E83DB00B6CEAF /* TORSSoff20.csv */,
@@ -420,6 +426,7 @@
 				CED95C1C1F2DBD7E00CA828F /* RefusalSpeedChart.csv in Resources */,
 				D32B2FE31F1A5F41002AAC67 /* maxab.csv in Resources */,
 				CED95C261F2E98A800CA828F /* RSCorrectionChart.csv in Resources */,
+				D367B2422041B93700F605A1 /* BreakCaution.csv in Resources */,
 				CE4D22B91F20485100C61443 /* RefusalFactorChart.csv in Resources */,
 				D3F23C5E1F09F89100D71A01 /* IFG (15 Aug 16).pdf in Resources */,
 				D39C8540203112AC00F28AEC /* threeEngineCorrection.csv in Resources */,
@@ -446,6 +453,7 @@
 				CE1CC2C120412A2900B6CEAF /* WetCFLSSoff20WS.csv in Resources */,
 				D3F23C1B1F08917800D71A01 /* Main.storyboard in Resources */,
 				CE1CC2C7204139A900B6CEAF /* LandingFactor.csv in Resources */,
+				D367B2432041B93700F605A1 /* BreakDanger.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
