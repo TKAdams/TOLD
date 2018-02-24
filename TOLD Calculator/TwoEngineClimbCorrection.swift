@@ -74,7 +74,7 @@ class TwoEngineClimb{
                 correctedTwoEngineClimb = uncorrectedTwoEngineClimb! + twoEngineClimbCorrection!
             }
         default:
-            correctedTwongineClimb = uncorrectedTwoEngineClimb! + twoEngineClimbCorrection!
+            correctedTwoEngineClimb = uncorrectedTwoEngineClimb! + twoEngineClimbCorrection!
         }
         
         return correctedTwoEngineClimb

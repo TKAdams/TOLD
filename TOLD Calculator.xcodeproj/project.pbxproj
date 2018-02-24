@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FB8106B2041E47200FD8C81 /* Climb3Engine.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5FB8106A2041E47200FD8C81 /* Climb3Engine.csv */; };
 		CE1CC2B5203E83D000B6CEAF /* TOR Norm.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B4203E83CF00B6CEAF /* TOR Norm.csv */; };
 		CE1CC2B7203E83DB00B6CEAF /* TORSSoff20.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2B6203E83DB00B6CEAF /* TORSSoff20.csv */; };
 		CE1CC2B9203E880900B6CEAF /* TOR.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC2B8203E880900B6CEAF /* TOR.swift */; };
@@ -38,7 +39,6 @@
 		D32B2FE51F1A5FFB002AAC67 /* MaxAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B2FE41F1A5FFB002AAC67 /* MaxAB.swift */; };
 		D32B2FE81F1BA10F002AAC67 /* UIColor+TOLDColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B2FE71F1BA10F002AAC67 /* UIColor+TOLDColor.swift */; };
 		D3334A811F238DEE000C63D6 /* TOLDOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3334A801F238DEE000C63D6 /* TOLDOutput.swift */; };
-		D367B239203E638B00F605A1 /* Climb3Engine.csv in Resources */ = {isa = PBXBuildFile; fileRef = D367B238203E638A00F605A1 /* Climb3Engine.csv */; };
 		D367B23D203E69F400F605A1 /* WingSweep.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367B23C203E69F400F605A1 /* WingSweep.swift */; };
 		D367B2422041B93700F605A1 /* BreakCaution.csv in Resources */ = {isa = PBXBuildFile; fileRef = D367B2402041B93600F605A1 /* BreakCaution.csv */; };
 		D367B2432041B93700F605A1 /* BreakDanger.csv in Resources */ = {isa = PBXBuildFile; fileRef = D367B2412041B93600F605A1 /* BreakDanger.csv */; };
@@ -84,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5FB8106A2041E47200FD8C81 /* Climb3Engine.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Climb3Engine.csv; path = Resources/Climb3Engine.csv; sourceTree = SOURCE_ROOT; };
 		CE1CC2B4203E83CF00B6CEAF /* TOR Norm.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "TOR Norm.csv"; path = "Resources/TOR Norm.csv"; sourceTree = SOURCE_ROOT; };
 		CE1CC2B6203E83DB00B6CEAF /* TORSSoff20.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TORSSoff20.csv; path = Resources/TORSSoff20.csv; sourceTree = SOURCE_ROOT; };
 		CE1CC2B8203E880900B6CEAF /* TOR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOR.swift; sourceTree = "<group>"; };
@@ -115,7 +116,6 @@
 		D32B2FE41F1A5FFB002AAC67 /* MaxAB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxAB.swift; sourceTree = "<group>"; };
 		D32B2FE71F1BA10F002AAC67 /* UIColor+TOLDColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TOLDColor.swift"; sourceTree = "<group>"; };
 		D3334A801F238DEE000C63D6 /* TOLDOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOLDOutput.swift; sourceTree = "<group>"; };
-		D367B238203E638A00F605A1 /* Climb3Engine.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Climb3Engine.csv; path = ../../../../Documents/Climb3Engine.csv; sourceTree = "<group>"; };
 		D367B23C203E69F400F605A1 /* WingSweep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingSweep.swift; sourceTree = "<group>"; };
 		D367B2402041B93600F605A1 /* BreakCaution.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BreakCaution.csv; path = Resources/BreakCaution.csv; sourceTree = SOURCE_ROOT; };
 		D367B2412041B93600F605A1 /* BreakDanger.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BreakDanger.csv; path = Resources/BreakDanger.csv; sourceTree = SOURCE_ROOT; };
@@ -232,10 +232,10 @@
 		D3F23C461F08919300D71A01 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				5FB8106A2041E47200FD8C81 /* Climb3Engine.csv */,
 				D367B2442041BA7800F605A1 /* Climb2Engine.csv */,
 				D367B2402041B93600F605A1 /* BreakCaution.csv */,
 				D367B2412041B93600F605A1 /* BreakDanger.csv */,
-				D367B238203E638A00F605A1 /* Climb3Engine.csv */,
 				CE1CC2B4203E83CF00B6CEAF /* TOR Norm.csv */,
 				CE1CC2B6203E83DB00B6CEAF /* TORSSoff20.csv */,
 				D39C853F203112AC00F28AEC /* threeEngineCorrection.csv */,
@@ -439,6 +439,7 @@
 				CE1CC2BD20411BF100B6CEAF /* CFLNorm.csv in Resources */,
 				D3DB91001F0C82F600CEF54E /* TakeoffFactor.csv in Resources */,
 				CE1CC2C320412A2F00B6CEAF /* IcyCFLNorm.csv in Resources */,
+				5FB8106B2041E47200FD8C81 /* Climb3Engine.csv in Resources */,
 				D39C853E2031129300F28AEC /* twoEngineCorrection.csv in Resources */,
 				CE1CC2C9204139D900B6CEAF /* ApproachSpeedFlaps.csv in Resources */,
 				CE1CC2B7203E83DB00B6CEAF /* TORSSoff20.csv in Resources */,
@@ -446,7 +447,6 @@
 				CE1CC2BF20412A2100B6CEAF /* WetCFLNorm.csv in Resources */,
 				CE1CC2C520412C4900B6CEAF /* TOSpeed15and20.csv in Resources */,
 				D3F23C201F08917800D71A01 /* Assets.xcassets in Resources */,
-				D367B239203E638B00F605A1 /* Climb3Engine.csv in Resources */,
 				CE1CC2D1204139F500B6CEAF /* LandingRollNoFlapDry.csv in Resources */,
 				CE1CC2BB20411BB200B6CEAF /* CFLNormSSoff20WS.csv in Resources */,
 				CE1CC2CF204139EF00B6CEAF /* LandingRollFlapsWet.csv in Resources */,
