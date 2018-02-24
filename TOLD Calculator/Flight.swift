@@ -16,8 +16,8 @@ class Flight {
     var rSF: RefusalFactor = RefusalFactor()
     var rS: RefusalSpeed = RefusalSpeed()
     var rSCorr: RSCorrection = RSCorrection()
-    var twoEngineClimbCorr: TwoEngineClimbCorrection = TwoEngineClimbCorrection()
-    var threeEngineClimbCorr: ThreeEngineClimbCorrection = ThreeEngineClimbCorrection()
+//    var twoEngineClimbCorr: TwoEngineClimbCorrection = TwoEngineClimbCorrection()
+//    var threeEngineClimbCorr: ThreeEngineClimbCorrection = ThreeEngineClimbCorrection()
     var crosswinds: Crosswinds = Crosswinds()
     var tOR: TOR = TOR()
     
