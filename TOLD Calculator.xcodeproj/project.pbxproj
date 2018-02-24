@@ -46,8 +46,6 @@
 		D367B2432041B93700F605A1 /* BreakDanger.csv in Resources */ = {isa = PBXBuildFile; fileRef = D367B2412041B93600F605A1 /* BreakDanger.csv */; };
 		D367B2452041BA7800F605A1 /* Climb2Engine.csv in Resources */ = {isa = PBXBuildFile; fileRef = D367B2442041BA7800F605A1 /* Climb2Engine.csv */; };
 		D392307E20103B6700EF75D9 /* InputTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D392307D20103B6700EF75D9 /* InputTableViewController.swift */; };
-		D39C853B2031125F00F28AEC /* TwoEngineClimbCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */; };
-		D39C853C2031125F00F28AEC /* ThreeEngineClimbCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */; };
 		D39C853E2031129300F28AEC /* twoEngineCorrection.csv in Resources */ = {isa = PBXBuildFile; fileRef = D39C853D2031129300F28AEC /* twoEngineCorrection.csv */; };
 		D39C8540203112AC00F28AEC /* threeEngineCorrection.csv in Resources */ = {isa = PBXBuildFile; fileRef = D39C853F203112AC00F28AEC /* threeEngineCorrection.csv */; };
 		D3AEA83D1F0F355E0052F7F7 /* TakeoffFactor2.csv in Resources */ = {isa = PBXBuildFile; fileRef = D3AEA83C1F0F355E0052F7F7 /* TakeoffFactor2.csv */; };
@@ -125,8 +123,6 @@
 		D367B2412041B93600F605A1 /* BreakDanger.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BreakDanger.csv; path = Resources/BreakDanger.csv; sourceTree = SOURCE_ROOT; };
 		D367B2442041BA7800F605A1 /* Climb2Engine.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Climb2Engine.csv; path = Resources/Climb2Engine.csv; sourceTree = SOURCE_ROOT; };
 		D392307D20103B6700EF75D9 /* InputTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewController.swift; sourceTree = "<group>"; };
-		D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoEngineClimbCorrection.swift; sourceTree = "<group>"; };
-		D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeEngineClimbCorrection.swift; sourceTree = "<group>"; };
 		D39C853D2031129300F28AEC /* twoEngineCorrection.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = twoEngineCorrection.csv; path = Resources/twoEngineCorrection.csv; sourceTree = SOURCE_ROOT; };
 		D39C853F203112AC00F28AEC /* threeEngineCorrection.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = threeEngineCorrection.csv; path = Resources/threeEngineCorrection.csv; sourceTree = SOURCE_ROOT; };
 		D3AEA83C1F0F355E0052F7F7 /* TakeoffFactor2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TakeoffFactor2.csv; path = Resources/TakeoffFactor2.csv; sourceTree = SOURCE_ROOT; };
@@ -310,8 +306,6 @@
 				CED95C191F2DBCE400CA828F /* RefusalSpeed.swift */,
 				CED95C1F1F2E8BCA00CA828F /* RSCorrection.swift */,
 				D3334A801F238DEE000C63D6 /* TOLDOutput.swift */,
-				D39C85392031125F00F28AEC /* TwoEngineClimbCorrection.swift */,
-				D39C853A2031125F00F28AEC /* ThreeEngineClimbCorrection.swift */,
 				CEB1185A20312DA000CBBFCE /* Crosswinds.swift */,
 				D367B23C203E69F400F605A1 /* WingSweep.swift */,
 				CE1CC2B8203E880900B6CEAF /* TOR.swift */,
@@ -508,8 +502,6 @@
 				D3F23C521F0929F600D71A01 /* Flight.swift in Sources */,
 				D3F23C1E1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld in Sources */,
 				D3F23C641F0A711400D71A01 /* CSVReader.swift in Sources */,
-				D39C853C2031125F00F28AEC /* ThreeEngineClimbCorrection.swift in Sources */,
-				D39C853B2031125F00F28AEC /* TwoEngineClimbCorrection.swift in Sources */,
 				D32B2FE51F1A5FFB002AAC67 /* MaxAB.swift in Sources */,
 				CE1CC2B9203E880900B6CEAF /* TOR.swift in Sources */,
 			);

@@ -19,14 +19,14 @@ class Flight {
 //    var twoEngineClimbCorr: TwoEngineClimbCorrection = TwoEngineClimbCorrection()
 //    var threeEngineClimbCorr: ThreeEngineClimbCorrection = ThreeEngineClimbCorrection()
     var crosswinds: Crosswinds = Crosswinds()
-    var tOR: TOR = TOR()
+//    var tOR: TOR = TOR()
     
     var grossWeight: Double = 0.0
     var wingSweep: Int = 0 // 0 = 15 WS 1 = 20WS 2 = 20WS S/S Off
     var availableRunway: Double = 0.0
     var pressureAltitude: Double = 0.0
     var temperature: Double = 0.0 //temperature in ºF
-//    var tOF: Double = 0.0
+    var tOF: Double? = 0.0
     var unCorrRefusalSpeed: Double = 0.0
     var refusalSpeed: Double = 0.0
     var decisionSpeed: Double = 0.0
@@ -48,13 +48,13 @@ class Flight {
 
 	func process() {
 
-//        tOF = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
-        tOFTable.takeoffFactor = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
-        updateTOFDependants(tof: tOFTable.takeoffFactor!, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR, temp: temperature)
+        tOF = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
+//        tOFTable.takeoffFactor = tOFTable.getTakeoffFactor(tempF: temperature, altitude: pressureAltitude)
+        updateTOFDependants(tof: tOF!, gwt: grossWeight, wingSweep: wingSweep, rcr: rCR, temp: temperature)
         
         takeoffSpeed = speedTable.getTOSpeed(wingSweep: wingSweep, grossWeight: grossWeight)
         rotateSpeed = speedTable.getRotateSpeed(wingsweep: wingSweep, grossWeight: grossWeight)
-        refusalSpeedFactor = rSF.getRefusalFactor(gWt: grossWeight, tOF: tOF)
+        refusalSpeedFactor = rSF.getRefusalFactor(gWt: grossWeight, tOF: tOF!)
         decisionSpeed = getDecisionSpeed(rotateSpeed: rotateSpeed, refusalSpeed: refusalSpeed)
         unCorrRefusalSpeed = rS.getRefusalSpeed(availableRunway: availableRunway, refusalFactor: refusalSpeedFactor)
         refusalSpeed = rSCorr.updateRS(refusalSpeed: unCorrRefusalSpeed, rCR: rCR)
@@ -93,9 +93,10 @@ class Flight {
         let perDeltaGWT: Double = percentDeltaGWT(gwt: gwt)
         let perDeltaTOF: Double = percentDeltaTOF(tof: tof)
         
-        threeEngineClimb = correctedThreeEngineClimb(gwt: grossWeight, temp: temperature, gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, wingSweep: wingSweep)
-        
-        twoEngineClimb = correctedTwoEngineClimb(gwt: grossWeight, temp: temperature, gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, wingSweep: wingSweep)
+//        twoEngineClimb =
+//        threeEngineClimb = correctedThreeEngineClimb(gwt: grossWeight, temp: temperature, gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, wingSweep: wingSweep)
+//
+//        twoEngineClimb = correctedTwoEngineClimb(gwt: grossWeight, temp: temperature, gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF, wingSweep: wingSweep)
         
         brakeCaution = brakeCaution(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
         brakeDanger = brakeDanger(gwtUpperIndex: i, TOFUpperIndex: j, deltaGWT: perDeltaGWT, deltaTOF: perDeltaTOF)
@@ -345,7 +346,7 @@ class Flight {
         return tOR
       
     }
-    
+    /*
     func correctedTwoEngineClimb (gwt: Double , temp: Double, gwtUpperIndex: Int, TOFUpperIndex: Int, deltaGWT: Double, deltaTOF: Double, wingSweep: Int) -> Double{
         
         var correctedTwoEngineClimb: Double = 0
@@ -354,7 +355,7 @@ class Flight {
         
         
         uncorrectedTwoEngineClimb = twoEngineClimb(gwtUpperIndex: gwtUpperIndex, TOFUpperIndex: TOFUpperIndex, deltaGWT: deltaGWT, deltaTOF: deltaTOF)
-        twoEngineClimbCorrection = twoEngineClimbCorr.getTwoEngineClimbCorrection(gwt: gwt, temp: temp)
+        twoEngineClimbCorrection = getTwoEngineClimbCorrection(gwt: gwt, temp: temp)
         
         switch wingSweep{
         
@@ -421,4 +422,5 @@ class Flight {
         }
         return correctedThreeEngineClimb
     }
+    */
 }
