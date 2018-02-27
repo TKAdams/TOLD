@@ -26,7 +26,6 @@
 		CE1CC2CF204139EF00B6CEAF /* LandingRollFlapsWet.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2CE204139EF00B6CEAF /* LandingRollFlapsWet.csv */; };
 		CE1CC2D1204139F500B6CEAF /* LandingRollNoFlapDry.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2D0204139F500B6CEAF /* LandingRollNoFlapDry.csv */; };
 		CE1CC2D3204139FA00B6CEAF /* LandingRollNoFlapWet.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE1CC2D2204139FA00B6CEAF /* LandingRollNoFlapWet.csv */; };
-		CE1CC2D920416ED900B6CEAF /* CommCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CC2D820416ED900B6CEAF /* CommCardViewController.swift */; };
 		CE4D22B71F20477500C61443 /* RefusalFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D22B61F20477500C61443 /* RefusalFactor.swift */; };
 		CE4D22B91F20485100C61443 /* RefusalFactorChart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CE4D22B81F20485100C61443 /* RefusalFactorChart.csv */; };
 		CEB1185B20312DA000CBBFCE /* Crosswinds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1185A20312DA000CBBFCE /* Crosswinds.swift */; };
@@ -36,6 +35,7 @@
 		CED95C1C1F2DBD7E00CA828F /* RefusalSpeedChart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CED95C1B1F2DBD7E00CA828F /* RefusalSpeedChart.csv */; };
 		CED95C201F2E8BCA00CA828F /* RSCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED95C1F1F2E8BCA00CA828F /* RSCorrection.swift */; };
 		CED95C261F2E98A800CA828F /* RSCorrectionChart.csv in Resources */ = {isa = PBXBuildFile; fileRef = CED95C251F2E98A800CA828F /* RSCorrectionChart.csv */; };
+		CEE9641A20438A2A00CB8963 /* BONETOLDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9641920438A2A00CB8963 /* BONETOLDViewController.swift */; };
 		D30FCFEE2026284E007B6E2E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30FCFED2026284E007B6E2E /* AboutViewController.swift */; };
 		D31F3A442030AE1E00926498 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31F3A432030AE1E00926498 /* Math.swift */; };
 		D32B2FE31F1A5F41002AAC67 /* maxab.csv in Resources */ = {isa = PBXBuildFile; fileRef = D32B2FE21F1A5F41002AAC67 /* maxab.csv */; };
@@ -104,7 +104,6 @@
 		CE1CC2CE204139EF00B6CEAF /* LandingRollFlapsWet.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LandingRollFlapsWet.csv; path = Resources/LandingRollFlapsWet.csv; sourceTree = SOURCE_ROOT; };
 		CE1CC2D0204139F500B6CEAF /* LandingRollNoFlapDry.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LandingRollNoFlapDry.csv; path = Resources/LandingRollNoFlapDry.csv; sourceTree = SOURCE_ROOT; };
 		CE1CC2D2204139FA00B6CEAF /* LandingRollNoFlapWet.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LandingRollNoFlapWet.csv; path = Resources/LandingRollNoFlapWet.csv; sourceTree = SOURCE_ROOT; };
-		CE1CC2D820416ED900B6CEAF /* CommCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommCardViewController.swift; sourceTree = "<group>"; };
 		CE4D22B61F20477500C61443 /* RefusalFactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefusalFactor.swift; sourceTree = "<group>"; };
 		CE4D22B81F20485100C61443 /* RefusalFactorChart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RefusalFactorChart.csv; path = Resources/RefusalFactorChart.csv; sourceTree = SOURCE_ROOT; };
 		CEB1185A20312DA000CBBFCE /* Crosswinds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crosswinds.swift; sourceTree = "<group>"; };
@@ -114,6 +113,7 @@
 		CED95C1B1F2DBD7E00CA828F /* RefusalSpeedChart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RefusalSpeedChart.csv; path = Resources/RefusalSpeedChart.csv; sourceTree = SOURCE_ROOT; };
 		CED95C1F1F2E8BCA00CA828F /* RSCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCorrection.swift; sourceTree = "<group>"; };
 		CED95C251F2E98A800CA828F /* RSCorrectionChart.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = RSCorrectionChart.csv; path = Resources/RSCorrectionChart.csv; sourceTree = SOURCE_ROOT; };
+		CEE9641920438A2A00CB8963 /* BONETOLDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BONETOLDViewController.swift; sourceTree = "<group>"; };
 		D30FCFED2026284E007B6E2E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D31F3A432030AE1E00926498 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		D32B2FE21F1A5F41002AAC67 /* maxab.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = maxab.csv; path = Resources/maxab.csv; sourceTree = SOURCE_ROOT; };
@@ -284,7 +284,7 @@
 				D3F23C4B1F08922300D71A01 /* TOLDViewController.swift */,
 				D392307D20103B6700EF75D9 /* InputTableViewController.swift */,
 				D30FCFED2026284E007B6E2E /* AboutViewController.swift */,
-				CE1CC2D820416ED900B6CEAF /* CommCardViewController.swift */,
+				CEE9641920438A2A00CB8963 /* BONETOLDViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -501,12 +501,12 @@
 				CED3A0B71F0A92C8005A6B69 /* SpeedTable.swift in Sources */,
 				D31F3A442030AE1E00926498 /* Math.swift in Sources */,
 				D3334A811F238DEE000C63D6 /* TOLDOutput.swift in Sources */,
-				CE1CC2D920416ED900B6CEAF /* CommCardViewController.swift in Sources */,
 				D32B2FE81F1BA10F002AAC67 /* UIColor+TOLDColor.swift in Sources */,
 				D3F23C521F0929F600D71A01 /* Flight.swift in Sources */,
 				D3F23C1E1F08917800D71A01 /* TOLD_Calculator.xcdatamodeld in Sources */,
 				D3F23C641F0A711400D71A01 /* CSVReader.swift in Sources */,
 				D32B2FE51F1A5FFB002AAC67 /* MaxAB.swift in Sources */,
+				CEE9641A20438A2A00CB8963 /* BONETOLDViewController.swift in Sources */,
 				CE1CC2B9203E880900B6CEAF /* TOR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

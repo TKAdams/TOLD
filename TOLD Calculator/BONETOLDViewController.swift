@@ -1,18 +1,21 @@
 //
-//  CommCardViewController.swift
+//  BONETOLDViewController.swift
 //  TOLD Calculator
 //
-//  Created by Travis Adams on 2/24/18.
+//  Created by Travis Adams on 2/25/18.
 //  Copyright © 2018 TODD WILSON. All rights reserved.
 //
 
 import UIKit
 
-class CommCardViewController: UIViewController {
+class BONETOLDViewController: UIViewController {
 
+    @IBOutlet weak var decisionSpeed: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.decisionSpeed.layer.borderWidth = CGFloat(Float(10.0))
+        
         // Do any additional setup after loading the view.
     }
 
